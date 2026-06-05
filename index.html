@@ -2585,8 +2585,11 @@ async function getTile(url) {
   });
 }
 
-async function putTile(url, blob) {
+async function putTile(url, data) {
   try {
+    // Convertir Response en Blob si nécessaire (réponse no-cors opaque)
+    const blob = data instanceof Blob ? data : await data.blob().catch(() => null);
+    if (!blob) return false;
     const database = await openDB();
     return new Promise(resolve => {
       const tx = database.transaction(DB_STORE, 'readwrite');
@@ -2638,11 +2641,10 @@ function initTileInterception() {
         } else {
           // Charger depuis le réseau et mettre en cache
           tile.onload = () => {
-            // Ne pas fetcher depuis file:// (bloqué par sécurité)
             if (location.protocol !== 'file:') {
-              fetch(url)
-                .then(r => r.blob())
-                .then(blob => putTile(url, blob))
+              // no-cors : répond "opaque" mais peut quand même être stocké dans IndexedDB
+              fetch(url, { mode: 'no-cors' })
+                .then(r => putTile(url, r))
                 .catch(() => {});
             }
             done(null, tile);
@@ -2716,8 +2718,10 @@ async function precacheMap() {
         const existing = await getTile(url);
         if (existing) { skipped++; }
         else {
-          const resp = await fetch(url);
-          if (resp.ok) { const blob = await resp.blob(); await putTile(url, blob); }
+          const resp = await fetch(url, { mode: 'no-cors' });
+          // no-cors retourne toujours ok=false mais le blob est utilisable
+          const blob = await resp.blob();
+          if (blob.size > 0) await putTile(url, blob);
           else errors++;
         }
       } catch(e) { errors++; }
