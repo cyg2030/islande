@@ -1,8 +1,12 @@
-// Service Worker — Islande Road Trip v3
-const TILE_CACHE = 'islande-tiles-v3';
+// Service Worker — Islande Road Trip
+const TILE_CACHE = 'islande-tiles-v1';
 
-self.addEventListener('install', e => { self.skipWaiting(); });
-self.addEventListener('activate', e => e.waitUntil(clients.claim()));
+self.addEventListener('install', e => self.skipWaiting());
+self.addEventListener('activate', e => e.waitUntil(
+  caches.keys()
+    .then(keys => Promise.all(keys.filter(k => k !== TILE_CACHE).map(k => caches.delete(k))))
+    .then(() => clients.claim())
+));
 
 self.addEventListener('fetch', e => {
   const url = e.request.url;
@@ -12,15 +16,10 @@ self.addEventListener('fetch', e => {
     caches.open(TILE_CACHE).then(cache =>
       cache.match(e.request).then(cached => {
         if (cached) return cached;
-        // Fetch sans aucune modification — requête la plus simple possible
         return fetch(url).then(resp => {
-          console.log('[SW v3] status:', resp.status, resp.type, url.slice(-20));
           if (resp.status === 200) cache.put(e.request, resp.clone());
           return resp;
-        }).catch(err => {
-          console.error('[SW v3] error:', err.message, url.slice(-20));
-          return new Response('', {status: 503});
-        });
+        }).catch(() => new Response('', {status: 503}));
       })
     )
   );
