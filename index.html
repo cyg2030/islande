@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>🇮🇸 Islande — Road Trip</title>
+<title>Islande — Road Trip</title>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🇮🇸</text></svg>">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
@@ -2643,9 +2643,11 @@ function initTileInterception() {
           // Charger depuis le réseau et mettre en cache
           tile.onload = () => {
             if (location.protocol !== 'file:') {
-              // no-cors : répond "opaque" mais peut quand même être stocké dans IndexedDB
-              fetch(url, { mode: 'no-cors' })
-                .then(r => putTile(url, r))
+              // Proxy CORS pour contourner la restriction no-cors d'OSM
+              const proxyUrl = 'https://corsproxy.io/?' + encodeURIComponent(url);
+              fetch(proxyUrl)
+                .then(r => r.ok ? r.blob() : null)
+                .then(blob => { if (blob && blob.size > 0) putTile(url, blob); })
                 .catch(() => {});
             }
             done(null, tile);
@@ -2719,10 +2721,9 @@ async function precacheMap() {
         const existing = await getTile(url);
         if (existing) { skipped++; }
         else {
-          const resp = await fetch(url, { mode: 'no-cors' });
-          // no-cors retourne toujours ok=false mais le blob est utilisable
-          const blob = await resp.blob();
-          if (blob.size > 0) await putTile(url, blob);
+          const proxyUrl = 'https://corsproxy.io/?' + encodeURIComponent(url);
+          const resp = await fetch(proxyUrl);
+          if (resp.ok) { const blob = await resp.blob(); if (blob.size > 0) await putTile(url, blob); }
           else errors++;
         }
       } catch(e) { errors++; }
