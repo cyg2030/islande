@@ -1,10 +1,12 @@
 [
   {
-    "name": "Öxarárfoss – Flosagjá Fissure loop from Þingvellir",
+    "name": "Boucle Öxarárfoss – Fissure de Flosagjá au départ de Þingvellir",
     "komoot": "https://www.komoot.com/smarttour/1076583",
-    "desc": "",
+    "difficulty_fr": "Facile",
+    "rating": "4.70",
+    "visitors": "3555",
     "dist": 4.9,
-    "dplus": 49,
+    "dplus": 94,
     "color": "#e67e22",
     "start": [
       64.25544,
@@ -788,14 +790,82 @@
         -21.13165
       ]
     ],
-    "waypoints": []
+    "waypoints": [
+      [
+        64.25544,
+        -21.13165,
+        "poi:AXyMt"
+      ],
+      [
+        64.25932,
+        -21.12263,
+        "hlp:217413"
+      ],
+      [
+        64.25955,
+        -21.12229,
+        "hlp:249861"
+      ],
+      [
+        64.26076,
+        -21.12205,
+        "hlp:584911"
+      ],
+      [
+        64.26586,
+        -21.11709,
+        "hlp:205533"
+      ],
+      [
+        64.26586,
+        -21.11709,
+        ""
+      ],
+      [
+        64.26828,
+        -21.11378,
+        "hlp:5646515"
+      ],
+      [
+        64.26816,
+        -21.11127,
+        ""
+      ],
+      [
+        64.26243,
+        -21.11667,
+        ""
+      ],
+      [
+        64.25847,
+        -21.11811,
+        "hlp:860013"
+      ],
+      [
+        64.25581,
+        -21.12301,
+        "hlp:7532608"
+      ],
+      [
+        64.25586,
+        -21.1245,
+        "hlp:6140916"
+      ],
+      [
+        64.25544,
+        -21.13165,
+        "special:back"
+      ]
+    ]
   },
   {
-    "name": "Strokkur Geyser – View of Strokkur Geyser loop from Geysir",
+    "name": "Boucle Geyser Strokkur – Vue sur le geyser Strokkur au départ de Stóri Geysir",
     "komoot": "https://www.komoot.com/smarttour/14127923",
-    "desc": "",
+    "difficulty_fr": "Facile",
+    "rating": "4.72",
+    "visitors": "1739",
     "dist": 3.1,
-    "dplus": 80,
+    "dplus": 140,
     "color": "#e67e22",
     "start": [
       64.30899,
@@ -1443,14 +1513,87 @@
         -20.30337
       ]
     ],
-    "waypoints": []
+    "waypoints": [
+      [
+        64.30899,
+        -20.30337,
+        "poi:80yOd"
+      ],
+      [
+        64.31103,
+        -20.30155,
+        "hlp:627066"
+      ],
+      [
+        64.31163,
+        -20.30126,
+        "hlp:1718706"
+      ],
+      [
+        64.31281,
+        -20.30038,
+        "hlp:163034"
+      ],
+      [
+        64.31281,
+        -20.30038,
+        ""
+      ],
+      [
+        64.31394,
+        -20.30611,
+        "hlp:5682067"
+      ],
+      [
+        64.31543,
+        -20.30532,
+        "hlp:4958323"
+      ],
+      [
+        64.31561,
+        -20.30576,
+        ""
+      ],
+      [
+        64.31377,
+        -20.30734,
+        "hlp:5410775"
+      ],
+      [
+        64.31302,
+        -20.30749,
+        ""
+      ],
+      [
+        64.31357,
+        -20.30136,
+        "hlp:3961553"
+      ],
+      [
+        64.31379,
+        -20.29992,
+        "hlp:1040729"
+      ],
+      [
+        64.30994,
+        -20.30128,
+        ""
+      ],
+      [
+        64.30899,
+        -20.30337,
+        "special:back"
+      ]
+    ]
   },
   {
-    "name": "Miðfoss – Brúar Falls (Brúarfoss) loop from Bruarfoss",
+    "name": "Boucle Miðfoss – Cascade de Brúarfoss au départ de Bruarfoss",
     "komoot": "https://www.komoot.com/smarttour/14128108",
-    "desc": "",
+    "difficulty_fr": "Facile",
+    "rating": "4.84",
+    "visitors": "1484",
     "dist": 6.3,
-    "dplus": 44,
+    "dplus": 82,
     "color": "#e67e22",
     "start": [
       64.24015,
@@ -2458,14 +2601,77 @@
         -20.52415
       ]
     ],
-    "waypoints": []
+    "waypoints": [
+      [
+        64.24015,
+        -20.52415,
+        "poi:zvKUI"
+      ],
+      [
+        64.24378,
+        -20.524,
+        "hlp:3806399"
+      ],
+      [
+        64.2513,
+        -20.51619,
+        "hls:6073155"
+      ],
+      [
+        64.2575,
+        -20.51435,
+        "hlp:551644"
+      ],
+      [
+        64.25786,
+        -20.5147,
+        "hlp:7673783"
+      ],
+      [
+        64.26428,
+        -20.51515,
+        "hlp:551643"
+      ],
+      [
+        64.26426,
+        -20.51534,
+        "hlp:7673786"
+      ],
+      [
+        64.26426,
+        -20.51534,
+        ""
+      ],
+      [
+        64.25338,
+        -20.5167,
+        "hlp:547787"
+      ],
+      [
+        64.25014,
+        -20.51601,
+        ""
+      ],
+      [
+        64.2404,
+        -20.52432,
+        "hlp:6073157"
+      ],
+      [
+        64.24015,
+        -20.52415,
+        "special:back"
+      ]
+    ]
   },
   {
-    "name": "View over Landmannalaugar – View of Friðland að Fjallabaki loop from Landmannalaugar",
+    "name": "Boucle Vue sur Landmannalaugar – Vue sur Friðland að Fjallabaki au départ de Landmannalaugar",
     "komoot": "https://www.komoot.com/smarttour/16938648",
-    "desc": "",
+    "difficulty_fr": "Difficile",
+    "rating": "4.96",
+    "visitors": "1250",
     "dist": 9.1,
-    "dplus": 350,
+    "dplus": 700,
     "color": "#e67e22",
     "start": [
       63.98963,
@@ -3189,14 +3395,67 @@
         -19.05852
       ]
     ],
-    "waypoints": []
+    "waypoints": [
+      [
+        63.98963,
+        -19.05852,
+        "poi:7ISRU"
+      ],
+      [
+        63.99007,
+        -19.05816,
+        "hlp:101145"
+      ],
+      [
+        63.99039,
+        -19.06529,
+        "hlp:3766318"
+      ],
+      [
+        63.99059,
+        -19.07891,
+        "hls:159088"
+      ],
+      [
+        63.98094,
+        -19.09558,
+        "hlp:205049"
+      ],
+      [
+        63.98093,
+        -19.0956,
+        "hlp:3717165"
+      ],
+      [
+        63.99063,
+        -19.09826,
+        "hlp:274715"
+      ],
+      [
+        63.99067,
+        -19.098,
+        "hlp:5902410"
+      ],
+      [
+        63.98196,
+        -19.08896,
+        "hlp:4765017"
+      ],
+      [
+        63.98963,
+        -19.05852,
+        "special:back"
+      ]
+    ]
   },
   {
-    "name": "Brúar Falls (Brúarfoss) – Miðfoss loop from Bruarfoss Parking",
+    "name": "Boucle Cascade de Brúarfoss – Miðfoss au départ de Bruarfoss Parking",
     "komoot": "https://www.komoot.com/smarttour/19375536",
-    "desc": "",
+    "difficulty_fr": "Facile",
+    "rating": "4.83",
+    "visitors": "1443",
     "dist": 7.1,
-    "dplus": 51,
+    "dplus": 98,
     "color": "#e67e22",
     "start": [
       64.26202,
@@ -4340,14 +4599,82 @@
         -20.52078
       ]
     ],
-    "waypoints": []
+    "waypoints": [
+      [
+        64.26202,
+        -20.52078,
+        "poi:wD9S"
+      ],
+      [
+        64.26426,
+        -20.51534,
+        "hlp:7673786"
+      ],
+      [
+        64.26428,
+        -20.51515,
+        "hlp:551643"
+      ],
+      [
+        64.25988,
+        -20.51356,
+        "hlp:5979281"
+      ],
+      [
+        64.25338,
+        -20.5167,
+        "hlp:547787"
+      ],
+      [
+        64.25077,
+        -20.51601,
+        ""
+      ],
+      [
+        64.24378,
+        -20.524,
+        "hlp:3806399"
+      ],
+      [
+        64.24157,
+        -20.52614,
+        ""
+      ],
+      [
+        64.24348,
+        -20.52628,
+        ""
+      ],
+      [
+        64.2513,
+        -20.51619,
+        "hls:6073155"
+      ],
+      [
+        64.2575,
+        -20.51435,
+        "hlp:551644"
+      ],
+      [
+        64.25786,
+        -20.5147,
+        "hlp:7673783"
+      ],
+      [
+        64.26202,
+        -20.52078,
+        "special:back"
+      ]
+    ]
   },
   {
-    "name": "Thingvellir National Park – Flosagjá Fissure loop from Þingvellir",
+    "name": "Boucle Parc national de Þingvellir – Fissure de Flosagjá au départ de Þingvellir",
     "komoot": "https://www.komoot.com/smarttour/23115532",
-    "desc": "",
+    "difficulty_fr": "Facile",
+    "rating": "4.67",
+    "visitors": "3047",
     "dist": 4.9,
-    "dplus": 50,
+    "dplus": 98,
     "color": "#e67e22",
     "start": [
       64.26503,
@@ -5115,14 +5442,82 @@
         -21.11435
       ]
     ],
-    "waypoints": []
+    "waypoints": [
+      [
+        64.26503,
+        -21.11435,
+        "poi:7Ytke"
+      ],
+      [
+        64.26828,
+        -21.11378,
+        "hlp:5646515"
+      ],
+      [
+        64.2696,
+        -21.11205,
+        ""
+      ],
+      [
+        64.2696,
+        -21.11205,
+        "hlp:4396191"
+      ],
+      [
+        64.25932,
+        -21.12263,
+        "hlp:217413"
+      ],
+      [
+        64.25955,
+        -21.12229,
+        "hlp:249861"
+      ],
+      [
+        64.25994,
+        -21.12218,
+        ""
+      ],
+      [
+        64.25546,
+        -21.12805,
+        "hlp:5555805"
+      ],
+      [
+        64.25537,
+        -21.12877,
+        ""
+      ],
+      [
+        64.25736,
+        -21.12125,
+        "hlp:318949"
+      ],
+      [
+        64.25847,
+        -21.11811,
+        "hlp:860013"
+      ],
+      [
+        64.26249,
+        -21.11662,
+        ""
+      ],
+      [
+        64.26503,
+        -21.11435,
+        "special:back"
+      ]
+    ]
   },
   {
-    "name": "Studlafoss Waterfall – Stuðlagil Basalt Canyon loop from Stuðlafoss",
+    "name": "Boucle Cascade de Studlafoss – Canyon basaltique de Stuðlagil au départ de Stuðlafoss",
     "komoot": "https://www.komoot.com/smarttour/34085454",
-    "desc": "",
+    "difficulty_fr": "Difficile",
+    "rating": "4.68",
+    "visitors": "2839",
     "dist": 5.1,
-    "dplus": 38,
+    "dplus": 64,
     "color": "#e67e22",
     "start": [
       65.17501,
@@ -5686,14 +6081,52 @@
         -15.27066
       ]
     ],
-    "waypoints": []
+    "waypoints": [
+      [
+        65.17501,
+        -15.27066,
+        "poi:eVoi"
+      ],
+      [
+        65.17441,
+        -15.27318,
+        "hlp:933764"
+      ],
+      [
+        65.16537,
+        -15.30336,
+        "hlp:6801898"
+      ],
+      [
+        65.16214,
+        -15.30912,
+        "hlp:6946381"
+      ],
+      [
+        65.16234,
+        -15.30772,
+        "hlp:8070817"
+      ],
+      [
+        65.16238,
+        -15.30748,
+        "hlp:933762"
+      ],
+      [
+        65.17501,
+        -15.27066,
+        "special:back"
+      ]
+    ]
   },
   {
-    "name": "Hverfjall Trailhead – Hverfjall Ascent Trail loop from Hverfjall",
+    "name": "Boucle Point de départ du sentier Hverfjall – Sentier d'ascension du Hverfjall au départ de Hverfjall",
     "komoot": "https://www.komoot.com/smarttour/34243154",
-    "desc": "",
+    "difficulty_fr": "Facile",
+    "rating": "4.80",
+    "visitors": "1893",
     "dist": 6.7,
-    "dplus": 202,
+    "dplus": 382,
     "color": "#e67e22",
     "start": [
       65.60619,
@@ -6309,14 +6742,82 @@
         -16.89286
       ]
     ],
-    "waypoints": []
+    "waypoints": [
+      [
+        65.60619,
+        -16.89286,
+        ""
+      ],
+      [
+        65.61204,
+        -16.87712,
+        ""
+      ],
+      [
+        65.61287,
+        -16.87584,
+        "hlp:6033454"
+      ],
+      [
+        65.61305,
+        -16.87494,
+        "hlp:4667752"
+      ],
+      [
+        65.60892,
+        -16.87764,
+        "hlp:8070570"
+      ],
+      [
+        65.60804,
+        -16.88101,
+        "hlp:6698254"
+      ],
+      [
+        65.60092,
+        -16.87781,
+        "hlp:161331"
+      ],
+      [
+        65.59977,
+        -16.87107,
+        "hlp:7770002"
+      ],
+      [
+        65.60793,
+        -16.8647,
+        "poi:D2mwU"
+      ],
+      [
+        65.60934,
+        -16.87224,
+        "hlp:7863234"
+      ],
+      [
+        65.60926,
+        -16.87522,
+        "hlp:7863237"
+      ],
+      [
+        65.61012,
+        -16.88383,
+        ""
+      ],
+      [
+        65.60619,
+        -16.89286,
+        "special:back"
+      ]
+    ]
   },
   {
-    "name": "2021 Fagradalsfjall Lava Flow – View of Meradalir Volcano loop from Borgarhraun",
+    "name": "Boucle Coulée de lave du Fagradalsfjall 2021 – Vue sur le volcan Meradalir au départ de Borgarhraun",
     "komoot": "https://www.komoot.com/smarttour/34245154",
-    "desc": "",
+    "difficulty_fr": "Modéré",
+    "rating": "4.76",
+    "visitors": "1323",
     "dist": 12.0,
-    "dplus": 306,
+    "dplus": 555,
     "color": "#e67e22",
     "start": [
       63.86666,
@@ -7384,14 +7885,82 @@
         -22.3158
       ]
     ],
-    "waypoints": []
+    "waypoints": [
+      [
+        63.86666,
+        -22.3158,
+        "poi:eW4I"
+      ],
+      [
+        63.87434,
+        -22.2923,
+        "hlp:7790897"
+      ],
+      [
+        63.87518,
+        -22.28922,
+        "hlp:3752093"
+      ],
+      [
+        63.87621,
+        -22.28891,
+        "hlp:3055272"
+      ],
+      [
+        63.87887,
+        -22.28665,
+        "hlp:3055284"
+      ],
+      [
+        63.88441,
+        -22.28663,
+        ""
+      ],
+      [
+        63.89245,
+        -22.28568,
+        "hlp:3776888"
+      ],
+      [
+        63.89826,
+        -22.26863,
+        "hlp:7557713"
+      ],
+      [
+        63.89769,
+        -22.25698,
+        "hlp:4766459"
+      ],
+      [
+        63.89769,
+        -22.25698,
+        ""
+      ],
+      [
+        63.89281,
+        -22.28556,
+        "hlp:7790865"
+      ],
+      [
+        63.88269,
+        -22.28768,
+        ""
+      ],
+      [
+        63.86666,
+        -22.3158,
+        "special:back"
+      ]
+    ]
   },
   {
-    "name": "Djúpagilsfoss Waterfall – Reykjadalur Hot Spring River loop from Varmá",
+    "name": "Boucle Cascade de Djúpagilsfoss – Rivière thermale de Reykjadalur au départ de Varmá",
     "komoot": "https://www.komoot.com/smarttour/57758",
-    "desc": "",
+    "difficulty_fr": "Modéré",
+    "rating": "4.83",
+    "visitors": "4553",
     "dist": 9.4,
-    "dplus": 282,
+    "dplus": 512,
     "color": "#e67e22",
     "start": [
       64.02105,
@@ -8231,14 +8800,67 @@
         -21.21108
       ]
     ],
-    "waypoints": []
+    "waypoints": [
+      [
+        64.02105,
+        -21.21108,
+        "poi:6dt5"
+      ],
+      [
+        64.02603,
+        -21.21209,
+        "hlp:6729879"
+      ],
+      [
+        64.02931,
+        -21.21498,
+        "hls:201411"
+      ],
+      [
+        64.03495,
+        -21.219,
+        "hlp:7757120"
+      ],
+      [
+        64.03588,
+        -21.21933,
+        "hlp:813261"
+      ],
+      [
+        64.05118,
+        -21.22942,
+        "hlp:739898"
+      ],
+      [
+        64.05081,
+        -21.22925,
+        "hlp:890248"
+      ],
+      [
+        64.04912,
+        -21.22863,
+        "hlp:3726473"
+      ],
+      [
+        64.04866,
+        -21.22277,
+        "hlp:330972"
+      ],
+      [
+        64.02105,
+        -21.21108,
+        "special:back"
+      ]
+    ]
   },
   {
-    "name": "Litlanesfoss Waterfall – Hengifoss Waterfall loop from Litlanesfoss",
+    "name": "Boucle Cascade de Litlanesfoss – Cascade de Hengifoss au départ de Litlanesfoss",
     "komoot": "https://www.komoot.com/smarttour/702652",
-    "desc": "",
+    "difficulty_fr": "Modéré",
+    "rating": "4.83",
+    "visitors": "1103",
     "dist": 4.1,
-    "dplus": 215,
+    "dplus": 438,
     "color": "#e67e22",
     "start": [
       65.07327,
@@ -8998,14 +9620,67 @@
         -14.88096
       ]
     ],
-    "waypoints": []
+    "waypoints": [
+      [
+        65.07327,
+        -14.88096,
+        "poi:7fKUN"
+      ],
+      [
+        65.07467,
+        -14.8818,
+        "hlp:575950"
+      ],
+      [
+        65.08213,
+        -14.88367,
+        "hlp:846192"
+      ],
+      [
+        65.08676,
+        -14.88421,
+        "hlp:6049506"
+      ],
+      [
+        65.08672,
+        -14.88464,
+        "hlp:845473"
+      ],
+      [
+        65.08672,
+        -14.88475,
+        "hlp:4617487"
+      ],
+      [
+        65.08832,
+        -14.88672,
+        "hlp:4617494"
+      ],
+      [
+        65.08938,
+        -14.88631,
+        "hlp:205554"
+      ],
+      [
+        65.08938,
+        -14.88631,
+        ""
+      ],
+      [
+        65.07327,
+        -14.88096,
+        "special:back"
+      ]
+    ]
   },
   {
-    "name": "Sólheimasandur Plane Wreck – Sólheimasandur Plane Wreck loop from Solheimasandur Parking",
+    "name": "Boucle Épave d’avion de Sólheimasandur – Épave d’avion de Sólheimasandur au départ de Sólheimasandur",
     "komoot": "https://www.komoot.com/smarttour/9381597",
-    "desc": "",
+    "difficulty_fr": "Facile",
+    "rating": "4.30",
+    "visitors": "2526",
     "dist": 7.4,
-    "dplus": 37,
+    "dplus": 74,
     "color": "#e67e22",
     "start": [
       63.4907,
@@ -9273,6 +9948,37 @@
         -19.36412
       ]
     ],
-    "waypoints": []
+    "waypoints": [
+      [
+        63.4907,
+        -19.36412,
+        "poi:8op4T"
+      ],
+      [
+        63.46099,
+        -19.36873,
+        "hlp:7767075"
+      ],
+      [
+        63.45912,
+        -19.36503,
+        "hlp:240186"
+      ],
+      [
+        63.45912,
+        -19.36503,
+        ""
+      ],
+      [
+        63.49024,
+        -19.36441,
+        "hlp:6233773"
+      ],
+      [
+        63.4907,
+        -19.36412,
+        "special:back"
+      ]
+    ]
   }
 ]
