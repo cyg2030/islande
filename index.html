@@ -2119,7 +2119,7 @@ async function init() {
   // Randonnées GPX — chargées depuis hikes.json (mis en cache par le SW)
   let HIKES = [];
   try {
-    const hikeResp = await fetch('./hikes.json');
+    const hikeResp = await fetch('./hikes.json?v=' + Date.now());
     if (hikeResp.ok) HIKES = await hikeResp.json();
   } catch(e) {
     console.warn('[Hikes] Impossible de charger hikes.json:', e.message);
