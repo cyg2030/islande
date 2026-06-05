@@ -309,6 +309,10 @@ function setCacheStatus(msg) {
 if (location.protocol === 'https:') registerSW().then(() => {
   const btn = document.getElementById('btn-sw-toggle');
   if (btn) { btn.querySelector('.label').textContent = 'Hors-ligne : activé ✅'; btn.classList.add('active'); }
+  // Si le SW vient d'être installé pour la 1ère fois, recharger pour qu'il intercepte toutes les tuiles
+  if (!navigator.serviceWorker.controller) {
+    navigator.serviceWorker.addEventListener('controllerchange', () => location.reload());
+  }
 });
 
 
