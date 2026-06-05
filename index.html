@@ -210,70 +210,11 @@ h1 { font-size:14px; font-weight:600; }
 let swReg = null;
 let swEnabled = false;
 
-const SW_CODE = `const CACHE = 'islande-v1';
-const TILES = 'islande-tiles-v1';
-
-self.addEventListener('install', e => {
-  self.skipWaiting();
-  e.waitUntil(caches.open(CACHE).then(c => c.addAll(['./', './islande_carte_complete.html'])));
-});
-self.addEventListener('activate', e => e.waitUntil(clients.claim()));
-
-self.addEventListener('fetch', e => {
-  const url = e.request.url;
-  if (!url.includes('tile.openstreetmap.org')) return;
-  e.respondWith(
-    caches.open(TILES).then(cache =>
-      cache.match(e.request).then(cached => {
-        if (cached) return cached;
-        return fetch(e.request).then(resp => {
-          if (resp.ok) cache.put(e.request, resp.clone());
-          return resp;
-        });
-      })
-    )
-  );
-});
-
-self.addEventListener('message', e => {
-  if (e.data === 'count') {
-    caches.open(TILES).then(c => c.keys().then(k =>
-      e.source.postMessage({type:'count', n: k.length})
-    ));
-  } else if (e.data === 'clear') {
-    caches.delete(TILES).then(() => e.source.postMessage({type:'cleared'}));
-  } else if (e.data && e.data.type === 'precache') {
-    precache(e.source, e.data.tiles);
-  }
-});
-
-async function precache(client, tiles) {
-  const cache = await caches.open(TILES);
-  let done = 0;
-  for (let i = 0; i < tiles.length; i += 6) {
-    const batch = tiles.slice(i, i+6);
-    await Promise.all(batch.map(async url => {
-      try {
-        if (!(await cache.match(url))) {
-          const r = await fetch(url);
-          if (r.ok) await cache.put(url, r);
-        }
-      } catch(e) {}
-      done++;
-    }));
-    if (done % 100 === 0 || done === tiles.length)
-      client.postMessage({type:'progress', done, total: tiles.length});
-    await new Promise(r => setTimeout(r, 20));
-  }
-  client.postMessage({type:'done', total: done});
-}`;
 
 async function registerSW() {
   if (location.protocol !== 'https:') return;
   try {
-    const blob = new Blob([SW_CODE], {type:'application/javascript'});
-    const swUrl = URL.createObjectURL(blob);
-    swReg = await navigator.serviceWorker.register(swUrl, {scope: './'});
+    swReg = await navigator.serviceWorker.register('./sw.js', {scope: './'});
     swEnabled = true;
     navigator.serviceWorker.addEventListener('message', handleSWMessage);
     console.log('[Cache] Service Worker actif ✅');
