@@ -434,9 +434,10 @@ function hikeIcon(num, color) {
 }
 
 function hikePop(hike) {
+  const ratingLabel = hike.rating >= 4.9 ? '🟡 Exceptionnel' : hike.rating >= 4.7 ? '🟢 Très bien' : hike.rating >= 4.5 ? '🟠 Bien' : hike.rating ? '🔵 Correct' : '';
   const meta = [];
   if (hike.difficulty_fr) meta.push(`<span style="background:#f0f4f8;border-radius:3px;padding:1px 6px;font-size:11px;color:#555">⚡ ${hike.difficulty_fr}</span>`);
-  if (hike.rating)        meta.push(`<span style="background:#f0f4f8;border-radius:3px;padding:1px 6px;font-size:11px;color:#555">⭐ ${hike.rating}/5</span>`);
+  if (hike.rating)        meta.push(`<span style="background:#f0f4f8;border-radius:3px;padding:1px 6px;font-size:11px;color:#555">⭐ ${hike.rating}/5 — ${ratingLabel}</span>`);
   if (hike.visitors)      meta.push(`<span style="background:#f0f4f8;border-radius:3px;padding:1px 6px;font-size:11px;color:#555">👥 ${parseInt(hike.visitors).toLocaleString()}</span>`);
   const metaHtml = meta.length ? `<div style="display:flex;flex-wrap:wrap;gap:5px;margin-bottom:8px">${meta.join('')}</div>` : '';
   const komootBtn = hike.komoot
@@ -2135,7 +2136,7 @@ async function init() {
     hikeBtn.querySelector('.label').textContent = `Randonnées (${HIKES.length})`;
   }
   HIKES.forEach((hike, idx) => {
-    const color = '#e67e22'; // couleur unique pour toutes les randonnées
+    const color = hike.color || '#27ae60'; // couleur par note depuis hikes.json
     const style = {color, weight:4, opacity:0.9, dashArray:'6,4'};
     // Tracé
     L.polyline(hike.coords, style)
