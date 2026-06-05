@@ -2150,43 +2150,8 @@ async function init() {
 
 init().catch(err => {
   console.error('Init error:', err);
-
-  // Randonnées GPX — chargées depuis hikes.json (mis en cache par le SW)
-  let HIKES = [];
-  try {
-    const hikeResp = await fetch('./hikes.json');
-    if (hikeResp.ok) HIKES = await hikeResp.json();
-  } catch(e) {
-    console.warn('[Hikes] Impossible de charger hikes.json:', e.message);
-  }
-  // Mettre à jour le compteur dans le bouton
-  const hikeBtn = document.getElementById('btn-hikes');
-  if (hikeBtn && HIKES.length > 0) {
-    hikeBtn.querySelector('.label').textContent = `Randonnées (${HIKES.length})`;
-  }
-  HIKES.forEach((hike, idx) => {
-    const color = hike.color || '#e67e22';
-    const style = {color, weight:4, opacity:0.9, dashArray:'6,4'};
-    // Tracé
-    L.polyline(hike.coords, style)
-      .bindPopup(hikePop(hike), {maxWidth:320})
-      .addTo(layerHikes);
-    // Marqueur départ
-    L.marker(hike.start, {icon: hikeIcon(idx+1, color), zIndexOffset:300})
-      .bindPopup(hikePop(hike), {maxWidth:320})
-      .addTo(layerHikes);
-    // Waypoints le long du tracé
-    hike.waypoints.forEach(([lat,lng,name]) => {
-      L.circleMarker([lat,lng], {radius:4, color:'#fff', fillColor:color, fillOpacity:0.9, weight:2})
-        .bindTooltip(name, {permanent:false, direction:'top'})
-        .addTo(layerHikes);
-    });
-  });
-
   document.getElementById('loading').style.display = 'none';
 });
 </script>
-</body>
-</html></script>
 </body>
 </html>
