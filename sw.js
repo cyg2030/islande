@@ -47,18 +47,15 @@ self.addEventListener('fetch', e => {
     return;
   }
 
-  // hikes.json — network first, cache fallback
+  // hikes.json — toujours réseau si ?v= présent (cache-busting), sinon cache fallback
   if (url.includes('hikes.json')) {
+    if (url.includes('?v=')) {
+      // Requête avec timestamp → réseau direct, pas de cache SW
+      return;
+    }
     e.respondWith(
-      fetch(url).then(resp => {
-        if (resp.ok) {
-          caches.open(APP_CACHE).then(c => c.put(e.request, resp.clone()));
-        }
-        return resp;
-      }).catch(() =>
-        caches.open(APP_CACHE).then(c => c.match(e.request))
-          .then(cached => cached || new Response('[]', {headers:{'Content-Type':'application/json'}}))
-      )
+      caches.open(APP_CACHE).then(c => c.match(e.request))
+        .then(cached => cached || fetch(url))
     );
     return;
   }
