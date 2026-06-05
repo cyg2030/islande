@@ -1,12 +1,13 @@
 // Service Worker — Islande Road Trip
 const TILE_CACHE  = 'islande-tiles-v1';
 const ROUTE_CACHE = 'islande-routes-v1';
+const APP_CACHE   = 'islande-app-v1';
 
 self.addEventListener('install', e => self.skipWaiting());
 self.addEventListener('activate', e => e.waitUntil(
   caches.keys()
     .then(keys => Promise.all(
-      keys.filter(k => k !== TILE_CACHE && k !== ROUTE_CACHE).map(k => caches.delete(k))
+      keys.filter(k => ![TILE_CACHE,ROUTE_CACHE,APP_CACHE].includes(k)).map(k => caches.delete(k))
     ))
     .then(() => clients.claim())
 ));
@@ -30,7 +31,7 @@ self.addEventListener('fetch', e => {
     return;
   }
 
-  // Routes OSRM — cache first, réseau en fallback
+  // Routes OSRM — cache first
   if (url.includes('router.project-osrm.org')) {
     e.respondWith(
       caches.open(ROUTE_CACHE).then(cache =>
@@ -41,6 +42,22 @@ self.addEventListener('fetch', e => {
             return resp;
           }).catch(() => new Response('', {status: 503}));
         })
+      )
+    );
+    return;
+  }
+
+  // hikes.json — network first, cache fallback
+  if (url.includes('hikes.json')) {
+    e.respondWith(
+      fetch(url).then(resp => {
+        if (resp.ok) {
+          caches.open(APP_CACHE).then(c => c.put(e.request, resp.clone()));
+        }
+        return resp;
+      }).catch(() =>
+        caches.open(APP_CACHE).then(c => c.match(e.request))
+          .then(cached => cached || new Response('[]', {headers:{'Content-Type':'application/json'}}))
       )
     );
     return;
