@@ -226,9 +226,13 @@ async function registerSW() {
 function handleSWMessage(e) {
   const msg = e.data;
   if (msg.type === 'count') {
-    const mb = (msg.n * 5 / 1024).toFixed(1);
     const routesTxt = msg.routes > 0 ? ` · ${msg.routes} routes OSRM` : '';
-    setCacheStatus(`📊 Cache : ${msg.n.toLocaleString()} tuiles (~${mb}MB)${routesTxt}`);
+    if (msg.n === -1) {
+      setCacheStatus(`📊 Cache actif (trop de tuiles pour compter — Safari)${routesTxt}`);
+    } else {
+      const mb = (msg.n * 5 / 1024).toFixed(1);
+      setCacheStatus(`📊 Cache : ${msg.n.toLocaleString()} tuiles (~${mb}MB)${routesTxt}`);
+    }
     _cacheInfoVisible = true;
   } else if (msg.type === 'cleared') {
     setCacheStatus('🗑️ Cache vidé.');
