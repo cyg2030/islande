@@ -1,35 +1,60 @@
 // Service Worker — Islande Road Trip
-const TILE_CACHE = 'islande-tiles-v1';
+const TILE_CACHE  = 'islande-tiles-v1';
+const ROUTE_CACHE = 'islande-routes-v1';
 
 self.addEventListener('install', e => self.skipWaiting());
 self.addEventListener('activate', e => e.waitUntil(
   caches.keys()
-    .then(keys => Promise.all(keys.filter(k => k !== TILE_CACHE).map(k => caches.delete(k))))
+    .then(keys => Promise.all(
+      keys.filter(k => k !== TILE_CACHE && k !== ROUTE_CACHE).map(k => caches.delete(k))
+    ))
     .then(() => clients.claim())
 ));
 
 self.addEventListener('fetch', e => {
   const url = e.request.url;
-  if (!url.includes('tile.openstreetmap.org')) return;
 
-  e.respondWith(
-    caches.open(TILE_CACHE).then(cache =>
-      cache.match(e.request).then(cached => {
-        if (cached) return cached;
-        return fetch(url).then(resp => {
-          if (resp.status === 200) cache.put(e.request, resp.clone());
-          return resp;
-        }).catch(() => new Response('', {status: 503}));
-      })
-    )
-  );
+  // Tuiles OSM — cache first
+  if (url.includes('tile.openstreetmap.org')) {
+    e.respondWith(
+      caches.open(TILE_CACHE).then(cache =>
+        cache.match(e.request).then(cached => {
+          if (cached) return cached;
+          return fetch(url).then(resp => {
+            if (resp.status === 200) cache.put(e.request, resp.clone());
+            return resp;
+          }).catch(() => new Response('', {status: 503}));
+        })
+      )
+    );
+    return;
+  }
+
+  // Routes OSRM — cache first, réseau en fallback
+  if (url.includes('router.project-osrm.org')) {
+    e.respondWith(
+      caches.open(ROUTE_CACHE).then(cache =>
+        cache.match(e.request).then(cached => {
+          if (cached) return cached;
+          return fetch(url).then(resp => {
+            if (resp.status === 200) cache.put(e.request, resp.clone());
+            return resp;
+          }).catch(() => new Response('', {status: 503}));
+        })
+      )
+    );
+    return;
+  }
 });
 
 self.addEventListener('message', e => {
   if (e.data === 'count') {
-    caches.open(TILE_CACHE).then(c => c.keys().then(k =>
-      e.source.postMessage({type:'count', n: k.length})
-    ));
+    Promise.all([
+      caches.open(TILE_CACHE).then(c => c.keys().then(k => k.length)),
+      caches.open(ROUTE_CACHE).then(c => c.keys().then(k => k.length)),
+    ]).then(([tiles, routes]) =>
+      e.source.postMessage({type:'count', n: tiles, routes})
+    );
   } else if (e.data === 'clear') {
     caches.keys().then(keys => Promise.all(keys.map(k => caches.delete(k))))
       .then(() => e.source.postMessage({type:'cleared'}));
