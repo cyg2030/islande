@@ -2588,9 +2588,10 @@ async function getTile(url) {
 
 async function putTile(url, data) {
   try {
-    // Convertir Response en Blob si nécessaire (réponse no-cors opaque)
     const blob = data instanceof Blob ? data : await data.blob().catch(() => null);
-    if (!blob) return false;
+    if (!blob) { console.warn('[Cache] putTile: no blob for', url.slice(-20)); return false; }
+    console.log('[Cache] storing tile', url.slice(-20), 'size:', blob.size);
+    if (blob.size === 0) { console.warn('[Cache] zero-size blob, skipping'); return false; }
     const database = await openDB();
     return new Promise(resolve => {
       const tx = database.transaction(DB_STORE, 'readwrite');
@@ -2598,7 +2599,7 @@ async function putTile(url, data) {
       tx.oncomplete = () => resolve(true);
       tx.onerror = () => resolve(false);
     });
-  } catch(e) { return false; }
+  } catch(e) { console.error('[Cache] putTile error:', e); return false; }
 }
 
 async function countTiles() {
@@ -2636,26 +2637,21 @@ function initTileInterception() {
     if (cacheEnabled) {
       getTile(url).then(cached => {
         if (cached) {
-          // Servir depuis IndexedDB
           tile.src = URL.createObjectURL(cached);
           done(null, tile);
         } else {
-          // Charger depuis OSM puis capturer via canvas (pas besoin de CORS)
-          tile.crossOrigin = 'anonymous';
           tile.onload = () => {
-            // Utiliser un canvas pour extraire le blob — contourne CORS
-            try {
-              const canvas = document.createElement('canvas');
-              canvas.width = tile.naturalWidth || 256;
-              canvas.height = tile.naturalHeight || 256;
-              const ctx = canvas.getContext('2d');
-              ctx.drawImage(tile, 0, 0);
-              canvas.toBlob(blob => {
-                if (blob && blob.size > 0) putTile(url, blob);
-              }, 'image/png');
-            } catch(e) {
-              // Canvas tainted (CORS strict) — on ignore silencieusement
-            }
+            // Fetch avec credentials omit — OSM accepte CORS depuis HTTPS
+            fetch(url, { mode: 'cors', credentials: 'omit' })
+              .then(r => { if (r.ok) return r.blob(); throw new Error('not ok'); })
+              .then(blob => putTile(url, blob))
+              .catch(() => {
+                // Dernier recours : no-cors (blob opaque, taille 0 mais stocké quand même)
+                fetch(url, { mode: 'no-cors' })
+                  .then(r => r.blob())
+                  .then(blob => { if (blob) putTile(url, blob); })
+                  .catch(() => {});
+              });
             done(null, tile);
           };
           tile.onerror = e => done(e, tile);
