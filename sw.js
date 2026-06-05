@@ -1,7 +1,7 @@
 // Service Worker — Islande Road Trip
 const TILE_CACHE  = 'islande-tiles-v1';
 const ROUTE_CACHE = 'islande-routes-v1';
-const APP_CACHE   = 'islande-app-v1';
+const APP_CACHE   = 'islande-app-v2'; // incrémenté pour vider l'ancien cache hikes.json
 
 self.addEventListener('install', e => self.skipWaiting());
 self.addEventListener('activate', e => e.waitUntil(
