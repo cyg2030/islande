@@ -443,14 +443,19 @@ function campeasyPop(name,cat,amenities,openPeriod,desc) {
 }
 
 function poiIcon(cat) {
-  const cfg={glacier:{color:'#85c1e9',em:'🧊'},volcano:{color:'#27ae60',em:'🌋'},wildnature:{color:'#117a65',em:'🏖️'},thermal:{color:'#e74c3c',em:'♨️'},geyser:{color:'#c0392b',em:'💨'},viewpoint:{color:'#f39c12',em:'📸'},culture:{color:'#8e44ad',em:'🏛️'},water:{color:'#2980b9',em:'💧'},pool:{color:'#2471a3',em:'🏊'},bird:{color:'#0e6655',em:'🦅'},church:{color:'#7d6608',em:'⛪'},fuel:{color:'#c0392b',em:'⛽'},shop:{color:'#e67e22',em:'🛒'}};
+  const cfg={glacier:{color:'#85c1e9',em:'🧊'},volcano:{color:'#27ae60',em:'🌋'},wildnature:{color:'#117a65',em:'🏖️'},thermal:{color:'#f1948a',em:'♨️'},geyser:{color:'#e74c3c',em:'💨'},viewpoint:{color:'#f39c12',em:'📸'},culture:{color:'#8e44ad',em:'🏛️'},water:{color:'#2980b9',em:'💧'},pool:{color:'#2471a3',em:'🏊'},bird:{color:'#0e6655',em:'🦅'},church:{color:'#7d6608',em:'⛪'},fuel:{color:'#c0392b',em:'⛽'},shop:{color:'#e67e22',em:'🛒'}};
   const c=cfg[cat]||{color:'#f39c12',em:'⭐'};
   const star=`<svg width="42" height="42" viewBox="0 0 42 42" xmlns="http://www.w3.org/2000/svg"><polygon points="21,7.7 24.5,11.4 29.7,9.2 29.7,14.8 35.3,17.2 31.5,21.0 33.6,26.8 27.9,27.5 26.8,33.3 21.0,31.0 15.2,33.3 14.1,27.5 8.4,26.8 10.5,21.0 6.7,17.2 12.3,14.8 12.3,9.2 17.5,11.4" fill="${c.color}" stroke="white" stroke-width="1.5" stroke-linejoin="round"/></svg>`;
   return L.divIcon({className:'',html:`<div style="position:relative;width:42px;height:42px;filter:drop-shadow(0 2px 4px rgba(0,0,0,0.4))">${star}<div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-52%);font-size:16px;line-height:1">${c.em}</div></div>`,iconSize:[42,42],iconAnchor:[21,21]});
 }
 
 function practicalIcon(cat) {
-  const cfg={fuel:{bg:'#c0392b',em:'⛽'},shop:{bg:'#e67e22',em:'🛒'},pool:{bg:'#2980b9',em:'🏊'},bird:{bg:'#117a65',em:'🦅'}};
+  const cfg={
+    fuel: {bg:'#fff3a3', em:'⛽'},  // jaune très clair
+    shop: {bg:'#fff3a3', em:'🛒'},  // jaune très clair
+    pool: {bg:'#2980b9', em:'🏊'},
+    bird: {bg:'#117a65', em:'🦅'},
+  };
   const c=cfg[cat]||{bg:'#555',em:'📍'};
   return L.divIcon({className:'',html:`<div style="width:26px;height:26px;border-radius:6px;background:${c.bg};border:2px solid #fff;display:flex;align-items:center;justify-content:center;font-size:13px;box-shadow:0 2px 5px rgba(0,0,0,0.45)">${c.em}</div>`,iconSize:[26,26],iconAnchor:[13,13]});
 }
