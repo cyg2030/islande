@@ -50,8 +50,8 @@ self.addEventListener('fetch', e => {
 self.addEventListener('message', e => {
   if (e.data === 'count') {
     Promise.all([
-      caches.open(TILE_CACHE).then(c => c.keys().then(k => k.length)),
-      caches.open(ROUTE_CACHE).then(c => c.keys().then(k => k.length)),
+      caches.open(TILE_CACHE).then(c => c.keys().then(k => k.length)).catch(() => -1),
+      caches.open(ROUTE_CACHE).then(c => c.keys().then(k => k.length)).catch(() => 0),
     ]).then(([tiles, routes]) =>
       e.source.postMessage({type:'count', n: tiles, routes})
     );
