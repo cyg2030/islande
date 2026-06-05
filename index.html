@@ -2130,7 +2130,7 @@ async function init() {
     hikeBtn.querySelector('.label').textContent = `Randonnées (${HIKES.length})`;
   }
   HIKES.forEach((hike, idx) => {
-    const color = hike.color || '#e67e22';
+    const color = '#e67e22'; // couleur unique pour toutes les randonnées
     const style = {color, weight:4, opacity:0.9, dashArray:'6,4'};
     // Tracé
     L.polyline(hike.coords, style)
