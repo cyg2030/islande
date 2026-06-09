@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd" version="1.1" creator="gpx.py -- https://github.com/tkrajina/gpxpy">
+  <metadata>
+  <name>Boucle Point de vue – Zone géothermique de Seltún au départ de Seltún</name>
+  <desc>Difficulté : Facile
+Note Komoot : 4.0
+Popularité : 33
+Distance : 1.39 km
+D+ : 35.625304045757645 m
+D- : 35.16320003681861 m
+
+https://www.komoot.com/tour/34229214</desc>
+  <link href="https://www.komoot.com/tour/34229214">
+    <text>Komoot Tour</text>
+  </link>
+  <extensions>
+    <komoot:id>34229214</komoot:id>
+    <komoot:difficulty>easy</komoot:difficulty>
+    <komoot:difficulty_fr>Facile</komoot:difficulty_fr>
+    <komoot:rating_score>4.0</komoot:rating_score>
+    <komoot:visitors>33</komoot:visitors>
+    <komoot:distance_m>1389.2108155859992</komoot:distance_m>
+    <komoot:elevation_up_m>35.625304045757645</komoot:elevation_up_m>
+    <komoot:elevation_down_m>35.16320003681861</komoot:elevation_down_m>
+    <komoot:duration_s>1439</komoot:duration_s>
+    <komoot:poi_count>10</komoot:poi_count>
+    <komoot:url>https://www.komoot.com/tour/34229214</komoot:url>
+  </extensions>
+</metadata>
+  <wpt lat="63.895526" lon="-22.051857">
+    <ele>159.5</ele>
+    <name>poi:gQgGh</name>
+  </wpt>
+  <wpt lat="63.895521" lon="-22.052291">
+    <ele>159.4</ele>
+    <name>hlp:4381359</name>
+  </wpt>
+  <wpt lat="63.895786" lon="-22.052848">
+    <ele>160.9</ele>
+    <name>hlp:4667392</name>
+  </wpt>
+  <wpt lat="63.895913" lon="-22.052634">
+    <ele>162.1</ele>
+    <name>hlp:7516437</name>
+  </wpt>
+  <wpt lat="63.89589" lon="-22.054256">
+    <ele>161.4</ele>
+    <name>hlp:5810642</name>
+  </wpt>
+  <wpt lat="63.894796" lon="-22.057893">
+    <ele>180.8</ele>
+  </wpt>
+  <wpt lat="63.89296" lon="-22.059702">
+    <ele>201.8</ele>
+    <name>hlp:3415049</name>
+  </wpt>
+  <wpt lat="63.89296" lon="-22.059702">
+    <ele>201.8</ele>
+  </wpt>
+  <wpt lat="63.895064" lon="-22.054967">
+    <ele>163.8</ele>
+    <name>hlp:240519</name>
+  </wpt>
+  <wpt lat="63.895526" lon="-22.051857">
+    <ele>159.5</ele>
+    <name>special:back</name>
+  </wpt>
+  <trk>
+    <name>Boucle Point de vue – Zone géothermique de Seltún au départ de Seltún</name>
+    <trkseg>
+      <trkpt lat="63.895526" lon="-22.051857">
+        <ele>159.8</ele>
+      </trkpt>
+      <trkpt lat="63.895372" lon="-22.051723">
+        <ele>159.9</ele>
+      </trkpt>
+      <trkpt lat="63.895518" lon="-22.052284">
+        <ele>160.1</ele>
+      </trkpt>
+      <trkpt lat="63.895521" lon="-22.052291">
+        <ele>160.1</ele>
+      </trkpt>
+      <trkpt lat="63.895693" lon="-22.052732">
+        <ele>160.3</ele>
+      </trkpt>
+      <trkpt lat="63.895786" lon="-22.052848">
+        <ele>160.4</ele>
+      </trkpt>
+      <trkpt lat="63.895875" lon="-22.052785">
+        <ele>160.6</ele>
+      </trkpt>
+      <trkpt lat="63.895913" lon="-22.05265">
+        <ele>160.6</ele>
+      </trkpt>
+      <trkpt lat="63.895913" lon="-22.052634">
+        <ele>160.6</ele>
+      </trkpt>
+      <trkpt lat="63.895913" lon="-22.05265">
+        <ele>160.7</ele>
+      </trkpt>
+      <trkpt lat="63.895875" lon="-22.052785">
+        <ele>160.8</ele>
+      </trkpt>
+      <trkpt lat="63.895786" lon="-22.052848">
+        <ele>160.9</ele>
+      </trkpt>
+      <trkpt lat="63.89589" lon="-22.054256">
+        <ele>162.5</ele>
+      </trkpt>
+      <trkpt lat="63.895854" lon="-22.054383">
+        <ele>162.8</ele>
+      </trkpt>
+      <trkpt lat="63.895668" lon="-22.054365">
+        <ele>163.4</ele>
+      </trkpt>
+      <trkpt lat="63.895587" lon="-22.054806">
+        <ele>164.2</ele>
+      </trkpt>
+      <trkpt lat="63.895587" lon="-22.055186">
+        <ele>164.9</ele>
+      </trkpt>
+      <trkpt lat="63.895481" lon="-22.05559">
+        <ele>166.1</ele>
+      </trkpt>
+      <trkpt lat="63.895444" lon="-22.055867">
+        <ele>167</ele>
+      </trkpt>
+      <trkpt lat="63.895451" lon="-22.056268">
+        <ele>168.3</ele>
+      </trkpt>
+      <trkpt lat="63.895477" lon="-22.056371">
+        <ele>168.8</ele>
+      </trkpt>
+      <trkpt lat="63.895451" lon="-22.056548">
+        <ele>169.5</ele>
+      </trkpt>
+      <trkpt lat="63.8955" lon="-22.056616">
+        <ele>170</ele>
+      </trkpt>
+      <trkpt lat="63.895501" lon="-22.056693">
+        <ele>170.2</ele>
+      </trkpt>
+      <trkpt lat="63.895498" lon="-22.056754">
+        <ele>170.4</ele>
+      </trkpt>
+      <trkpt lat="63.89545" lon="-22.056824">
+        <ele>170.8</ele>
+      </trkpt>
+      <trkpt lat="63.895437" lon="-22.057008">
+        <ele>171.4</ele>
+      </trkpt>
+      <trkpt lat="63.895469" lon="-22.057154">
+        <ele>171.8</ele>
+      </trkpt>
+      <trkpt lat="63.895415" lon="-22.057284">
+        <ele>172.2</ele>
+      </trkpt>
+      <trkpt lat="63.895411" lon="-22.057386">
+        <ele>172.5</ele>
+      </trkpt>
+      <trkpt lat="63.895378" lon="-22.057471">
+        <ele>172.7</ele>
+      </trkpt>
+      <trkpt lat="63.89519" lon="-22.057624">
+        <ele>173.8</ele>
+      </trkpt>
+      <trkpt lat="63.895144" lon="-22.057626">
+        <ele>174</ele>
+      </trkpt>
+      <trkpt lat="63.895021" lon="-22.057933">
+        <ele>174.9</ele>
+      </trkpt>
+      <trkpt lat="63.894955" lon="-22.057978">
+        <ele>175.4</ele>
+      </trkpt>
+      <trkpt lat="63.894894" lon="-22.057991">
+        <ele>175.8</ele>
+      </trkpt>
+      <trkpt lat="63.894796" lon="-22.057893">
+        <ele>176.6</ele>
+      </trkpt>
+      <trkpt lat="63.894551" lon="-22.057437">
+        <ele>179.1</ele>
+      </trkpt>
+      <trkpt lat="63.89449" lon="-22.057408">
+        <ele>179.6</ele>
+      </trkpt>
+      <trkpt lat="63.89416" lon="-22.05754">
+        <ele>182.6</ele>
+      </trkpt>
+      <trkpt lat="63.893994" lon="-22.057693">
+        <ele>184.2</ele>
+      </trkpt>
+      <trkpt lat="63.893909" lon="-22.057876">
+        <ele>185.1</ele>
+      </trkpt>
+      <trkpt lat="63.893626" lon="-22.059068">
+        <ele>190.8</ele>
+      </trkpt>
+      <trkpt lat="63.893499" lon="-22.059238">
+        <ele>192.2</ele>
+      </trkpt>
+      <trkpt lat="63.893311" lon="-22.0592">
+        <ele>193.8</ele>
+      </trkpt>
+      <trkpt lat="63.893243" lon="-22.059558">
+        <ele>194.8</ele>
+      </trkpt>
+      <trkpt lat="63.893122" lon="-22.059711">
+        <ele>195.3</ele>
+      </trkpt>
+      <trkpt lat="63.89296" lon="-22.059702">
+        <ele>195.5</ele>
+      </trkpt>
+      <trkpt lat="63.893122" lon="-22.059711">
+        <ele>195.3</ele>
+      </trkpt>
+      <trkpt lat="63.893243" lon="-22.059558">
+        <ele>194.8</ele>
+      </trkpt>
+      <trkpt lat="63.893311" lon="-22.0592">
+        <ele>193.8</ele>
+      </trkpt>
+      <trkpt lat="63.893499" lon="-22.059238">
+        <ele>192.2</ele>
+      </trkpt>
+      <trkpt lat="63.893626" lon="-22.059068">
+        <ele>190.8</ele>
+      </trkpt>
+      <trkpt lat="63.893909" lon="-22.057876">
+        <ele>183.8</ele>
+      </trkpt>
+      <trkpt lat="63.893994" lon="-22.057693">
+        <ele>182.3</ele>
+      </trkpt>
+      <trkpt lat="63.89416" lon="-22.05754">
+        <ele>180</ele>
+      </trkpt>
+      <trkpt lat="63.89449" lon="-22.057408">
+        <ele>175.7</ele>
+      </trkpt>
+      <trkpt lat="63.894687" lon="-22.05722">
+        <ele>173.3</ele>
+      </trkpt>
+      <trkpt lat="63.894724" lon="-22.056918">
+        <ele>171.9</ele>
+      </trkpt>
+      <trkpt lat="63.894811" lon="-22.056668">
+        <ele>170.6</ele>
+      </trkpt>
+      <trkpt lat="63.894829" lon="-22.056476">
+        <ele>169.8</ele>
+      </trkpt>
+      <trkpt lat="63.894798" lon="-22.056281">
+        <ele>169.2</ele>
+      </trkpt>
+      <trkpt lat="63.894948" lon="-22.055862">
+        <ele>167.6</ele>
+      </trkpt>
+      <trkpt lat="63.894964" lon="-22.055694">
+        <ele>167.2</ele>
+      </trkpt>
+      <trkpt lat="63.895013" lon="-22.055463">
+        <ele>166.5</ele>
+      </trkpt>
+      <trkpt lat="63.895019" lon="-22.05523">
+        <ele>165.9</ele>
+      </trkpt>
+      <trkpt lat="63.895064" lon="-22.054967">
+        <ele>165.2</ele>
+      </trkpt>
+      <trkpt lat="63.895064" lon="-22.054965">
+        <ele>165.2</ele>
+      </trkpt>
+      <trkpt lat="63.895158" lon="-22.05491">
+        <ele>164.7</ele>
+      </trkpt>
+      <trkpt lat="63.895199" lon="-22.05482">
+        <ele>164.4</ele>
+      </trkpt>
+      <trkpt lat="63.895215" lon="-22.054551">
+        <ele>163.8</ele>
+      </trkpt>
+      <trkpt lat="63.895261" lon="-22.054285">
+        <ele>163.3</ele>
+      </trkpt>
+      <trkpt lat="63.895332" lon="-22.054123">
+        <ele>163</ele>
+      </trkpt>
+      <trkpt lat="63.89557" lon="-22.054245">
+        <ele>162.5</ele>
+      </trkpt>
+      <trkpt lat="63.895668" lon="-22.054365">
+        <ele>162.4</ele>
+      </trkpt>
+      <trkpt lat="63.895854" lon="-22.054383">
+        <ele>162.2</ele>
+      </trkpt>
+      <trkpt lat="63.89589" lon="-22.054256">
+        <ele>162</ele>
+      </trkpt>
+      <trkpt lat="63.895786" lon="-22.052848">
+        <ele>161</ele>
+      </trkpt>
+      <trkpt lat="63.895875" lon="-22.052785">
+        <ele>160.9</ele>
+      </trkpt>
+      <trkpt lat="63.895913" lon="-22.05265">
+        <ele>160.8</ele>
+      </trkpt>
+      <trkpt lat="63.895913" lon="-22.052634">
+        <ele>160.8</ele>
+      </trkpt>
+      <trkpt lat="63.895907" lon="-22.052462">
+        <ele>160.7</ele>
+      </trkpt>
+      <trkpt lat="63.89575" lon="-22.052052">
+        <ele>160.5</ele>
+      </trkpt>
+      <trkpt lat="63.895526" lon="-22.051857">
+        <ele>160.3</ele>
+      </trkpt>
+    </trkseg>
+  </trk>
+</gpx>

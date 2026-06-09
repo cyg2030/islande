@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd" version="1.1" creator="gpx.py -- https://github.com/tkrajina/gpxpy">
+  <metadata>
+  <name>Boucle Vue sur Reynisfjara – Dyrhólaey au départ de Dyrhólaey</name>
+  <desc>Difficulté : Facile
+Note Komoot : 4.8125
+Popularité : 193
+Distance : 1.26 km
+D+ : 10.007525040713062 m
+D- : 9.969985259526268 m
+
+https://www.komoot.com/tour/34229170</desc>
+  <link href="https://www.komoot.com/tour/34229170">
+    <text>Komoot Tour</text>
+  </link>
+  <extensions>
+    <komoot:id>34229170</komoot:id>
+    <komoot:difficulty>easy</komoot:difficulty>
+    <komoot:difficulty_fr>Facile</komoot:difficulty_fr>
+    <komoot:rating_score>4.8125</komoot:rating_score>
+    <komoot:visitors>193</komoot:visitors>
+    <komoot:distance_m>1257.6576784700417</komoot:distance_m>
+    <komoot:elevation_up_m>10.007525040713062</komoot:elevation_up_m>
+    <komoot:elevation_down_m>9.969985259526268</komoot:elevation_down_m>
+    <komoot:duration_s>1187</komoot:duration_s>
+    <komoot:poi_count>12</komoot:poi_count>
+    <komoot:url>https://www.komoot.com/tour/34229170</komoot:url>
+  </extensions>
+</metadata>
+  <wpt lat="63.404747" lon="-19.106984">
+    <ele>17.8</ele>
+    <name>poi:eWt2</name>
+  </wpt>
+  <wpt lat="63.404633" lon="-19.10698">
+    <ele>17.5</ele>
+    <name>hlp:7328970</name>
+  </wpt>
+  <wpt lat="63.403884" lon="-19.103494">
+    <ele>14</ele>
+    <name>hlp:626301</name>
+  </wpt>
+  <wpt lat="63.40416" lon="-19.103224">
+    <ele>14.3</ele>
+    <name>hlp:2093638</name>
+  </wpt>
+  <wpt lat="63.404745" lon="-19.101933">
+    <ele>10</ele>
+    <name>hlp:6784145</name>
+  </wpt>
+  <wpt lat="63.404745" lon="-19.101933">
+    <ele>10</ele>
+  </wpt>
+  <wpt lat="63.403461" lon="-19.104118">
+    <ele>12.2</ele>
+    <name>hlp:6769567</name>
+  </wpt>
+  <wpt lat="63.402765" lon="-19.103127">
+    <ele>5.6</ele>
+    <name>hlp:626312</name>
+  </wpt>
+  <wpt lat="63.402765" lon="-19.103127">
+    <ele>5.6</ele>
+  </wpt>
+  <wpt lat="63.402874" lon="-19.104905">
+    <ele>5.9</ele>
+    <name>hlp:372690</name>
+  </wpt>
+  <wpt lat="63.402874" lon="-19.104905">
+    <ele>5.9</ele>
+  </wpt>
+  <wpt lat="63.404747" lon="-19.106984">
+    <ele>17.8</ele>
+    <name>special:back</name>
+  </wpt>
+  <trk>
+    <name>Boucle Vue sur Reynisfjara – Dyrhólaey au départ de Dyrhólaey</name>
+    <trkseg>
+      <trkpt lat="63.404747" lon="-19.106984">
+        <ele>17.8</ele>
+      </trkpt>
+      <trkpt lat="63.404748" lon="-19.107451">
+        <ele>17.8</ele>
+      </trkpt>
+      <trkpt lat="63.40465" lon="-19.107438">
+        <ele>17.8</ele>
+      </trkpt>
+      <trkpt lat="63.404633" lon="-19.10698">
+        <ele>17.7</ele>
+      </trkpt>
+      <trkpt lat="63.404441" lon="-19.106978">
+        <ele>17.4</ele>
+      </trkpt>
+      <trkpt lat="63.404383" lon="-19.106577">
+        <ele>17.1</ele>
+      </trkpt>
+      <trkpt lat="63.404325" lon="-19.1064">
+        <ele>16.9</ele>
+      </trkpt>
+      <trkpt lat="63.404134" lon="-19.106078">
+        <ele>16.4</ele>
+      </trkpt>
+      <trkpt lat="63.403957" lon="-19.1056">
+        <ele>15.9</ele>
+      </trkpt>
+      <trkpt lat="63.403888" lon="-19.105214">
+        <ele>15.7</ele>
+      </trkpt>
+      <trkpt lat="63.403793" lon="-19.104391">
+        <ele>15.1</ele>
+      </trkpt>
+      <trkpt lat="63.403808" lon="-19.104106">
+        <ele>14.9</ele>
+      </trkpt>
+      <trkpt lat="63.403884" lon="-19.103494">
+        <ele>14.3</ele>
+      </trkpt>
+      <trkpt lat="63.403932" lon="-19.103421">
+        <ele>14.1</ele>
+      </trkpt>
+      <trkpt lat="63.404078" lon="-19.103492">
+        <ele>13.8</ele>
+      </trkpt>
+      <trkpt lat="63.40411" lon="-19.103445">
+        <ele>13.7</ele>
+      </trkpt>
+      <trkpt lat="63.404133" lon="-19.103312">
+        <ele>13.6</ele>
+      </trkpt>
+      <trkpt lat="63.404162" lon="-19.103303">
+        <ele>13.5</ele>
+      </trkpt>
+      <trkpt lat="63.40416" lon="-19.103224">
+        <ele>13.4</ele>
+      </trkpt>
+      <trkpt lat="63.404162" lon="-19.103303">
+        <ele>13.4</ele>
+      </trkpt>
+      <trkpt lat="63.404205" lon="-19.103329">
+        <ele>13.4</ele>
+      </trkpt>
+      <trkpt lat="63.404382" lon="-19.103403">
+        <ele>13.2</ele>
+      </trkpt>
+      <trkpt lat="63.404535" lon="-19.103206">
+        <ele>13.2</ele>
+      </trkpt>
+      <trkpt lat="63.404568" lon="-19.103068">
+        <ele>13.2</ele>
+      </trkpt>
+      <trkpt lat="63.404562" lon="-19.102743">
+        <ele>13.2</ele>
+      </trkpt>
+      <trkpt lat="63.404722" lon="-19.102168">
+        <ele>13.2</ele>
+      </trkpt>
+      <trkpt lat="63.404745" lon="-19.101933">
+        <ele>13.1</ele>
+      </trkpt>
+      <trkpt lat="63.404722" lon="-19.102168">
+        <ele>13.2</ele>
+      </trkpt>
+      <trkpt lat="63.404562" lon="-19.102743">
+        <ele>13.2</ele>
+      </trkpt>
+      <trkpt lat="63.404568" lon="-19.103068">
+        <ele>13.2</ele>
+      </trkpt>
+      <trkpt lat="63.404535" lon="-19.103206">
+        <ele>13.1</ele>
+      </trkpt>
+      <trkpt lat="63.404382" lon="-19.103403">
+        <ele>13.1</ele>
+      </trkpt>
+      <trkpt lat="63.404205" lon="-19.103329">
+        <ele>13.2</ele>
+      </trkpt>
+      <trkpt lat="63.404162" lon="-19.103303">
+        <ele>13.2</ele>
+      </trkpt>
+      <trkpt lat="63.404133" lon="-19.103312">
+        <ele>13.1</ele>
+      </trkpt>
+      <trkpt lat="63.40411" lon="-19.103445">
+        <ele>13.2</ele>
+      </trkpt>
+      <trkpt lat="63.404078" lon="-19.103492">
+        <ele>13.2</ele>
+      </trkpt>
+      <trkpt lat="63.403932" lon="-19.103421">
+        <ele>13.1</ele>
+      </trkpt>
+      <trkpt lat="63.403884" lon="-19.103494">
+        <ele>13</ele>
+      </trkpt>
+      <trkpt lat="63.403808" lon="-19.104106">
+        <ele>12.4</ele>
+      </trkpt>
+      <trkpt lat="63.403793" lon="-19.104391">
+        <ele>12</ele>
+      </trkpt>
+      <trkpt lat="63.403602" lon="-19.104158">
+        <ele>11.3</ele>
+      </trkpt>
+      <trkpt lat="63.403461" lon="-19.104118">
+        <ele>10.8</ele>
+      </trkpt>
+      <trkpt lat="63.4034" lon="-19.104101">
+        <ele>10.7</ele>
+      </trkpt>
+      <trkpt lat="63.403312" lon="-19.104005">
+        <ele>10.4</ele>
+      </trkpt>
+      <trkpt lat="63.403146" lon="-19.10359">
+        <ele>9.9</ele>
+      </trkpt>
+      <trkpt lat="63.402849" lon="-19.103171">
+        <ele>9.3</ele>
+      </trkpt>
+      <trkpt lat="63.402765" lon="-19.103127">
+        <ele>9.1</ele>
+      </trkpt>
+      <trkpt lat="63.402849" lon="-19.103171">
+        <ele>8.9</ele>
+      </trkpt>
+      <trkpt lat="63.403146" lon="-19.10359">
+        <ele>8.2</ele>
+      </trkpt>
+      <trkpt lat="63.403312" lon="-19.104005">
+        <ele>8.2</ele>
+      </trkpt>
+      <trkpt lat="63.403009" lon="-19.104682">
+        <ele>9</ele>
+      </trkpt>
+      <trkpt lat="63.402874" lon="-19.104905">
+        <ele>9.5</ele>
+      </trkpt>
+      <trkpt lat="63.403009" lon="-19.104682">
+        <ele>10</ele>
+      </trkpt>
+      <trkpt lat="63.403312" lon="-19.104005">
+        <ele>11.2</ele>
+      </trkpt>
+      <trkpt lat="63.4034" lon="-19.104101">
+        <ele>11.5</ele>
+      </trkpt>
+      <trkpt lat="63.403461" lon="-19.104118">
+        <ele>11.7</ele>
+      </trkpt>
+      <trkpt lat="63.403602" lon="-19.104158">
+        <ele>12.3</ele>
+      </trkpt>
+      <trkpt lat="63.403793" lon="-19.104391">
+        <ele>13.3</ele>
+      </trkpt>
+      <trkpt lat="63.403888" lon="-19.105214">
+        <ele>14.9</ele>
+      </trkpt>
+      <trkpt lat="63.403957" lon="-19.1056">
+        <ele>15.6</ele>
+      </trkpt>
+      <trkpt lat="63.404134" lon="-19.106078">
+        <ele>16.4</ele>
+      </trkpt>
+      <trkpt lat="63.404325" lon="-19.1064">
+        <ele>16.9</ele>
+      </trkpt>
+      <trkpt lat="63.404383" lon="-19.106577">
+        <ele>17.1</ele>
+      </trkpt>
+      <trkpt lat="63.404441" lon="-19.106978">
+        <ele>17.5</ele>
+      </trkpt>
+      <trkpt lat="63.404546" lon="-19.107395">
+        <ele>17.7</ele>
+      </trkpt>
+      <trkpt lat="63.40464" lon="-19.107437">
+        <ele>17.8</ele>
+      </trkpt>
+      <trkpt lat="63.40465" lon="-19.107438">
+        <ele>17.8</ele>
+      </trkpt>
+      <trkpt lat="63.404748" lon="-19.107451">
+        <ele>17.8</ele>
+      </trkpt>
+      <trkpt lat="63.404747" lon="-19.106984">
+        <ele>17.8</ele>
+      </trkpt>
+    </trkseg>
+  </trk>
+</gpx>

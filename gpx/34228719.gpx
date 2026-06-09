@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd" version="1.1" creator="gpx.py -- https://github.com/tkrajina/gpxpy">
+  <metadata>
+  <name>Boucle Camping de Pakgil – Cascade de Kulufoss au départ de Þakgil</name>
+  <desc>Difficulté : Facile
+Note Komoot : 4.666666507720947
+Popularité : 21
+Distance : 1.05 km
+D+ : 114.39973244780603 m
+D- : 114.39973244780606 m
+
+https://www.komoot.com/tour/34228719</desc>
+  <link href="https://www.komoot.com/tour/34228719">
+    <text>Komoot Tour</text>
+  </link>
+  <extensions>
+    <komoot:id>34228719</komoot:id>
+    <komoot:difficulty>easy</komoot:difficulty>
+    <komoot:difficulty_fr>Facile</komoot:difficulty_fr>
+    <komoot:rating_score>4.666666507720947</komoot:rating_score>
+    <komoot:visitors>21</komoot:visitors>
+    <komoot:distance_m>1047.209099424034</komoot:distance_m>
+    <komoot:elevation_up_m>114.39973244780603</komoot:elevation_up_m>
+    <komoot:elevation_down_m>114.39973244780606</komoot:elevation_down_m>
+    <komoot:duration_s>1844</komoot:duration_s>
+    <komoot:poi_count>5</komoot:poi_count>
+    <komoot:url>https://www.komoot.com/tour/34228719</komoot:url>
+  </extensions>
+</metadata>
+  <wpt lat="63.530312" lon="-18.887834">
+    <ele>180.2</ele>
+    <name>poi:8emHQ</name>
+  </wpt>
+  <wpt lat="63.530501" lon="-18.887638">
+    <ele>178.2</ele>
+    <name>hlp:2597820</name>
+  </wpt>
+  <wpt lat="63.534489" lon="-18.887461">
+    <ele>327.8</ele>
+    <name>hlp:3601921</name>
+  </wpt>
+  <wpt lat="63.534489" lon="-18.887461">
+    <ele>327.8</ele>
+  </wpt>
+  <wpt lat="63.530312" lon="-18.887834">
+    <ele>180.2</ele>
+    <name>special:back</name>
+  </wpt>
+  <trk>
+    <name>Boucle Camping de Pakgil – Cascade de Kulufoss au départ de Þakgil</name>
+    <trkseg>
+      <trkpt lat="63.530312" lon="-18.887834">
+        <ele>179.7</ele>
+      </trkpt>
+      <trkpt lat="63.530351" lon="-18.887561">
+        <ele>179.8</ele>
+      </trkpt>
+      <trkpt lat="63.530501" lon="-18.887638">
+        <ele>180.1</ele>
+      </trkpt>
+      <trkpt lat="63.530677" lon="-18.887728">
+        <ele>180.8</ele>
+      </trkpt>
+      <trkpt lat="63.531027" lon="-18.888019">
+        <ele>183.2</ele>
+      </trkpt>
+      <trkpt lat="63.531528" lon="-18.888349">
+        <ele>189.7</ele>
+      </trkpt>
+      <trkpt lat="63.53163" lon="-18.88841">
+        <ele>191.8</ele>
+      </trkpt>
+      <trkpt lat="63.531743" lon="-18.888402">
+        <ele>194.2</ele>
+      </trkpt>
+      <trkpt lat="63.532076" lon="-18.888144">
+        <ele>202.8</ele>
+      </trkpt>
+      <trkpt lat="63.532315" lon="-18.888303">
+        <ele>210.3</ele>
+      </trkpt>
+      <trkpt lat="63.532329" lon="-18.88824">
+        <ele>211.2</ele>
+      </trkpt>
+      <trkpt lat="63.532356" lon="-18.888103">
+        <ele>213.3</ele>
+      </trkpt>
+      <trkpt lat="63.532424" lon="-18.888057">
+        <ele>215.9</ele>
+      </trkpt>
+      <trkpt lat="63.532549" lon="-18.888128">
+        <ele>220.5</ele>
+      </trkpt>
+      <trkpt lat="63.532663" lon="-18.887981">
+        <ele>225.6</ele>
+      </trkpt>
+      <trkpt lat="63.532803" lon="-18.887891">
+        <ele>231.7</ele>
+      </trkpt>
+      <trkpt lat="63.533354" lon="-18.887834">
+        <ele>258.2</ele>
+      </trkpt>
+      <trkpt lat="63.533588" lon="-18.887392">
+        <ele>273.3</ele>
+      </trkpt>
+      <trkpt lat="63.533884" lon="-18.887442">
+        <ele>284.2</ele>
+      </trkpt>
+      <trkpt lat="63.534105" lon="-18.887421">
+        <ele>289.8</ele>
+      </trkpt>
+      <trkpt lat="63.534346" lon="-18.887254">
+        <ele>293.4</ele>
+      </trkpt>
+      <trkpt lat="63.534489" lon="-18.887461">
+        <ele>294.1</ele>
+      </trkpt>
+      <trkpt lat="63.534346" lon="-18.887254">
+        <ele>293.4</ele>
+      </trkpt>
+      <trkpt lat="63.534105" lon="-18.887421">
+        <ele>289.8</ele>
+      </trkpt>
+      <trkpt lat="63.533884" lon="-18.887442">
+        <ele>284.2</ele>
+      </trkpt>
+      <trkpt lat="63.533588" lon="-18.887392">
+        <ele>273.3</ele>
+      </trkpt>
+      <trkpt lat="63.533354" lon="-18.887834">
+        <ele>258.2</ele>
+      </trkpt>
+      <trkpt lat="63.532803" lon="-18.887891">
+        <ele>231.7</ele>
+      </trkpt>
+      <trkpt lat="63.532663" lon="-18.887981">
+        <ele>225.6</ele>
+      </trkpt>
+      <trkpt lat="63.532549" lon="-18.888128">
+        <ele>220.5</ele>
+      </trkpt>
+      <trkpt lat="63.532424" lon="-18.888057">
+        <ele>215.9</ele>
+      </trkpt>
+      <trkpt lat="63.532356" lon="-18.888103">
+        <ele>213.3</ele>
+      </trkpt>
+      <trkpt lat="63.532329" lon="-18.88824">
+        <ele>211.2</ele>
+      </trkpt>
+      <trkpt lat="63.532315" lon="-18.888303">
+        <ele>210.3</ele>
+      </trkpt>
+      <trkpt lat="63.532076" lon="-18.888144">
+        <ele>202.8</ele>
+      </trkpt>
+      <trkpt lat="63.531743" lon="-18.888402">
+        <ele>194.2</ele>
+      </trkpt>
+      <trkpt lat="63.53163" lon="-18.88841">
+        <ele>191.8</ele>
+      </trkpt>
+      <trkpt lat="63.531528" lon="-18.888349">
+        <ele>189.7</ele>
+      </trkpt>
+      <trkpt lat="63.531027" lon="-18.888019">
+        <ele>183.2</ele>
+      </trkpt>
+      <trkpt lat="63.530677" lon="-18.887728">
+        <ele>180.8</ele>
+      </trkpt>
+      <trkpt lat="63.530501" lon="-18.887638">
+        <ele>180.1</ele>
+      </trkpt>
+      <trkpt lat="63.530351" lon="-18.887561">
+        <ele>179.8</ele>
+      </trkpt>
+      <trkpt lat="63.530312" lon="-18.887834">
+        <ele>179.7</ele>
+      </trkpt>
+    </trkseg>
+  </trk>
+</gpx>

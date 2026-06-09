@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd" version="1.1" creator="gpx.py -- https://github.com/tkrajina/gpxpy">
+  <metadata>
+  <name>Lac du cratère Ljótipollur boucle à partir de Ljótipollur</name>
+  <desc>Difficulté : Facile
+Note Komoot : 3.0
+Popularité : 9
+Distance : 1.0 km
+D+ : 42.36219603453628 m
+D- : 42.36219603453628 m
+
+https://www.komoot.com/tour/34240591</desc>
+  <link href="https://www.komoot.com/tour/34240591">
+    <text>Komoot Tour</text>
+  </link>
+  <extensions>
+    <komoot:id>34240591</komoot:id>
+    <komoot:difficulty>easy</komoot:difficulty>
+    <komoot:difficulty_fr>Facile</komoot:difficulty_fr>
+    <komoot:rating_score>3.0</komoot:rating_score>
+    <komoot:visitors>9</komoot:visitors>
+    <komoot:distance_m>996.9884298634539</komoot:distance_m>
+    <komoot:elevation_up_m>42.36219603453628</komoot:elevation_up_m>
+    <komoot:elevation_down_m>42.36219603453628</komoot:elevation_down_m>
+    <komoot:duration_s>1128</komoot:duration_s>
+    <komoot:poi_count>4</komoot:poi_count>
+    <komoot:url>https://www.komoot.com/tour/34240591</komoot:url>
+  </extensions>
+</metadata>
+  <wpt lat="64.034692" lon="-19.013633">
+    <ele>592.2</ele>
+    <name>poi:D2mwf</name>
+  </wpt>
+  <wpt lat="64.03376" lon="-19.008906">
+    <ele>612.9</ele>
+  </wpt>
+  <wpt lat="64.035583" lon="-19.007493">
+    <ele>633</ele>
+    <name>hlp:1896720</name>
+  </wpt>
+  <wpt lat="64.034692" lon="-19.013633">
+    <ele>592.2</ele>
+    <name>special:back</name>
+  </wpt>
+  <trk>
+    <name>Lac du cratère Ljótipollur boucle à partir de Ljótipollur</name>
+    <trkseg>
+      <trkpt lat="64.034692" lon="-19.013633">
+        <ele>593.8</ele>
+      </trkpt>
+      <trkpt lat="64.034649" lon="-19.013473">
+        <ele>594.1</ele>
+      </trkpt>
+      <trkpt lat="64.034575" lon="-19.013118">
+        <ele>594.7</ele>
+      </trkpt>
+      <trkpt lat="64.034542" lon="-19.012795">
+        <ele>595.3</ele>
+      </trkpt>
+      <trkpt lat="64.034543" lon="-19.012499">
+        <ele>595.9</ele>
+      </trkpt>
+      <trkpt lat="64.034562" lon="-19.012217">
+        <ele>596.6</ele>
+      </trkpt>
+      <trkpt lat="64.034676" lon="-19.011359">
+        <ele>599.2</ele>
+      </trkpt>
+      <trkpt lat="64.034746" lon="-19.011016">
+        <ele>600.5</ele>
+      </trkpt>
+      <trkpt lat="64.034594" lon="-19.010743">
+        <ele>602</ele>
+      </trkpt>
+      <trkpt lat="64.034206" lon="-19.009847">
+        <ele>606.6</ele>
+      </trkpt>
+      <trkpt lat="64.033976" lon="-19.00944">
+        <ele>609.1</ele>
+      </trkpt>
+      <trkpt lat="64.03376" lon="-19.008906">
+        <ele>611.8</ele>
+      </trkpt>
+      <trkpt lat="64.034965" lon="-19.008493">
+        <ele>623.5</ele>
+      </trkpt>
+      <trkpt lat="64.035583" lon="-19.007493">
+        <ele>633.1</ele>
+      </trkpt>
+      <trkpt lat="64.03623" lon="-19.006662">
+        <ele>636.2</ele>
+      </trkpt>
+      <trkpt lat="64.035904" lon="-19.007641">
+        <ele>632.7</ele>
+      </trkpt>
+      <trkpt lat="64.035657" lon="-19.008132">
+        <ele>628.3</ele>
+      </trkpt>
+      <trkpt lat="64.035518" lon="-19.008485">
+        <ele>624.6</ele>
+      </trkpt>
+      <trkpt lat="64.035312" lon="-19.009365">
+        <ele>615.8</ele>
+      </trkpt>
+      <trkpt lat="64.034746" lon="-19.011016">
+        <ele>602.2</ele>
+      </trkpt>
+      <trkpt lat="64.034676" lon="-19.011359">
+        <ele>600.4</ele>
+      </trkpt>
+      <trkpt lat="64.034562" lon="-19.012217">
+        <ele>597.1</ele>
+      </trkpt>
+      <trkpt lat="64.034543" lon="-19.012499">
+        <ele>596.2</ele>
+      </trkpt>
+      <trkpt lat="64.034542" lon="-19.012795">
+        <ele>595.4</ele>
+      </trkpt>
+      <trkpt lat="64.034575" lon="-19.013118">
+        <ele>594.7</ele>
+      </trkpt>
+      <trkpt lat="64.034649" lon="-19.013473">
+        <ele>594.1</ele>
+      </trkpt>
+      <trkpt lat="64.034692" lon="-19.013633">
+        <ele>593.8</ele>
+      </trkpt>
+    </trkseg>
+  </trk>
+</gpx>
