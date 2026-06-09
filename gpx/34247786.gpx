@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd" version="1.1" creator="gpx.py -- https://github.com/tkrajina/gpxpy">
+  <metadata>
+  <name>Boucle Öxarárfoss – Panneau d'information d'Efri-Vellir au départ de Þingvellir</name>
+  <desc>Difficulté : Facile
+Note Komoot : None
+Popularité : 20
+Distance : 0.95 km
+D+ : 14.270425299090718 m
+D- : 14.270425299090704 m
+
+https://www.komoot.com/tour/34247786</desc>
+  <link href="https://www.komoot.com/tour/34247786">
+    <text>Komoot Tour</text>
+  </link>
+  <extensions>
+    <komoot:id>34247786</komoot:id>
+    <komoot:difficulty>easy</komoot:difficulty>
+    <komoot:difficulty_fr>Facile</komoot:difficulty_fr>
+    <komoot:rating_score>None</komoot:rating_score>
+    <komoot:visitors>20</komoot:visitors>
+    <komoot:distance_m>945.5841528495838</komoot:distance_m>
+    <komoot:elevation_up_m>14.270425299090718</komoot:elevation_up_m>
+    <komoot:elevation_down_m>14.270425299090704</komoot:elevation_down_m>
+    <komoot:duration_s>929</komoot:duration_s>
+    <komoot:poi_count>4</komoot:poi_count>
+    <komoot:url>https://www.komoot.com/tour/34247786</komoot:url>
+  </extensions>
+</metadata>
+  <wpt lat="64.265035" lon="-21.114346">
+    <ele>101.5</ele>
+    <name>poi:7Ytke</name>
+  </wpt>
+  <wpt lat="64.265858" lon="-21.117086">
+    <ele>116.1</ele>
+    <name>hlp:205533</name>
+  </wpt>
+  <wpt lat="64.266028" lon="-21.115323">
+    <ele>102.8</ele>
+    <name>hlp:7326188</name>
+  </wpt>
+  <wpt lat="64.265035" lon="-21.114346">
+    <ele>101.5</ele>
+    <name>special:back</name>
+  </wpt>
+  <trk>
+    <name>Boucle Öxarárfoss – Panneau d'information d'Efri-Vellir au départ de Þingvellir</name>
+    <trkseg>
+      <trkpt lat="64.265035" lon="-21.114346">
+        <ele>101.8</ele>
+      </trkpt>
+      <trkpt lat="64.26489" lon="-21.114546">
+        <ele>101.9</ele>
+      </trkpt>
+      <trkpt lat="64.264834" lon="-21.114563">
+        <ele>101.9</ele>
+      </trkpt>
+      <trkpt lat="64.2651" lon="-21.115765">
+        <ele>102.2</ele>
+      </trkpt>
+      <trkpt lat="64.265268" lon="-21.11596">
+        <ele>102.5</ele>
+      </trkpt>
+      <trkpt lat="64.26558" lon="-21.115859">
+        <ele>103.2</ele>
+      </trkpt>
+      <trkpt lat="64.26567" lon="-21.115808">
+        <ele>103.5</ele>
+      </trkpt>
+      <trkpt lat="64.266028" lon="-21.115323">
+        <ele>105.6</ele>
+      </trkpt>
+      <trkpt lat="64.266061" lon="-21.115279">
+        <ele>105.8</ele>
+      </trkpt>
+      <trkpt lat="64.266458" lon="-21.115302">
+        <ele>108.2</ele>
+      </trkpt>
+      <trkpt lat="64.266568" lon="-21.115361">
+        <ele>108.9</ele>
+      </trkpt>
+      <trkpt lat="64.266728" lon="-21.115587">
+        <ele>110.1</ele>
+      </trkpt>
+      <trkpt lat="64.266827" lon="-21.115615">
+        <ele>110.6</ele>
+      </trkpt>
+      <trkpt lat="64.266862" lon="-21.115602">
+        <ele>110.9</ele>
+      </trkpt>
+      <trkpt lat="64.26695" lon="-21.115564">
+        <ele>111.4</ele>
+      </trkpt>
+      <trkpt lat="64.267041" lon="-21.115698">
+        <ele>112.1</ele>
+      </trkpt>
+      <trkpt lat="64.266919" lon="-21.115972">
+        <ele>113</ele>
+      </trkpt>
+      <trkpt lat="64.266657" lon="-21.116266">
+        <ele>114.5</ele>
+      </trkpt>
+      <trkpt lat="64.266536" lon="-21.116457">
+        <ele>115.1</ele>
+      </trkpt>
+      <trkpt lat="64.265934" lon="-21.117093">
+        <ele>116.1</ele>
+      </trkpt>
+      <trkpt lat="64.265878" lon="-21.117131">
+        <ele>116.1</ele>
+      </trkpt>
+      <trkpt lat="64.265858" lon="-21.117086">
+        <ele>116.1</ele>
+      </trkpt>
+      <trkpt lat="64.265878" lon="-21.117131">
+        <ele>116.1</ele>
+      </trkpt>
+      <trkpt lat="64.265934" lon="-21.117093">
+        <ele>116.1</ele>
+      </trkpt>
+      <trkpt lat="64.266536" lon="-21.116457">
+        <ele>115.1</ele>
+      </trkpt>
+      <trkpt lat="64.266657" lon="-21.116266">
+        <ele>114.5</ele>
+      </trkpt>
+      <trkpt lat="64.266919" lon="-21.115972">
+        <ele>113</ele>
+      </trkpt>
+      <trkpt lat="64.267041" lon="-21.115698">
+        <ele>112.1</ele>
+      </trkpt>
+      <trkpt lat="64.26695" lon="-21.115564">
+        <ele>111.4</ele>
+      </trkpt>
+      <trkpt lat="64.266862" lon="-21.115602">
+        <ele>110.9</ele>
+      </trkpt>
+      <trkpt lat="64.266827" lon="-21.115615">
+        <ele>110.6</ele>
+      </trkpt>
+      <trkpt lat="64.266728" lon="-21.115587">
+        <ele>110.1</ele>
+      </trkpt>
+      <trkpt lat="64.266568" lon="-21.115361">
+        <ele>108.9</ele>
+      </trkpt>
+      <trkpt lat="64.266458" lon="-21.115302">
+        <ele>108.2</ele>
+      </trkpt>
+      <trkpt lat="64.266061" lon="-21.115279">
+        <ele>105.8</ele>
+      </trkpt>
+      <trkpt lat="64.266028" lon="-21.115323">
+        <ele>105.6</ele>
+      </trkpt>
+      <trkpt lat="64.26567" lon="-21.115808">
+        <ele>103.5</ele>
+      </trkpt>
+      <trkpt lat="64.26558" lon="-21.115859">
+        <ele>103.2</ele>
+      </trkpt>
+      <trkpt lat="64.265268" lon="-21.11596">
+        <ele>102.5</ele>
+      </trkpt>
+      <trkpt lat="64.2651" lon="-21.115765">
+        <ele>102.2</ele>
+      </trkpt>
+      <trkpt lat="64.264834" lon="-21.114563">
+        <ele>101.9</ele>
+      </trkpt>
+      <trkpt lat="64.26489" lon="-21.114546">
+        <ele>101.9</ele>
+      </trkpt>
+      <trkpt lat="64.265035" lon="-21.114346">
+        <ele>101.8</ele>
+      </trkpt>
+    </trkseg>
+  </trk>
+</gpx>
