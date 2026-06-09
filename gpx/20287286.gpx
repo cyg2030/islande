@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd" version="1.1" creator="gpx.py -- https://github.com/tkrajina/gpxpy">
+  <metadata>
+  <name>Boucle Cascade de Reykjafoss – Fosslaug, source chaude au départ de Svartá</name>
+  <desc>Difficulté : Facile
+Note Komoot : 4.846153736114502
+Popularité : 156
+Distance : 2.2 km
+D+ : 12.101928798652267 m
+D- : 12.101928798652267 m
+
+https://www.komoot.com/tour/20287286</desc>
+  <link href="https://www.komoot.com/tour/20287286">
+    <text>Komoot Tour</text>
+  </link>
+  <extensions>
+    <komoot:id>20287286</komoot:id>
+    <komoot:difficulty>easy</komoot:difficulty>
+    <komoot:difficulty_fr>Facile</komoot:difficulty_fr>
+    <komoot:rating_score>4.846153736114502</komoot:rating_score>
+    <komoot:visitors>156</komoot:visitors>
+    <komoot:distance_m>2204.451137726562</komoot:distance_m>
+    <komoot:elevation_up_m>12.101928798652267</komoot:elevation_up_m>
+    <komoot:elevation_down_m>12.101928798652267</komoot:elevation_down_m>
+    <komoot:duration_s>2051</komoot:duration_s>
+    <komoot:poi_count>7</komoot:poi_count>
+    <komoot:url>https://www.komoot.com/tour/20287286</komoot:url>
+  </extensions>
+</metadata>
+  <wpt lat="65.501221" lon="-19.379384">
+    <ele>47.4</ele>
+    <name>poi:VsP6</name>
+  </wpt>
+  <wpt lat="65.501057" lon="-19.379784">
+    <ele>43.8</ele>
+    <name>hlp:6694575</name>
+  </wpt>
+  <wpt lat="65.497344" lon="-19.37929">
+    <ele>46.2</ele>
+    <name>hlp:6694614</name>
+  </wpt>
+  <wpt lat="65.494329" lon="-19.382869">
+    <ele>40.1</ele>
+    <name>hlp:913953</name>
+  </wpt>
+  <wpt lat="65.494049" lon="-19.383587">
+    <ele>39.4</ele>
+    <name>hlp:913956</name>
+  </wpt>
+  <wpt lat="65.495554" lon="-19.380456">
+    <ele>47.1</ele>
+    <name>hlp:6694681</name>
+  </wpt>
+  <wpt lat="65.501221" lon="-19.379384">
+    <ele>47.4</ele>
+    <name>special:back</name>
+  </wpt>
+  <trk>
+    <name>Boucle Cascade de Reykjafoss – Fosslaug, source chaude au départ de Svartá</name>
+    <trkseg>
+      <trkpt lat="65.501221" lon="-19.379384">
+        <ele>45.8</ele>
+      </trkpt>
+      <trkpt lat="65.501222" lon="-19.379658">
+        <ele>45.6</ele>
+      </trkpt>
+      <trkpt lat="65.501264" lon="-19.379947">
+        <ele>45.3</ele>
+      </trkpt>
+      <trkpt lat="65.501057" lon="-19.379784">
+        <ele>44.9</ele>
+      </trkpt>
+      <trkpt lat="65.500556" lon="-19.379389">
+        <ele>44</ele>
+      </trkpt>
+      <trkpt lat="65.500129" lon="-19.379349">
+        <ele>43.5</ele>
+      </trkpt>
+      <trkpt lat="65.499745" lon="-19.379513">
+        <ele>43.8</ele>
+      </trkpt>
+      <trkpt lat="65.499462" lon="-19.379482">
+        <ele>44.1</ele>
+      </trkpt>
+      <trkpt lat="65.499197" lon="-19.379329">
+        <ele>44.3</ele>
+      </trkpt>
+      <trkpt lat="65.498833" lon="-19.378762">
+        <ele>44.9</ele>
+      </trkpt>
+      <trkpt lat="65.498597" lon="-19.378805">
+        <ele>45.2</ele>
+      </trkpt>
+      <trkpt lat="65.49809" lon="-19.379159">
+        <ele>45.8</ele>
+      </trkpt>
+      <trkpt lat="65.497721" lon="-19.379277">
+        <ele>46.1</ele>
+      </trkpt>
+      <trkpt lat="65.497344" lon="-19.37929">
+        <ele>46.2</ele>
+      </trkpt>
+      <trkpt lat="65.497125" lon="-19.379298">
+        <ele>46.2</ele>
+      </trkpt>
+      <trkpt lat="65.496946" lon="-19.379451">
+        <ele>46.3</ele>
+      </trkpt>
+      <trkpt lat="65.496649" lon="-19.380038">
+        <ele>46.5</ele>
+      </trkpt>
+      <trkpt lat="65.496448" lon="-19.380317">
+        <ele>46.6</ele>
+      </trkpt>
+      <trkpt lat="65.49603" lon="-19.380435">
+        <ele>46.7</ele>
+      </trkpt>
+      <trkpt lat="65.495598" lon="-19.380435">
+        <ele>46.6</ele>
+      </trkpt>
+      <trkpt lat="65.495554" lon="-19.380456">
+        <ele>46.6</ele>
+      </trkpt>
+      <trkpt lat="65.495051" lon="-19.380693">
+        <ele>46.2</ele>
+      </trkpt>
+      <trkpt lat="65.494028" lon="-19.381004">
+        <ele>44.1</ele>
+      </trkpt>
+      <trkpt lat="65.49376" lon="-19.381111">
+        <ele>43.4</ele>
+      </trkpt>
+      <trkpt lat="65.493623" lon="-19.381218">
+        <ele>43.1</ele>
+      </trkpt>
+      <trkpt lat="65.493435" lon="-19.381457">
+        <ele>42.6</ele>
+      </trkpt>
+      <trkpt lat="65.493411" lon="-19.381668">
+        <ele>42.4</ele>
+      </trkpt>
+      <trkpt lat="65.493422" lon="-19.381717">
+        <ele>42.3</ele>
+      </trkpt>
+      <trkpt lat="65.493635" lon="-19.381938">
+        <ele>41.8</ele>
+      </trkpt>
+      <trkpt lat="65.494123" lon="-19.382294">
+        <ele>40.7</ele>
+      </trkpt>
+      <trkpt lat="65.494306" lon="-19.382624">
+        <ele>40.4</ele>
+      </trkpt>
+      <trkpt lat="65.494331" lon="-19.382791">
+        <ele>40.3</ele>
+      </trkpt>
+      <trkpt lat="65.494329" lon="-19.382869">
+        <ele>40.3</ele>
+      </trkpt>
+      <trkpt lat="65.494326" lon="-19.383008">
+        <ele>40.3</ele>
+      </trkpt>
+      <trkpt lat="65.494244" lon="-19.383369">
+        <ele>40.1</ele>
+      </trkpt>
+      <trkpt lat="65.494167" lon="-19.383412">
+        <ele>40.1</ele>
+      </trkpt>
+      <trkpt lat="65.494049" lon="-19.383587">
+        <ele>40.1</ele>
+      </trkpt>
+      <trkpt lat="65.494041" lon="-19.383599">
+        <ele>40.1</ele>
+      </trkpt>
+      <trkpt lat="65.493885" lon="-19.383587">
+        <ele>40.1</ele>
+      </trkpt>
+      <trkpt lat="65.493628" lon="-19.38333">
+        <ele>40.3</ele>
+      </trkpt>
+      <trkpt lat="65.493409" lon="-19.382962">
+        <ele>40.6</ele>
+      </trkpt>
+      <trkpt lat="65.493321" lon="-19.382467">
+        <ele>41</ele>
+      </trkpt>
+      <trkpt lat="65.493379" lon="-19.3818">
+        <ele>41.7</ele>
+      </trkpt>
+      <trkpt lat="65.493422" lon="-19.381717">
+        <ele>41.8</ele>
+      </trkpt>
+      <trkpt lat="65.493411" lon="-19.381668">
+        <ele>41.9</ele>
+      </trkpt>
+      <trkpt lat="65.493435" lon="-19.381457">
+        <ele>42.2</ele>
+      </trkpt>
+      <trkpt lat="65.493623" lon="-19.381218">
+        <ele>42.8</ele>
+      </trkpt>
+      <trkpt lat="65.49376" lon="-19.381111">
+        <ele>43.2</ele>
+      </trkpt>
+      <trkpt lat="65.494028" lon="-19.381004">
+        <ele>44</ele>
+      </trkpt>
+      <trkpt lat="65.495051" lon="-19.380693">
+        <ele>46.2</ele>
+      </trkpt>
+      <trkpt lat="65.495554" lon="-19.380456">
+        <ele>46.6</ele>
+      </trkpt>
+      <trkpt lat="65.495598" lon="-19.380435">
+        <ele>46.6</ele>
+      </trkpt>
+      <trkpt lat="65.49603" lon="-19.380435">
+        <ele>46.7</ele>
+      </trkpt>
+      <trkpt lat="65.496448" lon="-19.380317">
+        <ele>46.6</ele>
+      </trkpt>
+      <trkpt lat="65.496649" lon="-19.380038">
+        <ele>46.5</ele>
+      </trkpt>
+      <trkpt lat="65.496946" lon="-19.379451">
+        <ele>46.3</ele>
+      </trkpt>
+      <trkpt lat="65.497125" lon="-19.379298">
+        <ele>46.2</ele>
+      </trkpt>
+      <trkpt lat="65.497344" lon="-19.37929">
+        <ele>46.2</ele>
+      </trkpt>
+      <trkpt lat="65.497721" lon="-19.379277">
+        <ele>46.1</ele>
+      </trkpt>
+      <trkpt lat="65.49809" lon="-19.379159">
+        <ele>45.8</ele>
+      </trkpt>
+      <trkpt lat="65.498597" lon="-19.378805">
+        <ele>45.2</ele>
+      </trkpt>
+      <trkpt lat="65.498833" lon="-19.378762">
+        <ele>44.9</ele>
+      </trkpt>
+      <trkpt lat="65.499197" lon="-19.379329">
+        <ele>44.3</ele>
+      </trkpt>
+      <trkpt lat="65.499462" lon="-19.379482">
+        <ele>44.1</ele>
+      </trkpt>
+      <trkpt lat="65.499745" lon="-19.379513">
+        <ele>43.8</ele>
+      </trkpt>
+      <trkpt lat="65.500129" lon="-19.379349">
+        <ele>43.5</ele>
+      </trkpt>
+      <trkpt lat="65.500556" lon="-19.379389">
+        <ele>44</ele>
+      </trkpt>
+      <trkpt lat="65.501057" lon="-19.379784">
+        <ele>44.9</ele>
+      </trkpt>
+      <trkpt lat="65.501264" lon="-19.379947">
+        <ele>45.3</ele>
+      </trkpt>
+      <trkpt lat="65.501222" lon="-19.379658">
+        <ele>45.6</ele>
+      </trkpt>
+      <trkpt lat="65.501221" lon="-19.379384">
+        <ele>45.8</ele>
+      </trkpt>
+    </trkseg>
+  </trk>
+</gpx>
