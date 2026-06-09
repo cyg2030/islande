@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd" version="1.1" creator="gpx.py -- https://github.com/tkrajina/gpxpy">
+  <metadata>
+  <name>Boucle Sentier d'ascension du Hverfjall – Point de départ du sentier Hverfjall au départ de Grjótagjá</name>
+  <desc>Difficulté : Facile
+Note Komoot : None
+Popularité : 33
+Distance : 4.11 km
+D+ : 34.41820113495328 m
+D- : 34.459112814384866 m
+
+https://www.komoot.com/tour/14129933</desc>
+  <link href="https://www.komoot.com/tour/14129933">
+    <text>Komoot Tour</text>
+  </link>
+  <extensions>
+    <komoot:id>14129933</komoot:id>
+    <komoot:difficulty>easy</komoot:difficulty>
+    <komoot:difficulty_fr>Facile</komoot:difficulty_fr>
+    <komoot:rating_score>None</komoot:rating_score>
+    <komoot:visitors>33</komoot:visitors>
+    <komoot:distance_m>4112.2637287659845</komoot:distance_m>
+    <komoot:elevation_up_m>34.41820113495328</komoot:elevation_up_m>
+    <komoot:elevation_down_m>34.459112814384866</komoot:elevation_down_m>
+    <komoot:duration_s>3891</komoot:duration_s>
+    <komoot:poi_count>6</komoot:poi_count>
+    <komoot:url>https://www.komoot.com/tour/14129933</komoot:url>
+  </extensions>
+</metadata>
+  <wpt lat="65.626277" lon="-16.882579">
+    <ele>283</ele>
+    <name>poi:892jg</name>
+  </wpt>
+  <wpt lat="65.626288" lon="-16.882746">
+    <ele>282.9</ele>
+    <name>hlp:269574</name>
+  </wpt>
+  <wpt lat="65.613051" lon="-16.874942">
+    <ele>315</ele>
+    <name>hlp:4667752</name>
+  </wpt>
+  <wpt lat="65.612869" lon="-16.875843">
+    <ele>314</ele>
+  </wpt>
+  <wpt lat="65.612869" lon="-16.875843">
+    <ele>314</ele>
+    <name>hlp:6033454</name>
+  </wpt>
+  <wpt lat="65.626277" lon="-16.882579">
+    <ele>283</ele>
+    <name>special:back</name>
+  </wpt>
+  <trk>
+    <name>Boucle Sentier d'ascension du Hverfjall – Point de départ du sentier Hverfjall au départ de Grjótagjá</name>
+    <trkseg>
+      <trkpt lat="65.626277" lon="-16.882579">
+        <ele>282.9</ele>
+      </trkpt>
+      <trkpt lat="65.626288" lon="-16.882746">
+        <ele>282.8</ele>
+      </trkpt>
+      <trkpt lat="65.626277" lon="-16.882579">
+        <ele>282.8</ele>
+      </trkpt>
+      <trkpt lat="65.626261" lon="-16.882315">
+        <ele>282.8</ele>
+      </trkpt>
+      <trkpt lat="65.626343" lon="-16.882151">
+        <ele>282.8</ele>
+      </trkpt>
+      <trkpt lat="65.626336" lon="-16.88193">
+        <ele>282.7</ele>
+      </trkpt>
+      <trkpt lat="65.626132" lon="-16.881171">
+        <ele>282.6</ele>
+      </trkpt>
+      <trkpt lat="65.625971" lon="-16.880181">
+        <ele>282.6</ele>
+      </trkpt>
+      <trkpt lat="65.625796" lon="-16.879172">
+        <ele>282.9</ele>
+      </trkpt>
+      <trkpt lat="65.625652" lon="-16.878421">
+        <ele>283.4</ele>
+      </trkpt>
+      <trkpt lat="65.625455" lon="-16.877053">
+        <ele>284.5</ele>
+      </trkpt>
+      <trkpt lat="65.625409" lon="-16.876288">
+        <ele>285.1</ele>
+      </trkpt>
+      <trkpt lat="65.625426" lon="-16.875869">
+        <ele>285.5</ele>
+      </trkpt>
+      <trkpt lat="65.625412" lon="-16.875782">
+        <ele>285.6</ele>
+      </trkpt>
+      <trkpt lat="65.62527" lon="-16.875591">
+        <ele>285.9</ele>
+      </trkpt>
+      <trkpt lat="65.62521" lon="-16.875068">
+        <ele>286.2</ele>
+      </trkpt>
+      <trkpt lat="65.625006" lon="-16.874421">
+        <ele>286.6</ele>
+      </trkpt>
+      <trkpt lat="65.624756" lon="-16.873741">
+        <ele>286.9</ele>
+      </trkpt>
+      <trkpt lat="65.624401" lon="-16.873245">
+        <ele>287</ele>
+      </trkpt>
+      <trkpt lat="65.624301" lon="-16.873199">
+        <ele>287</ele>
+      </trkpt>
+      <trkpt lat="65.624093" lon="-16.873421">
+        <ele>287.1</ele>
+      </trkpt>
+      <trkpt lat="65.623446" lon="-16.873336">
+        <ele>287.1</ele>
+      </trkpt>
+      <trkpt lat="65.622792" lon="-16.873795">
+        <ele>286.8</ele>
+      </trkpt>
+      <trkpt lat="65.621447" lon="-16.873599">
+        <ele>286</ele>
+      </trkpt>
+      <trkpt lat="65.620907" lon="-16.873305">
+        <ele>285.7</ele>
+      </trkpt>
+      <trkpt lat="65.619937" lon="-16.873372">
+        <ele>285.3</ele>
+      </trkpt>
+      <trkpt lat="65.619063" lon="-16.872881">
+        <ele>285.6</ele>
+      </trkpt>
+      <trkpt lat="65.616776" lon="-16.873189">
+        <ele>289.2</ele>
+      </trkpt>
+      <trkpt lat="65.616388" lon="-16.873562">
+        <ele>290.5</ele>
+      </trkpt>
+      <trkpt lat="65.614922" lon="-16.877224">
+        <ele>299.7</ele>
+      </trkpt>
+      <trkpt lat="65.614241" lon="-16.878778">
+        <ele>304.4</ele>
+      </trkpt>
+      <trkpt lat="65.614221" lon="-16.878689">
+        <ele>304.6</ele>
+      </trkpt>
+      <trkpt lat="65.614221" lon="-16.878689">
+        <ele>304.6</ele>
+      </trkpt>
+      <trkpt lat="65.613472" lon="-16.875216">
+        <ele>311.6</ele>
+      </trkpt>
+      <trkpt lat="65.613335" lon="-16.875049">
+        <ele>312</ele>
+      </trkpt>
+      <trkpt lat="65.613051" lon="-16.874942">
+        <ele>312.7</ele>
+      </trkpt>
+      <trkpt lat="65.613335" lon="-16.875049">
+        <ele>313.1</ele>
+      </trkpt>
+      <trkpt lat="65.613295" lon="-16.875261">
+        <ele>313.2</ele>
+      </trkpt>
+      <trkpt lat="65.613243" lon="-16.87538">
+        <ele>313.3</ele>
+      </trkpt>
+      <trkpt lat="65.612869" lon="-16.875843">
+        <ele>313.2</ele>
+      </trkpt>
+      <trkpt lat="65.613243" lon="-16.87538">
+        <ele>312.3</ele>
+      </trkpt>
+      <trkpt lat="65.613295" lon="-16.875261">
+        <ele>312.1</ele>
+      </trkpt>
+      <trkpt lat="65.613335" lon="-16.875049">
+        <ele>311.9</ele>
+      </trkpt>
+      <trkpt lat="65.613472" lon="-16.875216">
+        <ele>311.5</ele>
+      </trkpt>
+      <trkpt lat="65.614221" lon="-16.878689">
+        <ele>304.6</ele>
+      </trkpt>
+      <trkpt lat="65.614221" lon="-16.878689">
+        <ele>304.6</ele>
+      </trkpt>
+      <trkpt lat="65.614241" lon="-16.878778">
+        <ele>304.4</ele>
+      </trkpt>
+      <trkpt lat="65.614922" lon="-16.877224">
+        <ele>299.7</ele>
+      </trkpt>
+      <trkpt lat="65.616388" lon="-16.873562">
+        <ele>290.5</ele>
+      </trkpt>
+      <trkpt lat="65.616776" lon="-16.873189">
+        <ele>289.2</ele>
+      </trkpt>
+      <trkpt lat="65.619063" lon="-16.872881">
+        <ele>285.6</ele>
+      </trkpt>
+      <trkpt lat="65.619937" lon="-16.873372">
+        <ele>285.3</ele>
+      </trkpt>
+      <trkpt lat="65.620907" lon="-16.873305">
+        <ele>285.7</ele>
+      </trkpt>
+      <trkpt lat="65.621447" lon="-16.873599">
+        <ele>286</ele>
+      </trkpt>
+      <trkpt lat="65.622792" lon="-16.873795">
+        <ele>286.8</ele>
+      </trkpt>
+      <trkpt lat="65.623446" lon="-16.873336">
+        <ele>287.1</ele>
+      </trkpt>
+      <trkpt lat="65.624093" lon="-16.873421">
+        <ele>287.1</ele>
+      </trkpt>
+      <trkpt lat="65.624301" lon="-16.873199">
+        <ele>287</ele>
+      </trkpt>
+      <trkpt lat="65.624401" lon="-16.873245">
+        <ele>287</ele>
+      </trkpt>
+      <trkpt lat="65.624756" lon="-16.873741">
+        <ele>286.9</ele>
+      </trkpt>
+      <trkpt lat="65.625006" lon="-16.874421">
+        <ele>286.6</ele>
+      </trkpt>
+      <trkpt lat="65.62521" lon="-16.875068">
+        <ele>286.2</ele>
+      </trkpt>
+      <trkpt lat="65.62527" lon="-16.875591">
+        <ele>285.9</ele>
+      </trkpt>
+      <trkpt lat="65.625412" lon="-16.875782">
+        <ele>285.6</ele>
+      </trkpt>
+      <trkpt lat="65.625426" lon="-16.875869">
+        <ele>285.5</ele>
+      </trkpt>
+      <trkpt lat="65.625409" lon="-16.876288">
+        <ele>285.1</ele>
+      </trkpt>
+      <trkpt lat="65.625455" lon="-16.877053">
+        <ele>284.5</ele>
+      </trkpt>
+      <trkpt lat="65.625652" lon="-16.878421">
+        <ele>283.4</ele>
+      </trkpt>
+      <trkpt lat="65.625796" lon="-16.879172">
+        <ele>282.9</ele>
+      </trkpt>
+      <trkpt lat="65.625971" lon="-16.880181">
+        <ele>282.6</ele>
+      </trkpt>
+      <trkpt lat="65.626132" lon="-16.881171">
+        <ele>282.6</ele>
+      </trkpt>
+      <trkpt lat="65.626336" lon="-16.88193">
+        <ele>282.7</ele>
+      </trkpt>
+      <trkpt lat="65.626343" lon="-16.882151">
+        <ele>282.8</ele>
+      </trkpt>
+      <trkpt lat="65.626261" lon="-16.882315">
+        <ele>282.8</ele>
+      </trkpt>
+      <trkpt lat="65.626277" lon="-16.882579">
+        <ele>282.8</ele>
+      </trkpt>
+    </trkseg>
+  </trk>
+</gpx>
