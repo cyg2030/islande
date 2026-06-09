@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd" version="1.1" creator="gpx.py -- https://github.com/tkrajina/gpxpy">
+  <metadata>
+  <name>Boucle Colonnes de basalte de Gerduberg – Gerðuberg Cliffs au départ de Hamrabelti Gerðubergi</name>
+  <desc>Difficulté : Facile
+Note Komoot : 4.0
+Popularité : 3
+Distance : 1.05 km
+D+ : 2.4659594684908868 m
+D- : 2.5033948944615503 m
+
+https://www.komoot.com/tour/34241458</desc>
+  <link href="https://www.komoot.com/tour/34241458">
+    <text>Komoot Tour</text>
+  </link>
+  <extensions>
+    <komoot:id>34241458</komoot:id>
+    <komoot:difficulty>easy</komoot:difficulty>
+    <komoot:difficulty_fr>Facile</komoot:difficulty_fr>
+    <komoot:rating_score>4.0</komoot:rating_score>
+    <komoot:visitors>3</komoot:visitors>
+    <komoot:distance_m>1049.0305455784696</komoot:distance_m>
+    <komoot:elevation_up_m>2.4659594684908868</komoot:elevation_up_m>
+    <komoot:elevation_down_m>2.5033948944615503</komoot:elevation_down_m>
+    <komoot:duration_s>958</komoot:duration_s>
+    <komoot:poi_count>6</komoot:poi_count>
+    <komoot:url>https://www.komoot.com/tour/34241458</komoot:url>
+  </extensions>
+</metadata>
+  <wpt lat="64.857819" lon="-22.367331">
+    <ele>47.5</ele>
+    <name>poi:854jW</name>
+  </wpt>
+  <wpt lat="64.859178" lon="-22.365483">
+    <ele>47.2</ele>
+    <name>hlp:4701491</name>
+  </wpt>
+  <wpt lat="64.860322" lon="-22.36111">
+    <ele>45.7</ele>
+    <name>hls:6261105</name>
+  </wpt>
+  <wpt lat="64.860677" lon="-22.359155">
+    <ele>44</ele>
+  </wpt>
+  <wpt lat="64.858116" lon="-22.366492">
+    <ele>47.2</ele>
+  </wpt>
+  <wpt lat="64.857819" lon="-22.367331">
+    <ele>47.5</ele>
+    <name>special:back</name>
+  </wpt>
+  <trk>
+    <name>Boucle Colonnes de basalte de Gerduberg – Gerðuberg Cliffs au départ de Hamrabelti Gerðubergi</name>
+    <trkseg>
+      <trkpt lat="64.857819" lon="-22.367331">
+        <ele>47.4</ele>
+      </trkpt>
+      <trkpt lat="64.857796" lon="-22.367401">
+        <ele>47.4</ele>
+      </trkpt>
+      <trkpt lat="64.857873" lon="-22.367174">
+        <ele>47.3</ele>
+      </trkpt>
+      <trkpt lat="64.858423" lon="-22.366665">
+        <ele>47.3</ele>
+      </trkpt>
+      <trkpt lat="64.858844" lon="-22.366211">
+        <ele>47.2</ele>
+      </trkpt>
+      <trkpt lat="64.859017" lon="-22.36575">
+        <ele>47.2</ele>
+      </trkpt>
+      <trkpt lat="64.859178" lon="-22.365483">
+        <ele>47.2</ele>
+      </trkpt>
+      <trkpt lat="64.859327" lon="-22.365235">
+        <ele>47.2</ele>
+      </trkpt>
+      <trkpt lat="64.859605" lon="-22.364312">
+        <ele>47.1</ele>
+      </trkpt>
+      <trkpt lat="64.859801" lon="-22.36383">
+        <ele>47</ele>
+      </trkpt>
+      <trkpt lat="64.859983" lon="-22.362853">
+        <ele>46.7</ele>
+      </trkpt>
+      <trkpt lat="64.860111" lon="-22.362574">
+        <ele>46.5</ele>
+      </trkpt>
+      <trkpt lat="64.860202" lon="-22.361619">
+        <ele>46</ele>
+      </trkpt>
+      <trkpt lat="64.860307" lon="-22.361308">
+        <ele>45.8</ele>
+      </trkpt>
+      <trkpt lat="64.860334" lon="-22.360933">
+        <ele>45.6</ele>
+      </trkpt>
+      <trkpt lat="64.860549" lon="-22.360321">
+        <ele>45.2</ele>
+      </trkpt>
+      <trkpt lat="64.860681" lon="-22.359742">
+        <ele>45</ele>
+      </trkpt>
+      <trkpt lat="64.86068" lon="-22.359666">
+        <ele>45</ele>
+      </trkpt>
+      <trkpt lat="64.860677" lon="-22.359155">
+        <ele>44.9</ele>
+      </trkpt>
+      <trkpt lat="64.860036" lon="-22.361094">
+        <ele>44.9</ele>
+      </trkpt>
+      <trkpt lat="64.858116" lon="-22.366492">
+        <ele>47.1</ele>
+      </trkpt>
+      <trkpt lat="64.857873" lon="-22.367174">
+        <ele>47.3</ele>
+      </trkpt>
+      <trkpt lat="64.857796" lon="-22.367401">
+        <ele>47.3</ele>
+      </trkpt>
+      <trkpt lat="64.857819" lon="-22.367331">
+        <ele>47.3</ele>
+      </trkpt>
+    </trkseg>
+  </trk>
+</gpx>

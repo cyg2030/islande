@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd" version="1.1" creator="gpx.py -- https://github.com/tkrajina/gpxpy">
+  <metadata>
+  <name>Boucle Vue sur le port de Stykkishólmur – Île Súgandisey au départ de Stykkishólmur</name>
+  <desc>Difficulté : Facile
+Note Komoot : None
+Popularité : 11
+Distance : 1.42 km
+D+ : 7.630975448766766 m
+D- : 7.630975448766924 m
+
+https://www.komoot.com/tour/34240901</desc>
+  <link href="https://www.komoot.com/tour/34240901">
+    <text>Komoot Tour</text>
+  </link>
+  <extensions>
+    <komoot:id>34240901</komoot:id>
+    <komoot:difficulty>easy</komoot:difficulty>
+    <komoot:difficulty_fr>Facile</komoot:difficulty_fr>
+    <komoot:rating_score>None</komoot:rating_score>
+    <komoot:visitors>11</komoot:visitors>
+    <komoot:distance_m>1421.5869744676154</komoot:distance_m>
+    <komoot:elevation_up_m>7.630975448766766</komoot:elevation_up_m>
+    <komoot:elevation_down_m>7.630975448766924</komoot:elevation_down_m>
+    <komoot:duration_s>1322</komoot:duration_s>
+    <komoot:poi_count>8</komoot:poi_count>
+    <komoot:url>https://www.komoot.com/tour/34240901</komoot:url>
+  </extensions>
+</metadata>
+  <wpt lat="65.078037" lon="-22.723816">
+    <ele>1.1</ele>
+    <name>poi:7w98M</name>
+  </wpt>
+  <wpt lat="65.078358" lon="-22.722694">
+    <ele>0.6</ele>
+    <name>hlp:1063992</name>
+  </wpt>
+  <wpt lat="65.080148" lon="-22.725911">
+    <ele>1.8</ele>
+    <name>hlp:264492</name>
+  </wpt>
+  <wpt lat="65.080282" lon="-22.723336">
+    <ele>6.7</ele>
+    <name>hlp:1063990</name>
+  </wpt>
+  <wpt lat="65.080426" lon="-22.722547">
+    <ele>5.7</ele>
+  </wpt>
+  <wpt lat="65.080732" lon="-22.724625">
+    <ele>4.3</ele>
+  </wpt>
+  <wpt lat="65.079784" lon="-22.725587">
+    <ele>0.3</ele>
+    <name>hlp:6016311</name>
+  </wpt>
+  <wpt lat="65.078037" lon="-22.723816">
+    <ele>1.1</ele>
+    <name>special:back</name>
+  </wpt>
+  <trk>
+    <name>Boucle Vue sur le port de Stykkishólmur – Île Súgandisey au départ de Stykkishólmur</name>
+    <trkseg>
+      <trkpt lat="65.078037" lon="-22.723816">
+        <ele>1</ele>
+      </trkpt>
+      <trkpt lat="65.077901" lon="-22.723893">
+        <ele>1</ele>
+      </trkpt>
+      <trkpt lat="65.077913" lon="-22.72371">
+        <ele>0.9</ele>
+      </trkpt>
+      <trkpt lat="65.07795" lon="-22.723609">
+        <ele>0.9</ele>
+      </trkpt>
+      <trkpt lat="65.078194" lon="-22.723435">
+        <ele>0.8</ele>
+      </trkpt>
+      <trkpt lat="65.078281" lon="-22.72318">
+        <ele>0.7</ele>
+      </trkpt>
+      <trkpt lat="65.078358" lon="-22.722694">
+        <ele>0.6</ele>
+      </trkpt>
+      <trkpt lat="65.078416" lon="-22.722331">
+        <ele>0.6</ele>
+      </trkpt>
+      <trkpt lat="65.078506" lon="-22.722191">
+        <ele>0.5</ele>
+      </trkpt>
+      <trkpt lat="65.07857" lon="-22.722167">
+        <ele>0.5</ele>
+      </trkpt>
+      <trkpt lat="65.07875" lon="-22.722215">
+        <ele>0.4</ele>
+      </trkpt>
+      <trkpt lat="65.078882" lon="-22.722063">
+        <ele>0.3</ele>
+      </trkpt>
+      <trkpt lat="65.079083" lon="-22.722082">
+        <ele>0.3</ele>
+      </trkpt>
+      <trkpt lat="65.079307" lon="-22.722229">
+        <ele>0.2</ele>
+      </trkpt>
+      <trkpt lat="65.079521" lon="-22.722517">
+        <ele>0.2</ele>
+      </trkpt>
+      <trkpt lat="65.079582" lon="-22.722794">
+        <ele>0.2</ele>
+      </trkpt>
+      <trkpt lat="65.079619" lon="-22.724495">
+        <ele>0.4</ele>
+      </trkpt>
+      <trkpt lat="65.079669" lon="-22.724756">
+        <ele>0.5</ele>
+      </trkpt>
+      <trkpt lat="65.079705" lon="-22.725547">
+        <ele>0.7</ele>
+      </trkpt>
+      <trkpt lat="65.079777" lon="-22.725518">
+        <ele>0.7</ele>
+      </trkpt>
+      <trkpt lat="65.079797" lon="-22.725716">
+        <ele>0.8</ele>
+      </trkpt>
+      <trkpt lat="65.079903" lon="-22.72567">
+        <ele>0.8</ele>
+      </trkpt>
+      <trkpt lat="65.079981" lon="-22.725547">
+        <ele>0.9</ele>
+      </trkpt>
+      <trkpt lat="65.080004" lon="-22.725434">
+        <ele>0.9</ele>
+      </trkpt>
+      <trkpt lat="65.080132" lon="-22.725401">
+        <ele>1.1</ele>
+      </trkpt>
+      <trkpt lat="65.080148" lon="-22.725911">
+        <ele>1.4</ele>
+      </trkpt>
+      <trkpt lat="65.080132" lon="-22.725401">
+        <ele>1.8</ele>
+      </trkpt>
+      <trkpt lat="65.080049" lon="-22.725178">
+        <ele>2.2</ele>
+      </trkpt>
+      <trkpt lat="65.080154" lon="-22.724605">
+        <ele>2.8</ele>
+      </trkpt>
+      <trkpt lat="65.080037" lon="-22.723641">
+        <ele>3.7</ele>
+      </trkpt>
+      <trkpt lat="65.080022" lon="-22.723327">
+        <ele>3.9</ele>
+      </trkpt>
+      <trkpt lat="65.080111" lon="-22.723241">
+        <ele>4</ele>
+      </trkpt>
+      <trkpt lat="65.080168" lon="-22.723238">
+        <ele>4</ele>
+      </trkpt>
+      <trkpt lat="65.080282" lon="-22.723336">
+        <ele>4.2</ele>
+      </trkpt>
+      <trkpt lat="65.080168" lon="-22.723238">
+        <ele>4.6</ele>
+      </trkpt>
+      <trkpt lat="65.080111" lon="-22.723241">
+        <ele>4.8</ele>
+      </trkpt>
+      <trkpt lat="65.080146" lon="-22.723104">
+        <ele>5.1</ele>
+      </trkpt>
+      <trkpt lat="65.080327" lon="-22.722722">
+        <ele>6</ele>
+      </trkpt>
+      <trkpt lat="65.080426" lon="-22.722547">
+        <ele>6.4</ele>
+      </trkpt>
+      <trkpt lat="65.080702" lon="-22.722059">
+        <ele>7</ele>
+      </trkpt>
+      <trkpt lat="65.080749" lon="-22.722027">
+        <ele>7</ele>
+      </trkpt>
+      <trkpt lat="65.080798" lon="-22.722133">
+        <ele>7</ele>
+      </trkpt>
+      <trkpt lat="65.080903" lon="-22.722617">
+        <ele>6.7</ele>
+      </trkpt>
+      <trkpt lat="65.080978" lon="-22.722851">
+        <ele>6.6</ele>
+      </trkpt>
+      <trkpt lat="65.081013" lon="-22.723008">
+        <ele>6.4</ele>
+      </trkpt>
+      <trkpt lat="65.081001" lon="-22.723278">
+        <ele>6.2</ele>
+      </trkpt>
+      <trkpt lat="65.080779" lon="-22.724006">
+        <ele>5.6</ele>
+      </trkpt>
+      <trkpt lat="65.080741" lon="-22.724238">
+        <ele>5.5</ele>
+      </trkpt>
+      <trkpt lat="65.080735" lon="-22.724616">
+        <ele>5.2</ele>
+      </trkpt>
+      <trkpt lat="65.080732" lon="-22.724625">
+        <ele>5.2</ele>
+      </trkpt>
+      <trkpt lat="65.080671" lon="-22.724814">
+        <ele>4.9</ele>
+      </trkpt>
+      <trkpt lat="65.080499" lon="-22.725091">
+        <ele>4</ele>
+      </trkpt>
+      <trkpt lat="65.080412" lon="-22.725308">
+        <ele>3.4</ele>
+      </trkpt>
+      <trkpt lat="65.080236" lon="-22.725319">
+        <ele>2.6</ele>
+      </trkpt>
+      <trkpt lat="65.080132" lon="-22.725401">
+        <ele>2.2</ele>
+      </trkpt>
+      <trkpt lat="65.080004" lon="-22.725434">
+        <ele>1.8</ele>
+      </trkpt>
+      <trkpt lat="65.079981" lon="-22.725547">
+        <ele>1.7</ele>
+      </trkpt>
+      <trkpt lat="65.079903" lon="-22.72567">
+        <ele>1.4</ele>
+      </trkpt>
+      <trkpt lat="65.079797" lon="-22.725716">
+        <ele>1.2</ele>
+      </trkpt>
+      <trkpt lat="65.079784" lon="-22.725587">
+        <ele>1.1</ele>
+      </trkpt>
+      <trkpt lat="65.079777" lon="-22.725518">
+        <ele>1</ele>
+      </trkpt>
+      <trkpt lat="65.079705" lon="-22.725547">
+        <ele>0.9</ele>
+      </trkpt>
+      <trkpt lat="65.079669" lon="-22.724756">
+        <ele>0.5</ele>
+      </trkpt>
+      <trkpt lat="65.079619" lon="-22.724495">
+        <ele>0.4</ele>
+      </trkpt>
+      <trkpt lat="65.079582" lon="-22.722794">
+        <ele>0.2</ele>
+      </trkpt>
+      <trkpt lat="65.079521" lon="-22.722517">
+        <ele>0.2</ele>
+      </trkpt>
+      <trkpt lat="65.079307" lon="-22.722229">
+        <ele>0.2</ele>
+      </trkpt>
+      <trkpt lat="65.079083" lon="-22.722082">
+        <ele>0.3</ele>
+      </trkpt>
+      <trkpt lat="65.078882" lon="-22.722063">
+        <ele>0.3</ele>
+      </trkpt>
+      <trkpt lat="65.07875" lon="-22.722215">
+        <ele>0.4</ele>
+      </trkpt>
+      <trkpt lat="65.07857" lon="-22.722167">
+        <ele>0.5</ele>
+      </trkpt>
+      <trkpt lat="65.078506" lon="-22.722191">
+        <ele>0.5</ele>
+      </trkpt>
+      <trkpt lat="65.078416" lon="-22.722331">
+        <ele>0.6</ele>
+      </trkpt>
+      <trkpt lat="65.078281" lon="-22.72318">
+        <ele>0.7</ele>
+      </trkpt>
+      <trkpt lat="65.078194" lon="-22.723435">
+        <ele>0.8</ele>
+      </trkpt>
+      <trkpt lat="65.07795" lon="-22.723609">
+        <ele>0.9</ele>
+      </trkpt>
+      <trkpt lat="65.077913" lon="-22.72371">
+        <ele>0.9</ele>
+      </trkpt>
+      <trkpt lat="65.077901" lon="-22.723893">
+        <ele>1</ele>
+      </trkpt>
+      <trkpt lat="65.078037" lon="-22.723816">
+        <ele>1</ele>
+      </trkpt>
+    </trkseg>
+  </trk>
+</gpx>

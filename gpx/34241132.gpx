@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd" version="1.1" creator="gpx.py -- https://github.com/tkrajina/gpxpy">
+  <metadata>
+  <name>Belvédère de Selbrekkufoss boucle à partir de Vestdalsa</name>
+  <desc>Difficulté : Facile
+Note Komoot : None
+Popularité : 3
+Distance : 2.73 km
+D+ : 145.64197800848652 m
+D- : 145.6419780084865 m
+
+https://www.komoot.com/tour/34241132</desc>
+  <link href="https://www.komoot.com/tour/34241132">
+    <text>Komoot Tour</text>
+  </link>
+  <extensions>
+    <komoot:id>34241132</komoot:id>
+    <komoot:difficulty>easy</komoot:difficulty>
+    <komoot:difficulty_fr>Facile</komoot:difficulty_fr>
+    <komoot:rating_score>None</komoot:rating_score>
+    <komoot:visitors>3</komoot:visitors>
+    <komoot:distance_m>2731.592392395321</komoot:distance_m>
+    <komoot:elevation_up_m>145.64197800848652</komoot:elevation_up_m>
+    <komoot:elevation_down_m>145.6419780084865</komoot:elevation_down_m>
+    <komoot:duration_s>3377</komoot:duration_s>
+    <komoot:poi_count>5</komoot:poi_count>
+    <komoot:url>https://www.komoot.com/tour/34241132</komoot:url>
+  </extensions>
+</metadata>
+  <wpt lat="65.278375" lon="-14.004041">
+    <ele>4.1</ele>
+    <name>poi:D2qWp</name>
+  </wpt>
+  <wpt lat="65.28324" lon="-14.018927">
+    <ele>147.1</ele>
+    <name>hlp:3853095</name>
+  </wpt>
+  <wpt lat="65.282941" lon="-14.021424">
+    <ele>157.2</ele>
+  </wpt>
+  <wpt lat="65.282726" lon="-14.01953">
+    <ele>153.2</ele>
+  </wpt>
+  <wpt lat="65.278375" lon="-14.004041">
+    <ele>4.1</ele>
+    <name>special:back</name>
+  </wpt>
+  <trk>
+    <name>Belvédère de Selbrekkufoss boucle à partir de Vestdalsa</name>
+    <trkseg>
+      <trkpt lat="65.278375" lon="-14.004041">
+        <ele>7.6</ele>
+      </trkpt>
+      <trkpt lat="65.278651" lon="-14.004733">
+        <ele>11.2</ele>
+      </trkpt>
+      <trkpt lat="65.278766" lon="-14.00476">
+        <ele>12.5</ele>
+      </trkpt>
+      <trkpt lat="65.278901" lon="-14.005012">
+        <ele>14.7</ele>
+      </trkpt>
+      <trkpt lat="65.278963" lon="-14.005264">
+        <ele>16.3</ele>
+      </trkpt>
+      <trkpt lat="65.279087" lon="-14.005444">
+        <ele>18.5</ele>
+      </trkpt>
+      <trkpt lat="65.279209" lon="-14.005475">
+        <ele>20.5</ele>
+      </trkpt>
+      <trkpt lat="65.279403" lon="-14.005282">
+        <ele>24.2</ele>
+      </trkpt>
+      <trkpt lat="65.279438" lon="-14.005534">
+        <ele>26.3</ele>
+      </trkpt>
+      <trkpt lat="65.279416" lon="-14.006283">
+        <ele>32.7</ele>
+      </trkpt>
+      <trkpt lat="65.279506" lon="-14.006555">
+        <ele>35.8</ele>
+      </trkpt>
+      <trkpt lat="65.279604" lon="-14.006589">
+        <ele>38</ele>
+      </trkpt>
+      <trkpt lat="65.279723" lon="-14.006396">
+        <ele>41.2</ele>
+      </trkpt>
+      <trkpt lat="65.279918" lon="-14.006196">
+        <ele>46</ele>
+      </trkpt>
+      <trkpt lat="65.280996" lon="-14.006867">
+        <ele>69.3</ele>
+      </trkpt>
+      <trkpt lat="65.28128" lon="-14.007212">
+        <ele>74.3</ele>
+      </trkpt>
+      <trkpt lat="65.281375" lon="-14.007326">
+        <ele>75.7</ele>
+      </trkpt>
+      <trkpt lat="65.28211" lon="-14.008695">
+        <ele>83.6</ele>
+      </trkpt>
+      <trkpt lat="65.28254" lon="-14.008258">
+        <ele>85.5</ele>
+      </trkpt>
+      <trkpt lat="65.282882" lon="-14.008345">
+        <ele>86.8</ele>
+      </trkpt>
+      <trkpt lat="65.283533" lon="-14.009363">
+        <ele>90.3</ele>
+      </trkpt>
+      <trkpt lat="65.283784" lon="-14.009537">
+        <ele>91.7</ele>
+      </trkpt>
+      <trkpt lat="65.283869" lon="-14.009958">
+        <ele>92.8</ele>
+      </trkpt>
+      <trkpt lat="65.283966" lon="-14.010222">
+        <ele>93.7</ele>
+      </trkpt>
+      <trkpt lat="65.284011" lon="-14.010706">
+        <ele>94.9</ele>
+      </trkpt>
+      <trkpt lat="65.284072" lon="-14.013483">
+        <ele>104</ele>
+      </trkpt>
+      <trkpt lat="65.284077" lon="-14.013641">
+        <ele>104.7</ele>
+      </trkpt>
+      <trkpt lat="65.283902" lon="-14.015484">
+        <ele>114.8</ele>
+      </trkpt>
+      <trkpt lat="65.283719" lon="-14.016468">
+        <ele>122.6</ele>
+      </trkpt>
+      <trkpt lat="65.283713" lon="-14.016827">
+        <ele>125.4</ele>
+      </trkpt>
+      <trkpt lat="65.283701" lon="-14.017565">
+        <ele>131</ele>
+      </trkpt>
+      <trkpt lat="65.283548" lon="-14.018037">
+        <ele>135.5</ele>
+      </trkpt>
+      <trkpt lat="65.283288" lon="-14.01853">
+        <ele>141.1</ele>
+      </trkpt>
+      <trkpt lat="65.28324" lon="-14.018927">
+        <ele>143.8</ele>
+      </trkpt>
+      <trkpt lat="65.283207" lon="-14.019195">
+        <ele>145.5</ele>
+      </trkpt>
+      <trkpt lat="65.283145" lon="-14.020054">
+        <ele>149.8</ele>
+      </trkpt>
+      <trkpt lat="65.282941" lon="-14.021424">
+        <ele>153.3</ele>
+      </trkpt>
+      <trkpt lat="65.282726" lon="-14.01953">
+        <ele>151.9</ele>
+      </trkpt>
+      <trkpt lat="65.282645" lon="-14.018817">
+        <ele>149.3</ele>
+      </trkpt>
+      <trkpt lat="65.282622" lon="-14.018335">
+        <ele>147</ele>
+      </trkpt>
+      <trkpt lat="65.282661" lon="-14.018134">
+        <ele>145.8</ele>
+      </trkpt>
+      <trkpt lat="65.282856" lon="-14.017946">
+        <ele>142.9</ele>
+      </trkpt>
+      <trkpt lat="65.283029" lon="-14.017377">
+        <ele>138.3</ele>
+      </trkpt>
+      <trkpt lat="65.283317" lon="-14.017161">
+        <ele>133.1</ele>
+      </trkpt>
+      <trkpt lat="65.283536" lon="-14.017084">
+        <ele>129</ele>
+      </trkpt>
+      <trkpt lat="65.283609" lon="-14.017001">
+        <ele>127.6</ele>
+      </trkpt>
+      <trkpt lat="65.283719" lon="-14.016468">
+        <ele>122.9</ele>
+      </trkpt>
+      <trkpt lat="65.283902" lon="-14.015484">
+        <ele>115.2</ele>
+      </trkpt>
+      <trkpt lat="65.284077" lon="-14.013641">
+        <ele>104.7</ele>
+      </trkpt>
+      <trkpt lat="65.284072" lon="-14.013483">
+        <ele>104</ele>
+      </trkpt>
+      <trkpt lat="65.284011" lon="-14.010706">
+        <ele>94.9</ele>
+      </trkpt>
+      <trkpt lat="65.283966" lon="-14.010222">
+        <ele>93.7</ele>
+      </trkpt>
+      <trkpt lat="65.283869" lon="-14.009958">
+        <ele>92.8</ele>
+      </trkpt>
+      <trkpt lat="65.283784" lon="-14.009537">
+        <ele>91.7</ele>
+      </trkpt>
+      <trkpt lat="65.283533" lon="-14.009363">
+        <ele>90.3</ele>
+      </trkpt>
+      <trkpt lat="65.282882" lon="-14.008345">
+        <ele>86.8</ele>
+      </trkpt>
+      <trkpt lat="65.28254" lon="-14.008258">
+        <ele>85.5</ele>
+      </trkpt>
+      <trkpt lat="65.28211" lon="-14.008695">
+        <ele>83.6</ele>
+      </trkpt>
+      <trkpt lat="65.281375" lon="-14.007326">
+        <ele>75.7</ele>
+      </trkpt>
+      <trkpt lat="65.28128" lon="-14.007212">
+        <ele>74.3</ele>
+      </trkpt>
+      <trkpt lat="65.280996" lon="-14.006867">
+        <ele>69.3</ele>
+      </trkpt>
+      <trkpt lat="65.279918" lon="-14.006196">
+        <ele>46</ele>
+      </trkpt>
+      <trkpt lat="65.279723" lon="-14.006396">
+        <ele>41.2</ele>
+      </trkpt>
+      <trkpt lat="65.279604" lon="-14.006589">
+        <ele>38</ele>
+      </trkpt>
+      <trkpt lat="65.279506" lon="-14.006555">
+        <ele>35.8</ele>
+      </trkpt>
+      <trkpt lat="65.279416" lon="-14.006283">
+        <ele>32.7</ele>
+      </trkpt>
+      <trkpt lat="65.279438" lon="-14.005534">
+        <ele>26.3</ele>
+      </trkpt>
+      <trkpt lat="65.279403" lon="-14.005282">
+        <ele>24.2</ele>
+      </trkpt>
+      <trkpt lat="65.279209" lon="-14.005475">
+        <ele>20.5</ele>
+      </trkpt>
+      <trkpt lat="65.279087" lon="-14.005444">
+        <ele>18.5</ele>
+      </trkpt>
+      <trkpt lat="65.278963" lon="-14.005264">
+        <ele>16.3</ele>
+      </trkpt>
+      <trkpt lat="65.278901" lon="-14.005012">
+        <ele>14.7</ele>
+      </trkpt>
+      <trkpt lat="65.278766" lon="-14.00476">
+        <ele>12.5</ele>
+      </trkpt>
+      <trkpt lat="65.278651" lon="-14.004733">
+        <ele>11.2</ele>
+      </trkpt>
+      <trkpt lat="65.278375" lon="-14.004041">
+        <ele>7.6</ele>
+      </trkpt>
+    </trkseg>
+  </trk>
+</gpx>
