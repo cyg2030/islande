@@ -106,8 +106,8 @@ h1 { font-size:14px; font-weight:600; }
     <button class="grp-btn" id="grpbtn-routes" onclick="toggleGroup('routes')">🗺️</button>
     <div class="grp-menu" id="grpmenu-routes">
       <div class="sub-label">Itinéraires</div>
-      <button class="sub-btn active" id="btn-itinerary" onclick="toggleLayer('itinerary')"><span class="icon">🗺️</span><span class="label">Principal (Westfjords)</span><span class="check"></span></button>
-      <button class="sub-btn" id="btn-altroute" onclick="toggleLayer('altroute')"><span class="icon">🔀</span><span class="label">Alternatif (sans Westfjords)</span><span class="check"></span></button>
+      <button class="sub-btn active" id="btn-itinerary" onclick="toggleLayer('itinerary')"><span class="icon">🗺️</span><span class="label">Principal (Askja &amp; Est)</span><span class="check"></span></button>
+      <button class="sub-btn" id="btn-altroute" onclick="toggleLayer('altroute')"><span class="icon">🔀</span><span class="label">Alternatif (Westfjords)</span><span class="check"></span></button>
       <div class="sub-sep"></div>
       <div class="sub-label">Routes</div>
       <button class="sub-btn" id="btn-forbidden" onclick="toggleLayer('forbidden')"><span class="icon">🚫</span><span class="label">Routes interdites 🔴 (11)</span><span class="check"></span></button>
@@ -628,48 +628,40 @@ const altStyle    = {color:'#9b59b6', weight:4, opacity:0.85};
 const altDetour   = {color:'#d98bf5', weight:3, opacity:0.9, dashArray:'8,5'};
 
 const segments = [
-  // J1 Keflavik→Geysir
-  {wp:[[63.98,-22.63],[64.18,-20.85],[64.31,-20.30]], style:ringStyle},
-  // J2 Geysir→Landmannalaugar (F225)
-  {wp:[[64.31,-20.30],[64.07,-19.77],[63.98,-19.07]], style:detourStyle},
-  // J2 Landmannalaugar→Hvolsvöllur→Seljalandsfoss
-  {wp:[[63.98,-19.07],[63.84,-19.98],[63.53,-20.17],[63.53,-20.02],[63.62,-19.99]], style:ringStyle},
-  // J3 Seljalandsfoss→Vík
-  {wp:[[63.62,-19.99],[63.48,-19.58],[63.42,-19.00]], style:ringStyle},
-  // J4 Vík→Skaftafell
-  {wp:[[63.42,-19.00],[63.47,-18.05],[63.52,-17.83],[63.66,-17.16],[64.07,-16.98]], style:ringStyle},
-  // J4 Skaftafell→Jökulsárlón
-  {wp:[[64.07,-16.98],[64.08,-16.23]], style:ringStyle},
-  // J5 Jökulsárlón→Höfn
-  {wp:[[64.08,-16.23],[64.26,-15.21]], style:ringStyle},
-  // J5 Höfn→Egilsstaðir (côte est)
-  {wp:[[64.26,-15.21],[64.65,-14.28],[65.00,-13.99],[65.26,-14.40]], style:ringStyle},
-  // J5 Seyðisfjörður
-  {wp:[[65.26,-14.40],[65.26,-14.01]], style:ringStyle},
-  // J6 Egilsstaðir→Dettifoss (via Mývatn)
-  {wp:[[65.26,-14.40],[65.60,-17.00],[65.81,-16.38]], style:ringStyle},
-  // J7 Dettifoss→Mývatn
-  {wp:[[65.81,-16.38],[65.60,-17.00]], style:ringStyle},
-  // J8 Mývatn→Húsavík
-  {wp:[[65.60,-17.00],[66.05,-17.34]], style:ringStyle},
-  // J8 Húsavík→Akureyri
-  {wp:[[66.05,-17.34],[65.68,-18.09]], style:ringStyle},
-  // J9 Akureyri→Siglufjörður
-  {wp:[[65.68,-18.09],[66.15,-18.91]], style:ringStyle},
-  // J9 Siglufjörður→Hólmavík
-  {wp:[[66.15,-18.91],[65.75,-20.2],[65.70,-21.69]], style:ringStyle},
-  // J10 Hólmavík→Ísafjörður
-  {wp:[[65.70,-21.69],[65.85,-22.2],[66.07,-23.12]], style:ringStyle},
-  // J11 Ísafjörður→Látrabjarg
-  {wp:[[66.07,-23.12],[65.50,-24.53]], style:ringStyle},
-  // J12 Látrabjarg→Heydalur→Stykkishólmur
-  {wp:[[65.50,-24.53],[65.84,-22.67],[65.07,-22.73]], style:ringStyle},
-  // J13 Stykkishólmur→Kirkjufell
-  {wp:[[65.07,-22.73],[64.93,-23.26]], style:ringStyle},
-  // J13 Kirkjufell→Snæfellsjökull (route 574)
-  {wp:[[64.93,-23.26],[64.87,-23.45],[64.83,-23.65],[64.770,-23.920]], style:ringStyle},
-  // J14 Snæfellsnes→Reykjavík→Keflavík
-  {wp:[[64.770,-23.920],[64.68,-23.1],[64.4,-22.5],[64.14,-21.94],[63.98,-22.63]], style:ringStyle},
+  // J1 KEF → Kirkjufell
+  {wp:[[63.985,-22.605],[63.985,-22.560],[64.926,-23.307]], style:ringStyle},
+  // J2 Kirkjufell → Goðafoss (via Borgarnes + tunnel Hvalfjörður)
+  {wp:[[64.926,-23.307],[64.700,-22.200],[64.500,-21.500],[65.683,-17.551]], style:ringStyle},
+  // J3 Goðafoss → Grettislaug
+  {wp:[[65.683,-17.551],[65.883,-19.736]], style:ringStyle},
+  // J3 Grettislaug → Grjótagjá → Mývatn → Námaskarð → Dettifoss
+  {wp:[[65.883,-19.736],[65.627,-16.882],[65.638,-16.836],[65.638,-16.820],[65.814,-16.385]], style:ringStyle},
+  // J4 Dettifoss → Askja (F-road 4x4)
+  {wp:[[65.814,-16.385],[65.048,-16.751]], style:detourStyle},
+  // J4 Askja → Stuðlagil
+  {wp:[[65.048,-16.751],[65.165,-15.313]], style:detourStyle},
+  // J5 Stuðlagil → Borgarfjörður eystri
+  {wp:[[65.165,-15.313],[65.522,-13.806]], style:ringStyle},
+  // J5 Borgarfjörður eystri → Seyðisfjörður
+  {wp:[[65.522,-13.806],[65.260,-14.011]], style:ringStyle},
+  // J6 Seyðisfjörður → Jökulsárlón (côte est)
+  {wp:[[65.260,-14.011],[65.260,-14.400],[64.500,-14.500],[64.048,-16.179]], style:ringStyle},
+  // J6 Jökulsárlón → Breiðamerkursandur
+  {wp:[[64.048,-16.179],[64.032,-16.212]], style:ringStyle},
+  // J7 Breiðamerkursandur → Lakigígar (F-road)
+  {wp:[[64.032,-16.212],[63.978,-18.230]], style:detourStyle},
+  // J7 Lakigígar → Vík
+  {wp:[[63.978,-18.230],[63.877,-19.040],[63.418,-19.003]], style:ringStyle},
+  // J8 Vík → Sólheimasandur → Skógafoss → Seljalandsfoss
+  {wp:[[63.418,-19.003],[63.540,-19.361],[63.532,-19.514],[63.615,-19.985]], style:ringStyle},
+  // J8 variante sud — Ferry Vestmannaeyjar (Landeyjahöfn → Heimaey → retour)
+  {wp:[[63.418,-19.003],[63.430,-20.275],[63.615,-19.985]], style:{color:'#16a085', weight:3, opacity:0.8, dashArray:'4,8'}},
+  // J9 Seljalandsfoss → Hella (route 1) → Landmannalaugar (F225 ✅)
+  {wp:[[63.615,-19.985],[63.836,-19.981],[63.979,-19.064]], style:detourStyle},
+  // J9 Landmannalaugar → retour Hella (route 26 asphaltée, évite F26/F210)
+  {wp:[[63.979,-19.064],[63.836,-19.981],[63.718,-20.280]], style:ringStyle},
+  // J10 Hella → Geysir → Gullfoss → Reykjavík → KEF (route 1 → 30 → 35)
+  {wp:[[63.718,-20.280],[64.312,-20.302],[64.327,-20.121],[64.141,-21.940],[63.985,-22.605]], style:ringStyle},
 ];
 
 const segmentsAlt = [
@@ -683,44 +675,42 @@ const segmentsAlt = [
   {wp:[[64.26,-15.21],[64.65,-14.28],[65.00,-13.99],[65.26,-14.40]], style:altStyle},
   {wp:[[65.26,-14.40],[65.26,-14.01]], style:altStyle},
   {wp:[[65.26,-14.40],[65.60,-17.00],[65.81,-16.38]], style:altStyle},
-  {wp:[[65.81,-16.38],[65.60,-17.00]], style:altStyle},
   {wp:[[65.60,-17.00],[66.05,-17.34]], style:altStyle},
   {wp:[[66.05,-17.34],[65.68,-18.09]], style:altStyle},
-  {wp:[[65.68,-18.09],[66.15,-18.91]], style:altDetour},
-  {wp:[[66.15,-18.91],[65.68,-18.09],[65.55,-19.46],[65.13,-20.95],[64.77,-22.00],[64.54,-22.00]], style:altStyle},
-  {wp:[[64.54,-22.00],[65.07,-22.73]], style:altDetour},
-  {wp:[[65.07,-22.73],[64.93,-23.26]], style:altDetour},
-  {wp:[[64.93,-23.26],[64.87,-23.45],[64.83,-23.65],[64.770,-23.920]], style:altDetour},
-  {wp:[[64.770,-23.920],[64.68,-21.5],[64.70,-20.87]], style:altDetour},
-  {wp:[[64.70,-20.87],[64.31,-20.30],[64.28,-21.09]], style:altDetour},
-  {wp:[[64.28,-21.09],[64.14,-21.94],[63.98,-22.63]], style:altStyle},
+  {wp:[[65.68,-18.09],[66.15,-18.91]], style:altStyle},
+  {wp:[[66.15,-18.91],[65.75,-20.2],[65.70,-21.69]], style:altStyle},
+  {wp:[[65.70,-21.69],[65.85,-22.2],[66.07,-23.12]], style:altStyle},
+  {wp:[[66.07,-23.12],[65.50,-24.53]], style:altStyle},
+  {wp:[[65.50,-24.53],[65.07,-22.73]], style:altStyle},
+  {wp:[[65.07,-22.73],[64.93,-23.26]], style:altStyle},
+  {wp:[[64.93,-23.26],[64.87,-23.45],[64.83,-23.65],[64.770,-23.920]], style:altStyle},
+  {wp:[[64.770,-23.920],[64.68,-23.1],[64.4,-22.5],[64.14,-21.94],[63.98,-22.63]], style:altStyle},
 ];
 
 
-// ── ÉTAPES ───────────────────────────────────────────────────────────────────
+// ── ÉTAPES — Nouveau parcours principal ──────────────────────────────────────
 const stops = [
-  {ll:[63.98,-22.63],c:'#e63946',l:'KEF',p:pop('J1&J15','#e63946','Keflavík','Aéroport international',[{i:'🚐',t:'J1 : Prise en charge van CampEasy (~20h30, atterrissage 18h45)'},{i:'✈️',t:'J15 : Vol retour 10h00 — restitution van AVANT 8h'}],'⚠️ Décollage 10h → restitution van avant 8h.')},
-  {ll:[64.31,-20.30],c:'#f4a261',l:'1',p:pop('J1','#f4a261','Golden Circle','~1h30 depuis Keflavík',[{i:'💧',t:'Geysir Strokkur — éruption toutes les 5-10 min'},{i:'🌊',t:'Gullfoss — chute double spectaculaire'},{i:'🏛️',t:'Þingvellir — site UNESCO, rift Am./Europe'}],null)},
-  {ll:[63.98,-19.07],c:'#f4a261',l:'2',p:pop('J2','#f4a261','Landmannalaugar','Via F225',[{i:'♨️',t:'Source chaude naturelle (gratuite)'},{i:'🏔️',t:'Montagnes de rhyolite multicolores'},{i:'🥾',t:'Rando Brennisteinsalda (2h A/R)'}],'🚐 Nuit camping Landmannalaugar.')},
-  {ll:[63.62,-19.99],c:'#1a73e8',l:'3',p:pop('J3','#1a73e8','Seljalandsfoss','Côte sud',[{i:'💧',t:'Seljalandsfoss — passer derrière la chute'},{i:'💧',t:'Gljúfrabúi — chute cachée, 200m plus loin'}],null)},
-  {ll:[63.42,-19.00],c:'#1a73e8',l:'4',p:pop('J3','#1a73e8','Vík í Mýrdal','Plage de sable noir',[{i:'🏖️',t:'Reynisfjara — plage noire, colonnes de basalte'},{i:'⚠️',t:'Vagues sournoises — ne jamais tourner le dos à la mer'}],null)},
-  {ll:[64.07,-16.98],c:'#1a73e8',l:'5',p:pop('J4','#1a73e8','Skaftafell — Vatnajökull','Plus grand glacier d\'Europe',[{i:'🥾',t:'Svartifoss — cascade + colonnes basalte (5km A/R)'},{i:'🏕️',t:'Camping : douches chaudes + lave-linge GRATUITS ⭐'}],null)},
-  {ll:[64.08,-16.23],c:'#1a73e8',l:'6',p:pop('J4','#1a73e8','Jökulsárlón + Diamond Beach','30 min de Skaftafell',[{i:'🧊',t:'Lagune aux icebergs'},{i:'💎',t:'Diamond Beach — icebergs sur sable noir'}],null)},
-  {ll:[64.26,-15.21],c:'#1a73e8',l:'7',p:pop('J5','#1a73e8','Höfn','Capitale du homard',[{i:'🦞',t:'Humarsúpa — soupe de homard, spécialité locale'}],null)},
-  {ll:[65.26,-14.01],c:'#f4a261',l:'8',p:pop('J5','#f4a261','Seyðisfjörður','Village arc-en-ciel',[{i:'🌈',t:'Route peinte arc-en-ciel'},{i:'⛪',t:'Église bleue Tvísöngur'}],null)},
-  {ll:[65.26,-14.40],c:'#1a73e8',l:'9',p:pop('J6','#1a73e8','Egilsstaðir','Principale ville de l\'Est',[{i:'🌲',t:'Forêt de Hallormsstaður'},{i:'🛒',t:'Supermarchés — ravitaillement'}],null)},
-  {ll:[65.81,-16.38],c:'#f4a261',l:'10',p:pop('J6','#f4a261','Dettifoss','Cascade la plus puissante d\'Europe',[{i:'💧',t:'Dettifoss — 500 m³/s, 44m'},{i:'💧',t:'Selfoss — 1km en amont'}],null)},
-  {ll:[65.60,-17.00],c:'#1a73e8',l:'11',p:pop('J7','#1a73e8','Lac Mývatn','Journée volcanique',[{i:'🌋',t:'Hverfjall — cratère 170m'},{i:'🗿',t:'Dimmuborgir — champs de lave'},{i:'🌡️',t:'Námaskarð — fumerolles + boue bouillonnante'},{i:'♨️',t:'Mývatn Nature Baths — réserver à l\'avance'}],'🕑 Prévoir la journée entière.')},
-  {ll:[66.05,-17.34],c:'#f4a261',l:'12',p:pop('J8','#f4a261','Húsavík','Capitale mondiale du whale watching',[{i:'🐋',t:'Whale watching — baleines à bosse (2-3h)'}],'🐋 Réserver sur gentlegiants.is')},
-  {ll:[65.68,-18.09],c:'#1a73e8',l:'13',p:pop('J8','#1a73e8','Akureyri','2ème ville d\'Islande',[{i:'⛪',t:'Akureyrarkirkja'},{i:'🌿',t:'Jardins botaniques — les plus nordiques du monde'}],null)},
-  {ll:[66.15,-18.91],c:'#f4a261',l:'14',p:pop('J9','#f4a261','Siglufjörður','Village de pêcheurs nordique',[{i:'🐟',t:'Síldarminjasafn — musée du hareng (primé)'}],null)},
-  {ll:[65.70,-21.69],c:'#1a73e8',l:'15',p:pop('J9','#1a73e8','Hólmavík','Porte des Westfjords',[{i:'🧙',t:'Strandagaldur — musée de la sorcellerie'},{i:'🌊',t:'Drangsnes — bains thermaux gratuits !'}],null)},
-  {ll:[66.07,-23.12],c:'#1a73e8',l:'16',p:pop('J10','#1a73e8','Ísafjörður','Capitale des Westfjords',[{i:'🏘️',t:'Vieille ville en bois du XVIIIe'},{i:'🚣',t:'Kayak dans le fjord'}],'⚠️ Route 622 interdite — rester route 60.')},
-  {ll:[65.50,-24.53],c:'#f4a261',l:'17',p:pop('J11','#f4a261','Látrabjarg','Falaises les plus à l\'ouest d\'Europe',[{i:'🐦',t:'Macareux, guillemots, fulmars'},{i:'🏖️',t:'Rauðasandur — plage de sable rouge (30 min)'}],null)},
-  {ll:[65.07,-22.73],c:'#1a73e8',l:'18',p:pop('J12','#1a73e8','Stykkishólmur','Arrivée Snæfellsnes',[{i:'🏘️',t:'Ville colorée, vue sur les îles'},{i:'🏛️',t:'Library of Water — installation artistique'}],null)},
-  {ll:[64.93,-23.26],c:'#f4a261',l:'19',p:pop('J13','#f4a261','Kirkjufell — Grundarfjörður','Montagne la + photographiée d\'Islande',[{i:'📸',t:'Kirkjufell + cascade Kirkjufellsfoss'},{i:'🎬',t:'Vue Game of Thrones'}],null)},
-  {ll:[64.770,-23.920],c:'#1a73e8',l:'20',p:pop('J13','#1a73e8','Snæfellsjökull + côte sud','Tour péninsule de Snæfellsnes',[{i:'🧊',t:'Glacier Snæfellsjökull (vue depuis route 574)'},{i:'🌊',t:'Arnarstapi — arches de lave'},{i:'💡',t:'Phare de Malarrif'}],'⚠️ F909 interdite — contourner par route 574 côtière.')},
-  {ll:[64.14,-21.94],c:'#1a73e8',l:'21',p:pop('J14','#1a73e8','Reykjavík + Blue Lagoon','Dernière étape',[{i:'⛪',t:'Hallgrímskirkja — vue panoramique'},{i:'🎵',t:'Harpa — salle de concert'},{i:'♨️',t:'Blue Lagoon (~45-60€/pers)'}],'🔵 Blue Lagoon : réservation obligatoire.')},
+  {ll:[63.985,-22.605],c:'#e63946',l:'KEF',p:pop('J1&J15','#e63946','Keflavík — Aéroport','Départ & retour',[{i:'🚐',t:'J1 : Prise en charge van CampEasy'},{i:'✈️',t:'J15 : Vol retour 10h00 — restitution van AVANT 8h'}],'⚠️ Décollage 10h → restitution van avant 8h.')},
+  {ll:[64.926,-23.307],c:'#f4a261',l:'1',p:pop('J1','#f4a261','Kirkjufell','Snæfellsnes',[{i:'📸',t:'Kirkjufell + cascade Kirkjufellsfoss'},{i:'🎬',t:'Montagne de Game of Thrones'}],null)},
+  {ll:[65.683,-17.551],c:'#f4a261',l:'2',p:pop('J2','#f4a261','Goðafoss','Cascade des dieux',[{i:'💧',t:'Goðafoss — cascade majestueuse, Ring Road'},{i:'🏛️',t:'Lieu historique — conversion au christianisme'}],null)},
+  {ll:[65.883,-19.736],c:'#1a73e8',l:'3',p:pop('J3','#1a73e8','Grettislaug','Bains géothermiques',[{i:'♨️',t:'Piscine naturelle chaude en bord de mer'},{i:'🏊',t:'Bains à Reykhólar'}],null)},
+  {ll:[65.627,-16.882],c:'#f4a261',l:'4',p:pop('J3','#f4a261','Grjótagjá','Grotte et source chaude',[{i:'🕳️',t:'Grotte volcanique avec eau chaude'},{i:'🎬',t:'Tournage Game of Thrones'}],null)},
+  {ll:[65.638,-16.836],c:'#1a73e8',l:'5',p:pop('J3','#1a73e8','Lac Mývatn','Journée volcanique',[{i:'🌋',t:'Hverfjall — cratère 170m'},{i:'🗿',t:'Dimmuborgir — champs de lave'},{i:'♨️',t:'Mývatn Nature Baths (réserver)'}],'🕑 Prévoir la journée entière.')},
+  {ll:[65.814,-16.385],c:'#1a73e8',l:'6',p:pop('J3','#1a73e8','Dettifoss','Cascade la plus puissante d\'Europe',[{i:'💧',t:'Dettifoss — 500 m³/s, 44m de hauteur'},{i:'💧',t:'Selfoss — 1km en amont'}],null)},
+  {ll:[65.048,-16.751],c:'#f4a261',l:'7',p:pop('J4','#f4a261','Askja','Hautes Terres — F-road',[{i:'🌋',t:'Viti — cratère-lac de lave'},{i:'🏔️',t:'Caldera d\'Askja'},{i:'⚠️',t:'F894/F88 — 4x4 obligatoire'}],'⚠️ Vérifier l\'ouverture de la F894 sur road.is')},
+  {ll:[65.165,-15.313],c:'#1a73e8',l:'8',p:pop('J4','#1a73e8','Stuðlagil','Canyon de basalte',[{i:'🏞️',t:'Colonnes de basalte hexagonales'},{i:'📸',t:'Canyon parmi les plus beaux d\'Islande'}],null)},
+  {ll:[65.522,-13.806],c:'#f4a261',l:'9',p:pop('J5','#f4a261','Borgarfjörður eystri','Fjords de l\'Est',[{i:'🐦',t:'Colonie de macareux (juin–août)'},{i:'🌄',t:'Paysage époustouflant'}],null)},
+  {ll:[65.260,-14.011],c:'#1a73e8',l:'10',p:pop('J5','#1a73e8','Seyðisfjörður','Village arc-en-ciel',[{i:'🌈',t:'Route peinte arc-en-ciel'},{i:'⛪',t:'Église bleue Tvísöngur'}],null)},
+  {ll:[64.048,-16.179],c:'#1a73e8',l:'11',p:pop('J6','#1a73e8','Jökulsárlón + Diamond Beach','30 min de Höfn',[{i:'🧊',t:'Lagune aux icebergs'},{i:'💎',t:'Diamond Beach — icebergs sur sable noir'}],null)},
+  {ll:[63.978,-18.230],c:'#f4a261',l:'12',p:pop('J7','#f4a261','Lakigígar','Hautes Terres — F-road',[{i:'🌋',t:'Laki — site volcanique Lakagígar'},{i:'⚠️',t:'Route F206 — 4x4 indispensable'}],'⚠️ Vérifier ouverture sur road.is')},
+  {ll:[63.418,-19.003],c:'#1a73e8',l:'13',p:pop('J7','#1a73e8','Vík í Mýrdal','Plage de sable noir',[{i:'🏖️',t:'Reynisfjara — plage noire, colonnes de basalte'},{i:'⚠️',t:'Vagues sournoises — ne jamais tourner le dos à la mer'}],null)},
+  {ll:[63.443,-20.275],c:'#16a085',l:'⛴',p:pop('J8 opt','#16a085','Vestmannaeyjar','Option ferry depuis Landeyjahöfn',[{i:'⛴',t:'Ferry Herjólfur : Landeyjahöfn → Heimaey (~35 min)'},{i:'🐦',t:'Observation macareux — plus grande colonie du monde'},{i:'🌋',t:'Eldfell — volcan apparu en 1973'},{i:'ℹ️',t:'Non accessible en van — stationnement au port'}],'💡 Option facultative — 2 allers-retours ferry/jour.')},
+  {ll:[63.540,-19.361],c:'#f4a261',l:'14',p:pop('J8','#f4a261','Sólheimasandur','Épave du DC-3',[{i:'✈️',t:'Épave US Navy DC-3 (1973) — 4km A/R à pied'},{i:'🏖️',t:'Paysage lunaire, sable noir'}],null)},
+  {ll:[63.532,-19.514],c:'#1a73e8',l:'15',p:pop('J8','#1a73e8','Skógafoss','Grande cascade du sud',[{i:'💧',t:'Skógafoss — 60m de hauteur, 25m de large'}],null)},
+  {ll:[63.615,-19.985],c:'#1a73e8',l:'16',p:pop('J8','#1a73e8','Seljalandsfoss','Cascade à traverser',[{i:'💧',t:'Seljalandsfoss — passer derrière la chute'},{i:'💧',t:'Gljúfrabúi — cascade cachée, 200m'}],null)},
+  {ll:[63.979,-19.064],c:'#f4a261',l:'17',p:pop('J9','#f4a261','Landmannalaugar','Brennisteinsalda — F-road',[{i:'🏔️',t:'Rhyolite multicolore — montagne arc-en-ciel'},{i:'♨️',t:'Source chaude naturelle gratuite'},{i:'⚠️',t:'F225 obligatoire — 4x4'}],'⚠️ Accès F-road uniquement')},
+  {ll:[64.312,-20.302],c:'#1a73e8',l:'18',p:pop('J10','#1a73e8','Geysir + Gullfoss','Golden Circle',[{i:'💨',t:'Strokkur — éruption toutes les 5-10 min'},{i:'🌊',t:'Gullfoss — chute double spectaculaire'}],null)},
+  {ll:[64.141,-21.940],c:'#1a73e8',l:'19',p:pop('J10','#1a73e8','Reykjavík','Capitale',[{i:'⛪',t:'Hallgrímskirkja — vue panoramique'},{i:'🎵',t:'Harpa — salle de concert'}],'🔵 Retour KEF le lendemain matin.')},
 ];
 
 const altStops = [
