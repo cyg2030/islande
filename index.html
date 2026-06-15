@@ -2053,21 +2053,21 @@ const churchPois      = DATA_CHURCHES.map(([la,ln,n,c,t1,t2,d])=>({ll:[la,ln],ca
 // ── PROGRAMME JOUR PAR JOUR ──────────────────────────────────────────────────
 const schedule = [
   {day:'J0',date:'4 sept.',etape:'Arrivée Keflavík (18h45)',type:'ring',km:0,total:0,camp:'Parking CampEasy / iStay Cabins 🌙',sites:'✈️ Atterrissage 18h45 · Van ~20h30 · Dîner : Olsen Olsen ou Antons Mamma Mia · Courses : Extra24 (24h/24)'},
-  {day:'J1',date:'5 sept.',etape:'Keflavík → Golden Circle',type:'ring',km:190,total:190,camp:'Camping Landmannalaugar',sites:'Geysir Strokkur · Gullfoss · Þingvellir · Route F225 vers Landmannalaugar'},
-  {day:'J2',date:'6 sept.',etape:'Landmannalaugar → Vík',type:'froad',km:160,total:350,camp:'Vik Camping',sites:'Source chaude naturelle · Rhyolite multicolore · Rando Brennisteinsalda · ⚠️ F233 jusqu\'à Syðri-Ófæra'},
-  {day:'J3',date:'7 sept.',etape:'Vík — Côte sud',type:'ring',km:60,total:410,camp:'Skaftafell Campground ⭐ douches + laverie gratuits',sites:'Seljalandsfoss (passer derrière) · Gljúfrabúi · Reynisfjara (plage noire) · Macareux'},
-  {day:'J4',date:'8 sept.',etape:'Vík → Skaftafell → Jökulsárlón',type:'ring',km:210,total:620,camp:'Camping Höfn',sites:'Svartifoss (5km A/R) · Jökulsárlón (lagune icebergs) · Diamond Beach · Phoques'},
-  {day:'J5',date:'9 sept.',etape:'Höfn → Egilsstaðir + Seyðisfjörður',type:'ring',km:300,total:920,camp:'Camp Egilsstaðir ⭐ douches gratuites',sites:'Fjords de l\'Est · Seyðisfjörður : route arc-en-ciel, église bleue, galeries'},
-  {day:'J6',date:'10 sept.',etape:'Egilsstaðir → Dettifoss → Mývatn',type:'ring',km:220,total:1140,camp:'Camping Mývatn',sites:'Forêt Hallormsstaður · Dettifoss (500 m³/s) · Selfoss · Hafragilsfoss'},
-  {day:'J7',date:'11 sept.',etape:'Mývatn — Journée volcanique',type:'ring',km:50,total:1190,camp:'Camping Mývatn (2ème nuit)',sites:'Hverfjall · Dimmuborgir · Námaskarð · Mývatn Nature Baths (réserver)'},
-  {day:'J8',date:'12 sept.',etape:'Mývatn → Húsavík → Akureyri',type:'ring',km:170,total:1360,camp:'Camping Hamrar — Akureyri',sites:'Húsavík : whale watching (réserver) · Akureyri : Akureyrarkirkja, jardins botaniques'},
-  {day:'J9',date:'13 sept.',etape:'Akureyri → Siglufjörður → Hólmavík',type:'froad',km:260,total:1620,camp:'Holmavik Campsite',sites:'Siglufjörður : musée du hareng · Hólmavík : musée de la sorcellerie, bains thermaux Drangsnes'},
-  {day:'J10',date:'14 sept.',etape:'Hólmavík → Ísafjörður (Westfjords)',type:'froad',km:190,total:1810,camp:'Camping Tungudalur ⭐ (4.6★)',sites:'Route 60 dans les Westfjords · Ísafjörður : vieille ville, kayak · ⚠️ Route 622 interdite'},
-  {day:'J11',date:'15 sept.',etape:'Ísafjörður → Látrabjarg',type:'froad',km:170,total:1980,camp:'Camping Breiðavík',sites:'Falaises Látrabjarg (14km, point + occidental Europe) · Macareux · Rauðasandur'},
-  {day:'J12',date:'16 sept.',etape:'Látrabjarg → Heydalur → Stykkishólmur',type:'froad',km:250,total:2230,camp:'Camping Snorrstaðir — Borgarnes',sites:'⭐ Heydalur : piscine géothermique en serre, hot-tubs, renard arctique 🦊 · Stykkishólmur'},
-  {day:'J13',date:'17 sept.',etape:'Snæfellsnes — Tour complet',type:'froad',km:200,total:2430,camp:'Camping Hellissandur ⭐ (4.5★)',sites:'Kirkjufell + cascade (Game of Thrones) · Snæfellsjökull (route 574) · Arnarstapi · Phare Malarrif'},
-  {day:'J14',date:'18 sept.',etape:'Snæfellsnes → Reykjavík → Keflavík',type:'ring',km:220,total:2650,camp:'Reykjavík Eco Campsite',sites:'Hallgrímskirkja · Harpa · Blue Lagoon (réserver, ~45-60€/pers) · Retour Keflavík'},
-  {day:'J15',date:'19 sept.',etape:'Retour — Keflavík (départ 10h)',type:'ring',km:25,total:2675,camp:'—',sites:'⚠️ Vol 10h00 → restitution van avant 8h · Navette aéroport'},
+  {day:'J1',date:'5 sept.',etape:'Keflavík → Snæfellsnes → Kirkjufell',type:'ring',km:200,total:200,camp:'Camping Kirkjufell ⭐',sites:'Péninsule Snæfellsnes · Arnarstapi · Snæfellsjökull (route 574) · Kirkjufell + Kirkjufellsfoss 📸'},
+  {day:'J2',date:'6 sept.',etape:'Kirkjufell → Borgarnes → Goðafoss',type:'ring',km:310,total:510,camp:'Camping Hamrar — Akureyri',sites:'Hraunfossar & Barnafoss · Tunnel Hvalfjörður · Goðafoss — cascade des dieux'},
+  {day:'J3',date:'7 sept.',etape:'Akureyri → Húsavík → Grettislaug',type:'ring',km:150,total:660,camp:'Grettislaug Tjaldsvæðið',sites:'Húsavík : whale watching 🐋 (réserver) · Tjörnes · Grettislaug : piscine géothermique en bord de mer ♨️'},
+  {day:'J4',date:'8 sept.',etape:'Grettislaug → Grjótagjá → Mývatn → Dettifoss',type:'ring',km:130,total:790,camp:'Camping Ásbyrgi ⭐',sites:'Grjótagjá (grotte volcanique GoT 🎬) · Lac Mývatn · Námaskarð · Hverfjall · Dettifoss 💧'},
+  {day:'J5',date:'9 sept.',etape:'Ásbyrgi → Askja (F894) → Stuðlagil',type:'froad',km:180,total:970,camp:'Camping Egilsstaðir ⭐ douches gratuites',sites:'⚠️ F894 — 4x4 obligatoire · Askja : caldera + lac Viti 🌋 · Stuðlagil : canyon de basalte hexagonal'},
+  {day:'J6',date:'10 sept.',etape:'Egilsstaðir → Borgarfjörður eystri → Seyðisfjörður',type:'ring',km:130,total:1100,camp:'Camping Seyðisfjörður',sites:'Borgarfjörður eystri : macareux 🐦 · Seyðisfjörður : route arc-en-ciel 🌈, église bleue, galeries d\'art'},
+  {day:'J7',date:'11 sept.',etape:'Seyðisfjörður → Fjords de l\'Est → Höfn → Jökulsárlón',type:'ring',km:280,total:1380,camp:'Camping Höfn',sites:'Fjords de l\'Est panoramiques · Höfn : la capitale du homard 🦞 · Jökulsárlón : lagune aux icebergs 🧊'},
+  {day:'J8',date:'12 sept.',etape:'Jökulsárlón → Diamond Beach → Lakigígar (F206) → Vík',type:'froad',km:220,total:1600,camp:'Camping Vík ⭐',sites:'Diamond Beach 💎 · ⚠️ F206 — 4x4 · Lakigígar (site volcanique Laki) · Reynisfjara (plage noire)'},
+  {day:'J9',date:'13 sept.',etape:'Vík → Sólheimasandur → Skógafoss → Seljalandsfoss',type:'ring',km:80,total:1680,camp:'Camping Seljalandsfoss',sites:'Épave DC-3 Sólheimasandur ✈️ · Skógafoss (60m) · Seljalandsfoss (passer derrière) · Gljúfrabúi'},
+  {day:'J10',date:'14 sept.',etape:'Seljalandsfoss → Landmannalaugar (F225) A/R → Hella',type:'froad',km:140,total:1820,camp:'Camping Hella',sites:'⚠️ F225 — 4x4 · Landmannalaugar : rhyolite multicolore 🏔️ · Source chaude naturelle ♨️ · Rando Brennisteinsalda'},
+  {day:'J11',date:'15 sept.',etape:'Hella → Þingvellir → Geysir → Gullfoss',type:'ring',km:150,total:1970,camp:'Camping Þingvellir',sites:'Þingvellir : rift tectonique, parlement viking, snorkeling Silfra 🤿 · Strokkur (éruption /5 min) · Gullfoss 🌊'},
+  {day:'J12',date:'16 sept.',etape:'Þingvellir → Reykjavík',type:'ring',km:60,total:2030,camp:'Reykjavík Eco Campsite',sites:'Hallgrímskirkja ⛪ · Harpa 🎵 · Vieux port · Laugavegur (shopping & restos)'},
+  {day:'J13',date:'17 sept.',etape:'Reykjavík → Keflavík',type:'ring',km:50,total:2080,camp:'Camping KEF / iStay Cabins 🌙',sites:'Dernières emplettes · Retour van CampEasy · Proche aéroport'},
+  {day:'J14',date:'18 sept.',etape:'Journée libre — Reykjavík',type:'ring',km:0,total:2080,camp:'Reykjavík Eco Campsite',sites:'Journée détente · Musées · Restaurants · Perlan 🌐 · Pools géothermiques locales ♨️'},
+  {day:'J15',date:'19 sept.',etape:'Retour — Keflavík (départ 10h)',type:'ring',km:50,total:2130,camp:'—',sites:'⚠️ Vol 10h00 → restitution van avant 8h · Navette aéroport'},
 ];
 
 const scheduleAlt = [
@@ -2095,8 +2095,8 @@ function switchTab(tab) {
   document.getElementById('tab-main').classList.toggle('active', tab==='main');
   document.getElementById('tab-alt').classList.toggle('active', tab==='alt');
   renderSchedule(tab==='main' ? schedule : scheduleAlt);
-  document.getElementById('foot-total').innerHTML = tab==='main' ? 'Distance : <b>~3 700 km</b>' : 'Distance : <b>~2 400 km</b>';
-  document.getElementById('foot-avg').innerHTML = tab==='main' ? 'Moyenne : <b>~247 km/jour</b>' : 'Moyenne : <b>~160 km/jour</b>';
+  document.getElementById('foot-total').innerHTML = tab==='main' ? 'Distance : <b>~2 130 km</b>' : 'Distance : <b>~2 400 km</b>';
+  document.getElementById('foot-avg').innerHTML = tab==='main' ? 'Moyenne : <b>~142 km/jour</b>' : 'Moyenne : <b>~160 km/jour</b>';
 }
 function renderSchedule(data) {
   const tbody = document.getElementById('schedule-body');
