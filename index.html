@@ -146,6 +146,19 @@ h1 { font-size:14px; font-weight:600; }
       <button class="sub-btn" id="btn-filter-basic" onclick="toggleFilter('basic')"><span class="icon">⛺</span><span class="label">Basique (26)</span><span class="check"></span></button>
       <button class="sub-btn" id="btn-filter-campcard" onclick="toggleFilter('campcard')"><span class="icon"><img src="https://utilegukortid.is/wp-content/uploads//2020/04/camping-card-logo.svg" style="height:20px;vertical-align:middle" alt="CampCard"></span><span class="label">CampCard uniquement (30)</span><span class="check"></span></button>
       <div class="sub-sep"></div>
+      <div class="sub-label">Réttir — rassemblement des moutons</div>
+      <button class="sub-btn" id="btn-rettir-0409" onclick="toggleRettirDay('04/09')"><span class="icon"><span style="display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:50%;background:#e6194b;font-size:11px">🐑</span></span><span class="label">4 septembre (1)</span><span class="check"></span></button>
+      <button class="sub-btn" id="btn-rettir-0509" onclick="toggleRettirDay('05/09')"><span class="icon"><span style="display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:50%;background:#3cb44b;font-size:11px">🐑</span></span><span class="label">5 septembre (4)</span><span class="check"></span></button>
+      <button class="sub-btn" id="btn-rettir-0609" onclick="toggleRettirDay('06/09')"><span class="icon"><span style="display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:50%;background:#4363d8;font-size:11px">🐑</span></span><span class="label">6 septembre (16)</span><span class="check"></span></button>
+      <button class="sub-btn" id="btn-rettir-0709" onclick="toggleRettirDay('07/09')"><span class="icon"><span style="display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:50%;background:#f58231;font-size:11px">🐑</span></span><span class="label">7 septembre (2)</span><span class="check"></span></button>
+      <button class="sub-btn" id="btn-rettir-0809" onclick="toggleRettirDay('08/09')"><span class="icon"><span style="display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:50%;background:#911eb4;font-size:11px">🐑</span></span><span class="label">8 septembre (2)</span><span class="check"></span></button>
+      <button class="sub-btn" id="btn-rettir-1009" onclick="toggleRettirDay('10/09')"><span class="icon"><span style="display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:50%;background:#42d4f4;font-size:11px">🐑</span></span><span class="label">10 septembre (1)</span><span class="check"></span></button>
+      <button class="sub-btn" id="btn-rettir-1109" onclick="toggleRettirDay('11/09')"><span class="icon"><span style="display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:50%;background:#f032e6;font-size:11px">🐑</span></span><span class="label">11 septembre (7)</span><span class="check"></span></button>
+      <button class="sub-btn" id="btn-rettir-1209" onclick="toggleRettirDay('12/09')"><span class="icon"><span style="display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:50%;background:#bfef45;font-size:11px">🐑</span></span><span class="label">12 septembre (27)</span><span class="check"></span></button>
+      <button class="sub-btn" id="btn-rettir-1309" onclick="toggleRettirDay('13/09')"><span class="icon"><span style="display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:50%;background:#fabed4;font-size:11px">🐑</span></span><span class="label">13 septembre (8)</span><span class="check"></span></button>
+      <button class="sub-btn" id="btn-rettir-1409" onclick="toggleRettirDay('14/09')"><span class="icon"><span style="display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:50%;background:#469990;font-size:11px">🐑</span></span><span class="label">14 septembre (2)</span><span class="check"></span></button>
+      <button class="sub-btn" id="btn-rettir-1509" onclick="toggleRettirDay('15/09')"><span class="icon"><span style="display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:50%;background:#9A6324;font-size:11px">🐑</span></span><span class="label">15 septembre (1)</span><span class="check"></span></button>
+      <div class="sub-sep"></div>
       <div class="sub-label">Pratique</div>
       <button class="sub-btn" id="btn-fuel" onclick="toggleLayer('fuel')"><span class="icon">⛽</span><span class="label">Stations essence (262)</span><span class="check"></span></button>
       <button class="sub-btn" id="btn-shops" onclick="toggleLayer('shops')"><span class="icon">🛒</span><span class="label">Supermarchés (242)</span><span class="check"></span></button>
@@ -347,6 +360,7 @@ const layerForbidden = L.layerGroup();
 const layerOrange    = L.layerGroup(); // routes à discrétion
 const layerGreen     = L.layerGroup(); // routes autorisées
 const layerCampings  = L.layerGroup();
+const layerRettir    = L.layerGroup(); // réttir (rassemblements de moutons)
 const layerPOI       = L.layerGroup(); // glaciers
 const layerNature    = L.layerGroup(); // volcans
 const layerWildNature= L.layerGroup(); // plages/grottes
@@ -365,7 +379,7 @@ const layerHikesMid  = L.layerGroup(); // randonnées moyennes (4.5–4.8)
 const layerHikesLow  = L.layerGroup(); // randonnées basses (<4.5 / sans note)
 
 const layerState = {
-  itinerary:true, altroute:false, forbidden:false, orange:false, green:false, campings:false,
+  itinerary:true, altroute:false, forbidden:false, orange:false, green:false, campings:false, rettir:false,
   poi:false, nature:false, wildnature:false, thermal:false, geyser:false,
   viewpoints:false, museums:false, waterfalls:false, fuel:false, shops:false,
   pools:false, birds:false, churches:false, hikeshigh:false, hikesmid:false, hikeslow:false
@@ -432,6 +446,22 @@ function toggleFilter(cat) {
   const anyActive = activeFilters.size > 0 || filterCampcard;
   if (anyActive && !layerState.campings) { layerCampings.addTo(map); layerState.campings = true; }
   else if (!anyActive && layerState.campings) { map.removeLayer(layerCampings); layerState.campings = false; }
+}
+
+const activeRettirDays = new Set();
+const rettirMarkers = [];
+
+function toggleRettirDay(day) {
+  if (activeRettirDays.has(day)) activeRettirDays.delete(day);
+  else activeRettirDays.add(day);
+  syncSubBtn('btn-rettir-'+day.replace('/',''), activeRettirDays.has(day));
+  rettirMarkers.forEach(({marker, day:d}) => {
+    if (activeRettirDays.has(d)) marker.addTo(layerRettir);
+    else layerRettir.removeLayer(marker);
+  });
+  const anyActive = activeRettirDays.size > 0;
+  if (anyActive && !layerState.rettir) { layerRettir.addTo(map); layerState.rettir = true; }
+  else if (!anyActive && layerState.rettir) { map.removeLayer(layerRettir); layerState.rettir = false; }
 }
 
 
@@ -511,6 +541,16 @@ function campeasyPop(name,cat,amenities,openPeriod,siteWeb,campcard,photoUrl,sou
   const linksHtml=(webLink||mapsLink)?`<div style="margin-top:7px;display:flex;flex-wrap:wrap;gap:4px">${webLink}${mapsLink}</div>`:'';
   const src=source||'CampEasy';
   return `<div style="padding:2px">${photo}<div style="font-weight:700;font-size:13px;color:#1a1a2e;margin-bottom:4px">⛺ ${name}${ccBadge}</div><div style="display:inline-block;background:${bg};color:#fff;font-size:10px;padding:2px 7px;border-radius:4px;margin-bottom:6px">${catLabels[cat]||''}</div>${amenities?`<div style="font-size:11px;color:#555;margin-bottom:5px">${amenities}</div>`:''}${openPeriod?`<div style="font-size:10.5px;color:#888;margin-bottom:4px">📅 ${openPeriod}</div>`:''}${linksHtml}<div style="font-size:10px;color:#aaa;margin-top:6px">Source : ${src}</div></div>`;
+}
+
+function rettirIcon(color) {
+  return L.divIcon({className:'',
+    html:`<div style="width:24px;height:24px;border-radius:50%;background:${color};border:2px solid #fff;display:flex;align-items:center;justify-content:center;font-size:13px;box-shadow:0 2px 6px rgba(0,0,0,0.5)">🐑</div>`,
+    iconSize:[24,24],iconAnchor:[12,12]});
+}
+
+function rettirPop(name,date,region) {
+  return `<div style="padding:2px"><div style="font-size:10px;color:#8e44ad;font-weight:700;margin-bottom:4px;text-transform:uppercase;letter-spacing:.05em">🐑 Réttir</div><div style="font-weight:700;font-size:13px;color:#1a1a2e;margin-bottom:6px">${name}</div><div style="font-size:12px;color:#444;margin-bottom:4px">📅 ${date}</div><div style="font-size:11px;color:#666">${region}</div></div>`;
 }
 
 function poiIcon(cat) {
@@ -922,6 +962,83 @@ const CAMPEASY_CAMPINGS = [
   [64.64405, -14.51658, "Tjaldvæðið Bragðavöllum", "shower", "🚿 Douche, 🍳 Cuisine", "1. May – 15. September", "https://utilegukortid.is/tjaldvaedid-bragdavollum/?lang=en", true, "https://i0.wp.com/utilegukortid.is/wp-content/uploads/2026/02/Screenshot-2026-02-03-163024.png?resize=400%2C250&ssl=1", "CampCard", "Bragðavellir, 766 Djúpavogur, Islande"],
   [66.05976, -23.2304, "Tungudalur Campsite", "full", "🚿 Douche, 🧺 Laverie, ⚡ Électricité", "10 June – 15 September", "https://utilegukortid.is/tungudalur/?lang=en", true, "https://i0.wp.com/utilegukortid.is/wp-content/uploads/2020/05/tungudalur-cover.jpg?resize=400%2C250&ssl=1", "CampCard", "Tungudalur, 400 Ísafjörður, Islande"],
   [64.03933, -22.69984, "Sandgerði Campsite", "full", "🚿 Douche, 🧺 Laverie, ⚡ Électricité, 📶 WiFi", "Open all year round", "http://www.airportcamping.is", true, "https://i0.wp.com/utilegukortid.is/wp-content/uploads/2020/05/Sangerdi2.jpg?resize=400%2C250&ssl=1", "CampCard", "Byggðavegi, 245 Sandgerði, Islande"]
+];
+
+
+// ── DONNÉES RÉTTIR (RASSEMBLEMENTS DE MOUTONS) ──────────────────────────────
+// [lat, lon, name, date "jj/mm", region, color]
+const RETTIR = [
+  [65.45,-20.25,"Undirfellsrétt í Vatnsdal, Austur-Húnavatnssýsla","04/09","Norðvesturland","#e6194b"],
+  [65.519,-19.9615,"Auðkúlurétt við Svínavatn, Austur-Húnavatnssýsla","05/09","Norðvesturland","#3cb44b"],
+  [65.5608,-20.03671,"Hlíðarrétt, Austur-Húnavatnssýsla","05/09","Norðvesturland","#3cb44b"],
+  [64.219,-20.8787,"Kringlumýrarrétt á Lyngdalsheiði, Árnessýslu","05/09","Réttir í Landnámi Ingólfs Arnarsonar","#3cb44b"],
+  [65.05,-21.7,"Ljárskógarétt í Laxárdal, Dalasýslu","05/09","Vesturland","#3cb44b"],
+  [65.63,-17.0,"Baldursheimsrétt í Mývatnssveit, Suður-Þingeyjarsýslu","06/09","Norðausturland","#4363d8"],
+  [66.13515,-15.32631,"Fjallalækjarselsrétt í Svalbarðshreppi, Norður-Þingeyjarsýslu","06/09","Norðausturland","#4363d8"],
+  [66.13257,-15.36129,"Garðsrétt í Svalbarðshreppi, Norður-Þingeyjarsýslu","06/09","Norðausturland","#4363d8"],
+  [65.64588,-16.98427,"Hlíðarrétt í Mývatnssveit, Suður-Þingeyjarsýslu","06/09","Norðausturland","#4363d8"],
+  [65.85,-17.35,"Hraunsrétt í Aðaldal, Suður-Þingeyjarsýslu","06/09","Norðausturland","#4363d8"],
+  [64.8215,-22.261,"Kaldárbakkarétt í Kolbeinsstaðahreppi","06/09","Vesturland","#4363d8"],
+  [66.35,-16.15,"Katastaðarétt í Núpasveit","06/09","Norðausturland","#4363d8"],
+  [65.41,-20.98,"Miðfjarðarrétt í Miðfirði, Vestur Húnavatnssýslu","06/09","Stóðréttir","#4363d8"],
+  [66.13,-17.15,"Mánárrétt","06/09","Norðausturland","#4363d8"],
+  [66.14929,-18.92925,"Siglufjörður Hólsdalur","06/09","Norðausturland","#4363d8"],
+  [65.75,-19.63,"Skarðarétt, Skagafjarðarsýslu","06/09","Norðurland","#4363d8"],
+  [65.3,-19.55,"Skrapatungurétt í Laxárdal, Austur-Húnavatnssýsla","06/09","Norðvesturland","#4363d8"],
+  [66.3,-16.3,"Stórsandhólarétt","06/09","Norðausturland","#4363d8"],
+  [66.15,-16.45,"Tungurétt, Öxarfirði","06/09","Norðausturland","#4363d8"],
+  [65.5332,-17.4751,"Árrétt í Bárðardal","06/09","Norðausturland","#4363d8"],
+  [65.2824,-18.1906,"Þverárrétt í Eyjafjarðarsveit","06/09","Norðausturland","#4363d8"],
+  [66.09246,-15.70983,"Miðfjarðarnesrétt í Langanesbyggð, Norður-Þingeyjarsýslu","07/09","Norðausturland","#f58231"],
+  [66.1507,-18.9108,"Siglufjörður Almenningar","07/09","Norðausturland","#f58231"],
+  [66.08937,-15.69243,"Hallgilsstaðarétt í Langanesbyggð, Norður-Þingeyjarsýslu","08/09","Norðausturland","#911eb4"],
+  [66.08842,-15.70556,"Tunguselsrétt í Langanesbyggð, Norður-Þingeyjarsýslu","08/09","Norðausturland","#911eb4"],
+  [65.55586,-20.01473,"Sveinsstaðarétt, Austur-Húnavatnssýsla","10/09","Norðvesturland","#42d4f4"],
+  [64.5137,-19.5365,"Hrunaréttir í Hrunamannahreppi, Árnessýslu","11/09","Suðurland","#f032e6"],
+  [66.12394,-15.35778,"Hvammsrétt í Svalbarðshreppi, Norður-Þingeyjarsýslu","11/09","Norðausturland","#f032e6"],
+  [64.6106,-18.8184,"Skaftholtsréttir í Gnúpverjahreppi, Árnessýslu","11/09","Suðurland","#f032e6"],
+  [65.52412,-20.02274,"Spákonufellsrétt, Austur-Húnavatnssýsla","11/09","Norðvesturland","#f032e6"],
+  [65.6047,-18.6089,"Staðarbakkarétt í Hörgárdal, Eyjafjarðarsýslu","11/09","Norðurland","#f032e6"],
+  [65.76847,-19.61825,"Staðarrétt (Reynisstaðarrétt), Skagafjarðarsýslu","11/09","Norðurland","#f032e6"],
+  [66.04415,-19.10175,"Stíflurétt í Fljótum, Skagafjarðarsýslu","11/09","Norðurland","#f032e6"],
+  [66.1609,-15.35348,"Dalsrétt í Svalbarðshreppi, Norður-Þingeyjarsýslu","12/09","Norðausturland","#bfef45"],
+  [65.8575,-19.2586,"Deildardalsrétt í Deildardal, Skagafjarðarsýslu","12/09","Norðurland","#bfef45"],
+  [66.05,-16.65,"Fjallarétt í Kelduhverfi, Norður-Þingeyjarsýslu","12/09","Norðausturland","#bfef45"],
+  [64.1146,-21.7799,"Fjárborgarrétt í Hólmsheiði","12/09","Réttir í Landnámi Ingólfs Arnarsonar","#bfef45"],
+  [64.0715,-21.6703,"Fossvallarétt í Lækjarbotnalandi","12/09","Réttir í Landnámi Ingólfs Arnarsonar","#bfef45"],
+  [65.54456,-20.03148,"Fossárrétt, Austur-Húnavatnssýsla","12/09","Norðvesturland","#bfef45"],
+  [65.68,-18.05,"Geldingsárrétt í Vaðlaheiði","12/09","Norðurland","#bfef45"],
+  [63.79,-18.05,"Grafarrétt Skaftártungu, Skaftárhreppi, V-Skaftafellssýslu","12/09","Suðurland","#bfef45"],
+  [65.6379,-18.5026,"Grjótgarðsrétt í Hörgársveit, Eyjafjarðarsýslu","12/09","Norðurland","#bfef45"],
+  [66.16054,-15.32726,"Gunnarsstaðarétt í Svalbarðshreppi, Norður-Þingeyjarsýslu","12/09","Norðausturland","#bfef45"],
+  [65.526,-20.965,"Hamarsrétt á Vatnsnesi, Vestur-Húnavatnssýslu","12/09","Norðvesturland","#bfef45"],
+  [66.05,-19.1,"Holtsrétt í Fljótum, Skagafjarðarsýslu","12/09","Norðurland","#bfef45"],
+  [64.1758,-21.6202,"Hraðastaðarétt í Mosfellsdal, Kjósarsýslu","12/09","Réttir í Landnámi Ingólfs Arnarsonar","#bfef45"],
+  [65.28,-21.45,"Hrútafjörður að vestan / Bæjarhreppur","12/09","Norðvesturland","#bfef45"],
+  [65.34,-21.14,"Hvalsárrétt í Hrútafirði, Strandasýslu","12/09","Norðvesturland","#bfef45"],
+  [64.03,-21.3,"Húsmúlarétt við Kolviðarhól, Árnessýslu","12/09","Réttir í Landnámi Ingólfs Arnarsonar","#bfef45"],
+  [65.53652,-20.06007,"Kjalarlandsrétt, Austur-Húnavatnssýsla","12/09","Norðvesturland","#bfef45"],
+  [64.8357,-15.262,"Melarétt í Fljótsdal, Norður-Múlasýslu","12/09","Austurland","#bfef45"],
+  [65.64887,-18.50281,"Reistarárrétt í Hörgársveit, Eyjafjarðarsýslu","12/09","Norðurland","#bfef45"],
+  [64.55,-20.45,"Reykjaréttir á Skeiðum, Árnessýslu","12/09","Suðurland","#bfef45"],
+  [63.78202,-18.03229,"Skaftárrétt, Hunkubökkum, Skaftárhreppi, V-Skaftafellssýslu","12/09","Suðurland","#bfef45"],
+  [65.35,-19.65,"Stafnsrétt í Svartárdal, Austur-Húnavatnssýsla","12/09","Norðvesturland","#bfef45"],
+  [64.35,-20.35,"Tungnaréttir í Biskupstungum, Árnessýslu","12/09","Suðurland","#bfef45"],
+  [66.03264,-16.65371,"Víkingavatnsrétt í Kelduhverfi, Norður-Þingeyjarsýslu","12/09","Norðausturland","#bfef45"],
+  [65.9,-19.4,"Árhólarétt í Unadal, Skagafjarðarsýslu","12/09","Norðurland","#bfef45"],
+  [65.45,-20.75,"Þverárrétt í Vesturhópi, Vestur-Húnavatnssýslu","12/09","Norðvesturland","#bfef45"],
+  [65.55,-18.75,"Þverárrétt í Öxnadal, Eyjafjarðarsýslu","12/09","Norðurland","#bfef45"],
+  [66.1072,-15.6988,"Bakkarétt í Langanesbyggð, Norður-Þingeyjarsýslu","13/09","Norðausturland","#fabed4"],
+  [64.25,-21.1,"Brúsastaðarétt í Þingvallasveit, Árnessýslu","13/09","Suðurland","#fabed4"],
+  [64.26061,-21.09179,"Heiðarbæjarrétt í Þingvallasveit, Árnessýslu","13/09","Réttir í Landnámi Ingólfs Arnarsonar","#fabed4"],
+  [65.35,-19.2,"Hlíðarrétt í Vesturdal, Skagafjarðarsýslu","13/09","Norðurland","#fabed4"],
+  [65.6958,-17.8864,"Lokastaðarétt í Fnjóskadal, Suður-Þingeyjarsýslu","13/09","Norðausturland","#fabed4"],
+  [66.05474,-16.65203,"Tjarnarleitisrétt í Kelduhverfi, Norður-Þingeyjarsýslu","13/09","Norðausturland","#fabed4"],
+  [66.15,-15.35,"Álandstungurétt í Svalbarðshreppi, Norður-Þingeyjarsýslu","13/09","Norðausturland","#fabed4"],
+  [64.0,-21.2,"Ölfusrétt í Reykjadal, Árnessýslu","13/09","Réttir í Landnámi Ingólfs Arnarsonar","#fabed4"],
+  [64.1063,-20.8216,"Grafningsrétt í Grafningi, Árnessýslu","14/09","Réttir í Landnámi Ingólfs Arnarsonar","#469990"],
+  [65.65,-19.35,"Silfrastaðarétt í Blönduhlíð, Skagafjarðarsýslu","14/09","Norðurland","#469990"],
+  [66.035,-14.8051,"Miðfjarðarrétt í Bakkafirði, Norður-Þingeyjarsýslu","15/09","Norðausturland","#9A6324"]
 ];
 
 
@@ -2210,6 +2327,13 @@ async function init() {
     const marker = L.marker([lat,lng],{icon:campIcon(cat,false,campcard),zIndexOffset:cat==='full'?-200:cat==='shower'?-210:-220})
       .bindPopup(campeasyPop(name,cat,amenities,openPeriod,siteWeb,campcard,photoUrl,source,address),{maxWidth:300});
     campMarkers.push({marker,markerCat:cat,markerCampcard:campcard});
+  });
+
+  // Réttir (rassemblements de moutons)
+  RETTIR.forEach(([lat,lon,name,date,region,color]) => {
+    const marker = L.marker([lat,lon],{icon:rettirIcon(color),zIndexOffset:-150})
+      .bindPopup(rettirPop(name,date,region),{maxWidth:280});
+    rettirMarkers.push({marker,day:date});
   });
 
 
