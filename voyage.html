@@ -445,15 +445,14 @@ function airportIcon(hue) {
     iconSize:[26,26], iconAnchor:[13,13]});
 }
 
-function kmLine(date, label) {
+function kmLine(date) {
   const km = KM_LOG[date];
-  if (km == null) return `<div class="popup-km">🚗 Kilométrage : <i style="color:#999">à compléter</i></div>`;
   const idx = DAYS.findIndex(d => d.date === date);
   const prevDate = idx > 0 ? DAYS[idx-1].date : null;
   const prevKm = idx === 0 ? KM_INITIAL : (prevDate ? KM_LOG[prevDate] : null);
-  if (prevKm == null) return `<div class="popup-km">🚗 ${label} : <b>${km.toLocaleString('fr-FR')} km</b></div>`;
+  if (km == null || prevKm == null) return `<div class="popup-km">🚗 Distance parcourue : <i style="color:#999">à compléter</i></div>`;
   const delta = km - prevKm;
-  return `<div class="popup-km">🚗 ${label} : <b>${km.toLocaleString('fr-FR')} km</b> — <b>${delta.toLocaleString('fr-FR')} km</b> parcourus ce jour-là</div>`;
+  return `<div class="popup-km">🚗 Distance parcourue : <b>${delta.toLocaleString('fr-FR')} km</b></div>`;
 }
 
 function dayPop(d) {
@@ -462,7 +461,7 @@ function dayPop(d) {
       <span class="popup-day" style="background:hsl(${d.hue},72%,42%)">${d.jour} — ${d.dateLabel}</span>
       <div class="popup-title">✈️ ${d.campName}</div>
       <div class="popup-sub">📍 Fin du voyage — dernière position avant l'embarquement (${d.lastTime})</div>
-      ${kmLine(d.date, 'Compteur au retour du véhicule')}
+      ${kmLine(d.date)}
     </div>`;
   }
   const campWarn = d.campUncertain
@@ -473,7 +472,7 @@ function dayPop(d) {
     <div class="popup-title">🌙 ${d.campName}</div>
     <div class="popup-sub">📍 Position déduite de la dernière photo géolocalisée (${d.lastTime})</div>
     ${campWarn}
-    ${kmLine(d.date, 'Compteur du soir')}
+    ${kmLine(d.date)}
   </div>`;
 }
 
