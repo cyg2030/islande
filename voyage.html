@@ -48,6 +48,25 @@ h1 { font-size:14px; font-weight:600; }
 .popup-km { font-size:12px; color:#444; margin-top:6px; }
 .popup-warn { margin-top:6px; padding:5px 8px; background:#fdf3e3; border-left:3px solid #f4a261; font-size:10.5px; color:#7a5c2e; border-radius:0 4px 4px 0; }
 #cache-status { display:none; font-size:10px; color:#7ec8e3; padding:6px 10px; line-height:1.4; border-top:1px solid #2a3a4a; margin-top:4px; }
+#schedule-panel { display:none; position:fixed; inset:0; z-index:5000; background:rgba(10,12,20,0.7); backdrop-filter:blur(4px); align-items:center; justify-content:center; }
+#schedule-panel.open { display:flex; }
+#schedule-inner { background:#0f1623; border:1px solid #2a3a4a; border-radius:14px; width:92vw; max-width:900px; max-height:88vh; display:flex; flex-direction:column; overflow:hidden; box-shadow:0 8px 40px rgba(0,0,0,0.7); }
+#schedule-header { padding:14px 20px; border-bottom:1px solid #2a3a4a; display:flex; align-items:center; justify-content:space-between; flex-shrink:0; }
+#schedule-header h2 { font-size:15px; color:#7ec8e3; font-family:Arial; }
+#schedule-close { background:none; border:1px solid #2a3a4a; color:#aaa; border-radius:6px; padding:4px 10px; cursor:pointer; font-size:13px; }
+#schedule-scroll { overflow-y:auto; padding:0 0 16px; }
+#schedule-table { width:100%; border-collapse:collapse; font-size:12px; }
+#schedule-table th { position:sticky; top:0; background:#131d2e; color:#7ec8e3; padding:10px 12px; text-align:left; font-size:11px; text-transform:uppercase; letter-spacing:.06em; border-bottom:2px solid #2a3a4a; white-space:nowrap; }
+#schedule-table td { padding:10px 12px; border-bottom:1px solid #1a2535; color:#c8d4e0; vertical-align:top; line-height:1.5; }
+.td-day { font-weight:700; white-space:nowrap; }
+.td-date { color:#7ec8e3; white-space:nowrap; font-size:11px; }
+.td-km { text-align:right; font-weight:700; color:#f4a261; white-space:nowrap; }
+.td-km-total { text-align:right; color:#666; font-size:10.5px; white-space:nowrap; }
+.td-camp { color:#2ecc71; font-size:11px; }
+.td-sites { color:#aaa; font-size:11px; line-height:1.6; }
+#schedule-footer { padding:12px 20px; border-top:1px solid #2a3a4a; flex-shrink:0; display:flex; gap:24px; flex-wrap:wrap; }
+.foot-stat { font-size:12px; color:#aaa; }
+.foot-stat b { color:#7ec8e3; }
 </style>
 </head>
 <body>
@@ -101,6 +120,7 @@ h1 { font-size:14px; font-weight:600; }
     <div class="grp-menu" id="grpmenu-actions">
       <button class="sub-btn" onclick="toggleHeader();closeAllGroups()"><span class="icon">ℹ️</span><span class="label">Infos voyage</span><span class="check"></span></button>
       <button class="sub-btn" onclick="map.setView([65.0,-19.0],6);closeAllGroups()"><span class="icon">🎯</span><span class="label">Recentrer la carte</span><span class="check"></span></button>
+      <button class="sub-btn" onclick="toggleSchedule();closeAllGroups()"><span class="icon">📋</span><span class="label">Programme jour par jour</span><span class="check"></span></button>
       <button class="sub-btn" onclick="toggleLegend();closeAllGroups()"><span class="icon">📖</span><span class="label">Légende</span><span class="check"></span></button>
       <div class="sub-sep"></div>
       <div class="sub-label">Mode hors-ligne</div>
@@ -108,6 +128,26 @@ h1 { font-size:14px; font-weight:600; }
       <button class="sub-btn" onclick="clearCache()"><span class="icon">🗑️</span><span class="label">Vider le cache</span><span class="check"></span></button>
       <button class="sub-btn" onclick="getCacheInfo()"><span class="icon">📊</span><span class="label">Infos cache</span><span class="check"></span></button>
       <div id="cache-status"></div>
+    </div>
+  </div>
+</div>
+
+<!-- Schedule Panel -->
+<div id="schedule-panel" onclick="if(event.target===this)toggleSchedule()">
+  <div id="schedule-inner">
+    <div id="schedule-header">
+      <h2>📋 Programme — Islande 4–19 septembre (voyage réalisé)</h2>
+      <button id="schedule-close" onclick="toggleSchedule()">✕ Fermer</button>
+    </div>
+    <div id="schedule-scroll">
+      <table id="schedule-table">
+        <thead><tr><th>Jour</th><th>Date</th><th style="text-align:right">Km/jour</th><th style="text-align:right">Total</th><th>Nuit</th><th>Points d'intérêt</th></tr></thead>
+        <tbody id="schedule-body"></tbody>
+      </table>
+    </div>
+    <div id="schedule-footer">
+      <div class="foot-stat" id="foot-total">Distance : <b>—</b></div>
+      <div class="foot-stat" id="foot-avg">Moyenne : <b>—</b></div>
     </div>
   </div>
 </div>
@@ -124,7 +164,7 @@ h1 { font-size:14px; font-weight:600; }
 <div class="leg"><div class="leg-dot" style="background:#888"></div>📸 = arrêt marquant (détecté automatiquement, voir menu dédié)</div>
 <div class="leg-section">Précision</div>
 <div style="font-size:10.5px;color:#7ec8e3;line-height:1.5">Traces reconstruites à partir des photos géolocalisées (téléphone du conducteur). J0 (arrivée) est masqué par défaut. Le camping de la nuit et les arrêts marquants sont déduits automatiquement (proximité avec des lieux connus / regroupement de photos) — ⚠️ signale une correspondance incertaine, à confirmer manuellement.</div>
-<div style="margin-top:10px;padding-top:8px;border-top:1px solid #2a3a4a;font-size:10px;color:#7ec8e3;line-height:1.5">Kilométrage quotidien : à compléter.</div>
+<div style="margin-top:10px;padding-top:8px;border-top:1px solid #2a3a4a;font-size:10px;color:#7ec8e3;line-height:1.5">Voir le programme jour par jour (⚙️ → 📋) pour le détail des kilomètres et des points d'intérêt.</div>
 </div>
 </div>
 
@@ -207,6 +247,7 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 // ── UI FUNCTIONS ─────────────────────────────────────────────────────────
 function toggleHeader() { document.getElementById('main-header').classList.toggle('visible'); }
 function toggleLegend() { const b=document.getElementById('legend-box'); b.style.display=b.style.display==='none'?'block':'none'; }
+function toggleSchedule() { document.getElementById('schedule-panel').classList.toggle('open'); }
 function toggleGroup(name) {
   const btn=document.getElementById('grpbtn-'+name);
   const menu=document.getElementById('grpmenu-'+name);
@@ -251,11 +292,27 @@ const DAYS = [
   {jour:"J15",date:"2026-09-19",dateLabel:"19 septembre",hue:338,firstTime:"07:47",lastTime:"10:53",endType:"airport",campName:"Aéroport de Keflavík (KEF)",campKm:0,campUncertain:false,defaultOn:true,nightPos:[64.00098,-22.60486],segments:[{type:"foot",coords:[[64.01688,-22.56781],[64.01688,-22.56781],[64.01687,-22.5673],[64.01687,-22.5673],[64.01687,-22.56782],[64.01682,-22.56791],[64.01682,-22.56791],[64.01682,-22.56791],[64.01687,-22.5673],[64.01687,-22.5673]]},{type:"road",coords:[[64.01689,-22.56722],[64.01692,-22.56725],[64.01695,-22.56724],[64.01697,-22.56718],[64.01706,-22.56665],[64.0171,-22.56644],[64.01716,-22.5662],[64.01614,-22.5653],[64.01566,-22.56487],[64.01521,-22.56747],[64.0151,-22.56815],[64.01488,-22.56938],[64.01461,-22.57096],[64.01447,-22.57178],[64.01438,-22.57235],[64.01416,-22.57362],[64.01404,-22.57431],[64.01387,-22.57519],[64.01368,-22.57625],[64.01363,-22.57652],[64.01356,-22.57679],[64.01492,-22.57857],[64.01525,-22.57905],[64.01543,-22.57933],[64.01558,-22.57959],[64.01573,-22.5799],[64.01592,-22.58033],[64.01595,-22.5804],[64.01614,-22.58096],[64.01626,-22.58137],[64.01642,-22.58202],[64.01656,-22.5828],[64.01663,-22.58343],[64.0167,-22.5841],[64.01673,-22.58447],[64.01677,-22.58489],[64.0168,-22.58504],[64.01684,-22.58504],[64.01688,-22.58506],[64.01691,-22.58511],[64.01695,-22.58517],[64.01697,-22.58525],[64.01698,-22.58535],[64.01699,-22.58543],[64.01698,-22.58551],[64.01697,-22.58559],[64.01695,-22.58566],[64.01692,-22.58573],[64.01688,-22.58578],[64.01684,-22.58581],[64.01679,-22.5858],[64.01675,-22.58577],[64.01671,-22.58572],[64.01649,-22.58575],[64.01626,-22.58575],[64.01598,-22.58585],[64.01589,-22.5859],[64.01573,-22.58599],[64.0155,-22.58616],[64.01521,-22.58643],[64.0148,-22.58689],[64.01434,-22.58737],[64.01355,-22.5881],[64.01289,-22.58863],[64.01244,-22.5889],[64.01194,-22.58914],[64.01144,-22.58935],[64.01058,-22.58967],[64.0101,-22.58983],[64.00999,-22.58987],[64.00913,-22.59017],[64.00865,-22.59035],[64.00822,-22.59053],[64.00784,-22.59076],[64.00744,-22.59106],[64.00709,-22.59136],[64.00676,-22.59171],[64.00648,-22.59205],[64.0062,-22.59246],[64.0059,-22.59295],[64.00557,-22.59356],[64.00528,-22.5942],[64.00495,-22.59499],[64.00468,-22.59576],[64.0045,-22.59634],[64.00435,-22.59689],[64.00417,-22.59758],[64.00396,-22.59854],[64.00385,-22.59903],[64.00374,-22.59953],[64.00358,-22.60013],[64.0034,-22.60073],[64.00332,-22.60097],[64.00327,-22.60118],[64.00314,-22.60152],[64.00302,-22.60183],[64.00298,-22.60194],[64.00296,-22.60206],[64.00294,-22.60226],[64.00295,-22.6023],[64.00297,-22.6024],[64.00297,-22.60251],[64.00296,-22.60261],[64.00293,-22.6027],[64.00291,-22.60275],[64.00285,-22.60316],[64.00281,-22.60344],[64.00275,-22.6038],[64.00273,-22.60401],[64.0027,-22.60455],[64.00268,-22.60491],[64.00268,-22.60532],[64.0027,-22.60594],[64.00276,-22.60746],[64.00276,-22.60806],[64.00276,-22.60863],[64.00275,-22.60913],[64.00272,-22.60974],[64.00269,-22.61027],[64.00264,-22.61084],[64.00253,-22.61189],[64.00211,-22.61562],[64.00172,-22.61878],[64.00134,-22.62206],[64.00106,-22.62432],[64.00097,-22.62502],[64.00089,-22.62546],[64.0008,-22.62591],[64.00072,-22.62625],[64.00062,-22.6266],[64.00051,-22.62692],[64.00037,-22.62722],[64.00017,-22.62753],[64.0,-22.62775],[63.99987,-22.62786],[63.99976,-22.62794],[63.99967,-22.62799],[63.99957,-22.62803],[63.9995,-22.62805],[63.99943,-22.62806],[63.9993,-22.62807],[63.99916,-22.62805],[63.99904,-22.62801],[63.99896,-22.62796],[63.99885,-22.6279],[63.99874,-22.62782],[63.99865,-22.62773],[63.99862,-22.6277],[63.99856,-22.62763],[63.99847,-22.62751],[63.99839,-22.6274],[63.99831,-22.62724],[63.99817,-22.62713],[63.99811,-22.62709],[63.99804,-22.62704],[63.99795,-22.62699],[63.99783,-22.62694],[63.9978,-22.62694],[63.99775,-22.62694],[63.9973,-22.62693],[63.99709,-22.62692],[63.99707,-22.62692],[63.99701,-22.62692],[63.9969,-22.62692],[63.99672,-22.62696],[63.99644,-22.62697],[63.99637,-22.62695],[63.99633,-22.62691],[63.99629,-22.62686],[63.99626,-22.6268],[63.99623,-22.62672],[63.99621,-22.62663],[63.99619,-22.62653],[63.99618,-22.62643],[63.99617,-22.62627],[63.99617,-22.62577],[63.99619,-22.62565],[63.99622,-22.62555],[63.99625,-22.62547],[63.99628,-22.62541],[63.99632,-22.62536],[63.99636,-22.62533],[63.99639,-22.62533]]},{type:"foot",coords:[[63.99638,-22.62462],[63.9959,-22.62328],[63.99593,-22.62258],[63.99593,-22.62258],[63.99368,-22.62209],[63.99368,-22.62209]]},{type:"road",coords:[[63.99569,-22.61751],[63.99569,-22.61751]]},{type:"foot",coords:[[63.99307,-22.61821],[63.99307,-22.61821],[63.99368,-22.62209],[63.99277,-22.61826],[63.99277,-22.61826],[63.99277,-22.61826],[63.99277,-22.61826],[64.00098,-22.60486],[64.00098,-22.60486]]}]}
 ];
 
-// Kilométrage quotidien (photo du compteur chaque soir) — à compléter.
+// Kilométrage quotidien (photo du compteur chaque soir).
 // KM_INITIAL = compteur du véhicule au départ (photo initiale, J0 avant trajet).
-let KM_INITIAL = null;
-const KM_LOG = {};
-DAYS.forEach(d => { KM_LOG[d.date] = null; });
+let KM_INITIAL = 17329.7;
+const KM_LOG = {
+  "2026-09-04": 17379.3,
+  "2026-09-05": 17608.1,
+  "2026-09-06": 17836.4,
+  "2026-09-07": 18111.4,
+  "2026-09-08": 18310.7,
+  "2026-09-09": 18490.4,
+  "2026-09-10": 18608.2,
+  "2026-09-11": 18792.8,
+  "2026-09-12": 19049.4,
+  "2026-09-13": 19299.1,
+  "2026-09-14": 19448.4,
+  "2026-09-15": 19545.7,
+  "2026-09-16": 19676.8,
+  "2026-09-17": 19855.4,
+  "2026-09-18": 20069.4,
+  "2026-09-19": null
+};
 
 // Arrêts marquants — première liste calculée automatiquement en regroupant
 // les photos proches géographiquement (et temporellement) les unes des
@@ -474,6 +531,44 @@ function toggleLayer(name) {
   else map.removeLayer(layerStops);
   syncSubBtn('btn-stops', layerState.stops);
 }
+
+// ── PROGRAMME JOUR PAR JOUR ─────────────────────────────────────────────
+function renderSchedule() {
+  const tbody = document.getElementById('schedule-body');
+  tbody.innerHTML = '';
+  let lastKnownTotal = null;
+
+  DAYS.forEach((d, idx) => {
+    const km = KM_LOG[d.date];
+    const prevKm = idx === 0 ? KM_INITIAL : KM_LOG[DAYS[idx-1].date];
+    const delta = (km != null && prevKm != null) ? km - prevKm : null;
+    const total = km != null ? km - KM_INITIAL : null;
+    if (total != null) lastKnownTotal = total;
+
+    const kmCell = delta != null ? `<b>${delta.toLocaleString('fr-FR',{maximumFractionDigits:1})} km</b>` : '<span style="color:#555">—</span>';
+    const totalCell = total != null ? `${total.toLocaleString('fr-FR',{maximumFractionDigits:1})} km` : '—';
+
+    const nightLabel = d.endType === 'airport' ? `✈️ ${d.campName}` : `🌙 ${d.campName}${d.campUncertain ? ' ⚠️' : ''}`;
+
+    const stops = STOPS.filter(s => s.date === d.date);
+    const sitesCell = stops.length
+      ? stops.map(s => `${s.matched ? '' : '⚠️ '}${s.name}`).join(' · ')
+      : '<span style="color:#555">—</span>';
+
+    const tr = document.createElement('tr');
+    tr.innerHTML = `<td class="td-day">${d.jour}</td><td class="td-date">${d.dateLabel}</td><td class="td-km">${kmCell}</td><td class="td-km-total">${totalCell}</td><td class="td-camp">${nightLabel}</td><td class="td-sites">${sitesCell}</td>`;
+    tbody.appendChild(tr);
+  });
+
+  document.getElementById('foot-total').innerHTML = lastKnownTotal != null
+    ? `Distance : <b>${lastKnownTotal.toLocaleString('fr-FR',{maximumFractionDigits:1})} km</b>`
+    : 'Distance : <b>—</b>';
+  const nDaysWithKm = DAYS.filter(d => KM_LOG[d.date] != null).length;
+  document.getElementById('foot-avg').innerHTML = (lastKnownTotal != null && nDaysWithKm)
+    ? `Moyenne : <b>${Math.round(lastKnownTotal / nDaysWithKm).toLocaleString('fr-FR')} km/jour</b>`
+    : 'Moyenne : <b>—</b>';
+}
+renderSchedule();
 
 document.getElementById('loading').style.display = 'none';
 </script>
