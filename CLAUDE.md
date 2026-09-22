@@ -11,7 +11,7 @@ A single-page interactive Leaflet map for a self-planned Iceland road trip (Ring
 - `sw.js` — a small service worker for offline tile/route caching, registered only over HTTPS, shared as-is by both `index.html` and `voyage.html`.
 - `hikes.json` — ~1000 hikes (route geometry + metadata), fetched at runtime, not inlined in `index.html`.
 - `gpx/` — ~1000 downloadable `.gpx` files, one per hike, named by their Komoot numeric id (see "Hikes" below).
-- `CNAME` — GitHub Pages custom domain (`github.itcg-consulting.com`); required for `voyage.html`'s Immich thumbnails to work (see `VOYAGE.md`).
+- `CNAME` — GitHub Pages custom domain (`islande2026.itcg-consulting.com`); required for `voyage.html`'s Immich thumbnails to work (see `VOYAGE.md`).
 
 ## Commands
 
