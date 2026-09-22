@@ -113,6 +113,7 @@ h1 { font-size:14px; font-weight:600; }
     <div class="grp-menu" id="grpmenu-poi">
       <div class="sub-label">Points d'intérêt</div>
       <button class="sub-btn" id="btn-stops" onclick="toggleLayer('stops')"><span class="icon">📸</span><span class="label">Arrêts marquants (106)</span><span class="check"></span></button>
+      <button class="sub-btn" id="btn-stopsMinor" onclick="toggleLayer('stopsMinor')"><span class="icon">🔹</span><span class="label">Autres arrêts, moins marquants (29)</span><span class="check"></span></button>
     </div>
   </div>
   <div class="ctrl-group">
@@ -427,6 +428,39 @@ const STOPS = [
   {date:"2026-09-19",lat:63.99314,lon:-22.61952,name:"Arrêt près de Reykjanesbær",matched:false,hue:338,nPhotos:9,timeRange:"10:15-10:26",assetId:"16a1fa1c-9326-4b4d-882e-0ca5869ec584"}
 ];
 
+// Arrêts secondaires (2-3 photos, >=1min) — désactivés par défaut.
+const STOPS_MINOR = [
+  {date:"2026-09-04",lat:63.98132,lon:-22.54433,name:"Arrêt près de Reykjanesbær",matched:false,hue:0,nPhotos:2,timeRange:"20:39-21:12",assetId:"324f3299-d575-4162-8ced-0c3b0e6e708d"},
+  {date:"2026-09-05",lat:64.76815,lon:-23.61911,name:"Arrêt près de Ólafsvík",matched:false,hue:22,nPhotos:3,timeRange:"19:21-19:23",assetId:"e00f89c9-f219-42d7-9a05-f1c2d5b142a2"},
+  {date:"2026-09-05",lat:64.75145,lon:-23.64407,name:"Arrêt près de Ólafsvík",matched:false,hue:22,nPhotos:7,timeRange:"19:37-19:39",assetId:"5348ee55-444b-4bdf-9c6b-a0e6d0691fc1"},
+  {date:"2026-09-06",lat:64.92623,lon:-23.31239,name:"Kirkjufellsfoss",matched:true,hue:45,nPhotos:6,timeRange:"15:46-15:49",assetId:"4e5bfd8e-08e1-4491-9238-373cfe26bdba"},
+  {date:"2026-09-07",lat:65.7507,lon:-19.65075,name:"1238 The Battle of Iceland",matched:true,hue:68,nPhotos:3,timeRange:"14:09-14:25",assetId:"0f714d8a-21cd-4a7a-8c1f-ce3ebd8155aa"},
+  {date:"2026-09-08",lat:65.70515,lon:-17.6644,name:"Arrêt près de Laugar",matched:false,hue:90,nPhotos:5,timeRange:"12:27-12:29",assetId:"09fe0a87-2b99-4411-8bc5-79c1efe2db92"},
+  {date:"2026-09-09",lat:65.62447,lon:-16.18842,name:"Arrêt (à nommer)",matched:false,hue:112,nPhotos:3,timeRange:"16:43-17:11",assetId:"f00b256a-1d91-40ef-8cf9-53db96cb4c75"},
+  {date:"2026-09-10",lat:65.1592,lon:-15.82273,name:"Arrêt (à nommer)",matched:false,hue:135,nPhotos:6,timeRange:"12:21-12:23",assetId:"27072905-907c-431f-8cff-0ad25abbc73c"},
+  {date:"2026-09-11",lat:65.06788,lon:-16.39519,name:"Arrêt (à nommer)",matched:false,hue:158,nPhotos:5,timeRange:"11:13-11:14",assetId:"a7b0f09e-23f4-4c4f-be09-97e9695ad35f"},
+  {date:"2026-09-11",lat:65.03625,lon:-16.33175,name:"Arrêt (à nommer)",matched:false,hue:158,nPhotos:4,timeRange:"11:31-11:33",assetId:"f77a5493-e95d-4c6a-9374-38c985dec6e7"},
+  {date:"2026-09-11",lat:65.13783,lon:-15.65581,name:"Arrêt (à nommer)",matched:false,hue:158,nPhotos:6,timeRange:"14:55-14:58",assetId:"1044e4b0-c161-46cb-ac00-cdb168e9cc3f"},
+  {date:"2026-09-11",lat:65.08083,lon:-15.67787,name:"Arrêt (à nommer)",matched:false,hue:158,nPhotos:6,timeRange:"15:28-15:29",assetId:"2cb1cd16-705a-44b8-891c-bf915478db7d"},
+  {date:"2026-09-12",lat:65.09993,lon:-14.74056,name:"Arrêt près de Egilsstaðir",matched:false,hue:180,nPhotos:2,timeRange:"10:50-10:57",assetId:"52818b49-88da-446d-afeb-67b47a26c004"},
+  {date:"2026-09-12",lat:64.70706,lon:-14.31384,name:"Arrêt près de Fáskrúðsfjörður",matched:false,hue:180,nPhotos:5,timeRange:"19:40-19:41",assetId:"68c4f188-7aa5-4685-b6a8-685441028b0c"},
+  {date:"2026-09-13",lat:64.25671,lon:-14.99833,name:"Viking Café",matched:true,hue:202,nPhotos:2,timeRange:"13:19-13:22",assetId:"1bf2dd25-1774-444d-a7d5-e431a0a5447f"},
+  {date:"2026-09-13",lat:64.25267,lon:-15.21248,name:"Svavarssafn - Listasafn",matched:true,hue:202,nPhotos:2,timeRange:"13:39-13:43",assetId:"a7e907a1-c254-4826-8dfa-e8bad5ced109"},
+  {date:"2026-09-14",lat:64.02037,lon:-16.94714,name:"Arrêt (à nommer)",matched:false,hue:225,nPhotos:2,timeRange:"12:08-12:13",assetId:"79da48d9-1314-4bb7-bdb4-d3874c65e711"},
+  {date:"2026-09-14",lat:63.95685,lon:-17.4762,name:"Arrêt (à nommer)",matched:false,hue:225,nPhotos:6,timeRange:"13:16-13:17",assetId:"1d5c2e89-cf45-48dd-846f-cf143b8e8940"},
+  {date:"2026-09-14",lat:63.79452,lon:-18.03867,name:"Kirkjugólf",matched:true,hue:225,nPhotos:2,timeRange:"14:18-14:22",assetId:"a7a5c7b4-b4de-4732-ab78-042808f6609c"},
+  {date:"2026-09-15",lat:63.50204,lon:-20.15291,name:"Arrêt près de Vestmannaeyjar",matched:false,hue:248,nPhotos:9,timeRange:"15:52-15:54",assetId:"491dc0e6-46b7-4618-95e2-2ab551d7fc2b"},
+  {date:"2026-09-15",lat:63.49602,lon:-20.16261,name:"Arrêt près de Vestmannaeyjar",matched:false,hue:248,nPhotos:7,timeRange:"15:54-15:55",assetId:"90b69317-3cd2-4639-ad09-51111ff9735e"},
+  {date:"2026-09-15",lat:63.48149,lon:-20.18621,name:"Arrêt près de Vestmannaeyjar",matched:false,hue:248,nPhotos:8,timeRange:"15:59-16:01",assetId:"86a0ceb4-679e-432d-913a-f509f2e1c523"},
+  {date:"2026-09-15",lat:63.4607,lon:-20.21942,name:"Arrêt près de Vestmannaeyjar",matched:false,hue:248,nPhotos:11,timeRange:"16:07-16:10",assetId:"be498790-3dad-4fac-8b77-2ccca4256d71"},
+  {date:"2026-09-15",lat:63.45382,lon:-20.22965,name:"Arrêt près de Vestmannaeyjar",matched:false,hue:248,nPhotos:4,timeRange:"16:10-16:11",assetId:"f2f986a4-96ad-4258-8de2-e54314f7fcef"},
+  {date:"2026-09-15",lat:63.44926,lon:-20.23943,name:"Arrêt près de Vestmannaeyjar",matched:false,hue:248,nPhotos:6,timeRange:"16:12-16:13",assetId:"116225ad-f4e3-4a8d-97a7-ae4a72483576"},
+  {date:"2026-09-15",lat:63.44698,lon:-20.2539,name:"Landlyst",matched:true,hue:248,nPhotos:16,timeRange:"16:13-16:16",assetId:"0afd413e-0c77-46d2-8ea4-e8ca4be41ad7"},
+  {date:"2026-09-15",lat:63.43282,lon:-20.2474,name:"Eldfell",matched:true,hue:248,nPhotos:14,timeRange:"17:33-17:36",assetId:"ab221a65-90cd-4d6c-a03f-d2902ab7da77"},
+  {date:"2026-09-16",lat:63.92403,lon:-20.67394,name:"Urriðafoss",matched:true,hue:270,nPhotos:13,timeRange:"17:54-17:56",assetId:"1a9937ab-9176-4735-b0bf-9366f2a1cd9c"},
+  {date:"2026-09-18",lat:63.85964,lon:-22.17457,name:"Arrêt près de Grindavík",matched:false,hue:315,nPhotos:8,timeRange:"13:56-13:58",assetId:"b67d32ba-7598-4a2c-9e1e-5c7d479ecbc6"}
+];
+
 
 // ── ICONS ────────────────────────────────────────────────────────────────
 function nightIcon(hue) {
@@ -438,6 +472,11 @@ function stopIcon(hue) {
   return L.divIcon({className:'',
     html:`<div style="width:22px;height:22px;border-radius:50%;background:#fff;border:3px solid hsl(${hue},72%,42%);display:flex;align-items:center;justify-content:center;font-size:11px;box-shadow:0 2px 6px rgba(0,0,0,0.45)">📸</div>`,
     iconSize:[22,22], iconAnchor:[11,11]});
+}
+function stopMinorIcon(hue) {
+  return L.divIcon({className:'',
+    html:`<div style="width:14px;height:14px;border-radius:50%;background:hsl(${hue},72%,60%);border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,0.4)"></div>`,
+    iconSize:[14,14], iconAnchor:[7,7]});
 }
 function airportIcon(hue) {
   return L.divIcon({className:'',
@@ -480,10 +519,14 @@ const IMMICH_BASE_URL = 'https://photo.itcg-consulting.com:5010';
 
 function stopPop(s) {
   const warn = s.matched ? '' : `<div class="popup-warn">⚠️ Nom non identifié — à renseigner manuellement (${s.nPhotos} photos, ${s.timeRange}).</div>`;
+  const thumb = s.assetId
+    ? `<img src="${IMMICH_BASE_URL}/api/assets/${s.assetId}/thumbnail?size=thumbnail" loading="lazy" style="width:100%;height:110px;object-fit:cover;border-radius:6px;margin-bottom:8px;display:block" onerror="this.style.display='none'">`
+    : '';
   const immichLink = s.assetId
     ? `<div style="margin-top:7px"><a href="${IMMICH_BASE_URL}/photos/${s.assetId}" target="_blank" style="display:inline-flex;align-items:center;gap:5px;background:#e8f0fe;color:#1565c0;font-size:11px;font-weight:600;padding:4px 9px;border-radius:5px;text-decoration:none">🔗 Voir les photos sur Immich</a></div>`
     : '';
   return `<div style="padding:2px">
+    ${thumb}
     <span class="popup-day" style="background:hsl(${s.hue},72%,42%)">${s.date.slice(8,10)} septembre</span>
     <div class="popup-title">📸 ${s.name}</div>
     <div class="popup-sub">${s.nPhotos} photos · ${s.timeRange}</div>
@@ -529,12 +572,22 @@ STOPS.forEach(s => {
     .bindPopup(stopPop(s), {maxWidth:280}).addTo(layerStops);
 });
 
+const layerStopsMinor = L.layerGroup();
+STOPS_MINOR.forEach(s => {
+  L.marker([s.lat, s.lon], {icon: stopMinorIcon(s.hue), zIndexOffset:100})
+    .bindPopup(stopPop(s), {maxWidth:280}).addTo(layerStopsMinor);
+});
+
+layerState.stopsMinor = false;
+
 function toggleLayer(name) {
-  if (name !== 'stops') return;
-  layerState.stops = !layerState.stops;
-  if (layerState.stops) layerStops.addTo(map);
-  else map.removeLayer(layerStops);
-  syncSubBtn('btn-stops', layerState.stops);
+  const map_ = {stops: layerStops, stopsMinor: layerStopsMinor};
+  const layer = map_[name];
+  if (!layer) return;
+  layerState[name] = !layerState[name];
+  if (layerState[name]) layer.addTo(map);
+  else map.removeLayer(layer);
+  syncSubBtn(name === 'stops' ? 'btn-stops' : 'btn-stopsMinor', layerState[name]);
 }
 
 // ── PROGRAMME JOUR PAR JOUR ─────────────────────────────────────────────
