@@ -7,9 +7,11 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 A single-page interactive Leaflet map for a self-planned Iceland road trip (Ring Road + F-roads, campsites, hikes, réttir sheep round-ups, POIs). There is no framework, no package manager, and no build step — the entire app is one HTML file.
 
 - `index.html` — everything: CSS, DOM, and JS (~2300+ lines) for the map, controls, legend, and day-by-day schedule panel.
-- `sw.js` — a small service worker for offline tile/route caching, registered only over HTTPS.
+- `voyage.html` — a separate, self-contained page: the post-trip journal (actual day-by-day GPS tracks, real campsites, detected stops, mileage), built from a one-time data pipeline (Immich photos → clustering → OSRM road-matching) whose output is baked into static arrays in the file — no live API calls at runtime. See `VOYAGE.md` for the full data pipeline, thresholds, and the custom-domain/cookie reasoning behind it.
+- `sw.js` — a small service worker for offline tile/route caching, registered only over HTTPS, shared as-is by both `index.html` and `voyage.html`.
 - `hikes.json` — ~1000 hikes (route geometry + metadata), fetched at runtime, not inlined in `index.html`.
 - `gpx/` — ~1000 downloadable `.gpx` files, one per hike, named by their Komoot numeric id (see "Hikes" below).
+- `CNAME` — GitHub Pages custom domain (`islande.itcg-consulting.com`); required for `voyage.html`'s Immich thumbnails to work (see `VOYAGE.md`).
 
 ## Commands
 
