@@ -117,6 +117,18 @@ h1 { font-size:14px; font-weight:600; }
     </div>
   </div>
   <div class="ctrl-group">
+    <button class="grp-btn" id="grpbtn-edit" onclick="toggleGroup('edit')">✏️</button>
+    <div class="grp-menu" id="grpmenu-edit">
+      <div class="sub-label">Mode édition</div>
+      <button class="sub-btn" id="btn-editmode" onclick="toggleEditMode()"><span class="icon">✏️</span><span class="label">Mode édition : désactivé</span><span class="check"></span></button>
+      <div class="sub-sep"></div>
+      <div id="edit-count" style="padding:4px 10px 6px;font-size:11px;color:#7ec8e3">Aucune modification en attente</div>
+      <button class="sub-btn" onclick="sendEditsByEmail()"><span class="icon">📧</span><span class="label">Envoyer par email</span><span class="check"></span></button>
+      <button class="sub-btn" onclick="copyEditsToClipboard()"><span class="icon">📋</span><span class="label">Copier</span><span class="check"></span></button>
+      <button class="sub-btn" onclick="clearEdits()"><span class="icon">🗑️</span><span class="label">Effacer mes modifications</span><span class="check"></span></button>
+    </div>
+  </div>
+  <div class="ctrl-group">
     <button class="grp-btn" id="grpbtn-actions" onclick="toggleGroup('actions')">⚙️</button>
     <div class="grp-menu" id="grpmenu-actions">
       <button class="sub-btn" onclick="toggleHeader();closeAllGroups()"><span class="icon">ℹ️</span><span class="label">Infos voyage</span><span class="check"></span></button>
@@ -266,6 +278,67 @@ document.addEventListener('click', e => { if (!e.target.closest('#controls')) cl
 function syncSubBtn(id, active) {
   const el = document.getElementById(id);
   if (el) el.classList.toggle('active', active);
+}
+
+
+// ── MODE ÉDITION (local, sans backend) ──────────────────────────────────
+// Les corrections (nom de lieu, photo principale) sont stockées dans le
+// navigateur (localStorage) uniquement — rien n'est jamais envoyé à un
+// serveur. L'utilisateur exporte lui-même ses modifications (email ou
+// presse-papier) pour les transmettre.
+const EDITS_KEY = 'voyage_edits_v1';
+function loadEdits() {
+  try { return JSON.parse(localStorage.getItem(EDITS_KEY) || '{}'); } catch(e) { return {}; }
+}
+let EDITS = loadEdits();
+function saveEdits() {
+  try { localStorage.setItem(EDITS_KEY, JSON.stringify(EDITS)); } catch(e) {}
+  updateEditCount();
+}
+function recordEdit(key, field, value) {
+  if (!EDITS[key]) EDITS[key] = {};
+  if (value == null || value === '') delete EDITS[key][field];
+  else EDITS[key][field] = value;
+  if (Object.keys(EDITS[key]).length === 0) delete EDITS[key];
+  saveEdits();
+}
+function updateEditCount() {
+  const n = Object.keys(EDITS).length;
+  const el = document.getElementById('edit-count');
+  if (el) el.textContent = n === 0 ? 'Aucune modification en attente' : `${n} lieu${n>1?'x':''} modifié${n>1?'s':''} en attente`;
+}
+function escAttr(s) {
+  return String(s).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;');
+}
+
+let editMode = false;
+function toggleEditMode() {
+  editMode = !editMode;
+  syncSubBtn('btn-editmode', editMode);
+  const btn = document.getElementById('btn-editmode');
+  if (btn) btn.querySelector('.label').textContent = editMode ? 'Mode édition : activé ✅' : 'Mode édition : désactivé';
+}
+
+function editsSummaryText() {
+  return JSON.stringify(EDITS, null, 2);
+}
+function sendEditsByEmail() {
+  if (Object.keys(EDITS).length === 0) { alert('Aucune modification à envoyer.'); return; }
+  const subject = encodeURIComponent('Modifications carte voyage Islande');
+  const body = encodeURIComponent(editsSummaryText());
+  window.location.href = `mailto:?subject=${subject}&body=${body}`;
+}
+function copyEditsToClipboard() {
+  if (Object.keys(EDITS).length === 0) { alert('Aucune modification à copier.'); return; }
+  navigator.clipboard.writeText(editsSummaryText())
+    .then(() => alert('Modifications copiées dans le presse-papier.'))
+    .catch(() => alert('Copie automatique impossible sur ce navigateur.'));
+}
+function clearEdits() {
+  if (Object.keys(EDITS).length === 0) return;
+  if (!confirm('Effacer toutes les modifications en attente ?')) return;
+  EDITS = {};
+  saveEdits();
 }
 
 
@@ -594,23 +667,31 @@ function kmLine(date) {
 }
 
 function dayPop(d) {
+  const editKey = 'day:' + d.date;
+  const edit = EDITS[editKey] || {};
+  const campName = edit.campName || d.campName;
+  const editUi = editMode
+    ? `<div style="margin-top:7px"><input type="text" value="${escAttr(campName)}" placeholder="Nom du camping" oninput="recordEdit('${editKey}','campName', this.value.trim() || null)" style="width:100%;font-size:11px;padding:4px 6px;border:1px solid #ccc;border-radius:4px;box-sizing:border-box"></div>`
+    : '';
   if (d.endType === 'airport') {
     return `<div style="padding:2px">
       <span class="popup-day" style="background:hsl(${d.hue},72%,42%)">${d.jour} — ${d.dateLabel}</span>
-      <div class="popup-title">✈️ ${d.campName}</div>
+      <div class="popup-title">✈️ ${campName}</div>
       <div class="popup-sub">📍 Fin du voyage — dernière position avant l'embarquement (${d.lastTime})</div>
       ${kmLine(d.date)}
+      ${editUi}
     </div>`;
   }
-  const campWarn = d.campUncertain
+  const campWarn = (d.campUncertain && !edit.campName)
     ? `<div class="popup-warn">⚠️ Camping le plus proche à ${d.campKm} km — position à confirmer manuellement.</div>`
     : '';
   return `<div style="padding:2px">
     <span class="popup-day" style="background:hsl(${d.hue},72%,42%)">${d.jour} — ${d.dateLabel}</span>
-    <div class="popup-title">🌙 ${d.campName}</div>
+    <div class="popup-title">🌙 ${campName}</div>
     <div class="popup-sub">📍 Position déduite de la dernière photo géolocalisée (${d.lastTime})</div>
     ${campWarn}
     ${kmLine(d.date)}
+    ${editUi}
   </div>`;
 }
 
@@ -627,32 +708,60 @@ function navStopPhoto(uid, dir) {
   const img = document.getElementById('stopimg-'+uid);
   const badge = document.getElementById('stopbadge-'+uid);
   const link = document.getElementById('stoplink-'+uid);
+  const star = document.getElementById('stopstar-'+uid);
   if (img) { img.style.display = 'block'; if (img.parentElement) img.parentElement.style.display = ''; img.src = `${IMMICH_BASE_URL}/api/assets/${id}/thumbnail?size=thumbnail`; }
   if (badge) badge.textContent = `${time} · ${s._idx+1}/${s.photos.length}`;
   if (link) link.href = `${IMMICH_BASE_URL}/photos/${id}`;
+  if (star) star.textContent = ((EDITS['stop:'+uid]||{}).favoriteAssetId === id) ? '⭐' : '☆';
+}
+
+function setFavoritePhoto(uid) {
+  const s = STOP_BY_UID[uid];
+  if (!s) return;
+  const [id] = s.photos[s._idx];
+  recordEdit('stop:'+uid, 'favoriteAssetId', id);
+  const star = document.getElementById('stopstar-'+uid);
+  if (star) star.textContent = '⭐';
 }
 
 function stopPop(s) {
-  const warn = s.matched ? '' : `<div class="popup-warn">⚠️ Nom non identifié — à renseigner manuellement (${s.nPhotos} photos, ${s.timeRange}).</div>`;
-  const [firstId, firstTime] = s.photos[0];
+  const editKey = 'stop:' + s.uid;
+  const edit = EDITS[editKey] || {};
+  const displayName = edit.name || s.name;
+  const warn = (s.matched || edit.name) ? '' : `<div class="popup-warn">⚠️ Nom non identifié — à renseigner manuellement (${s.nPhotos} photos, ${s.timeRange}).</div>`;
+  let idx = 0;
+  if (edit.favoriteAssetId) {
+    const fi = s.photos.findIndex(p => p[0] === edit.favoriteAssetId);
+    if (fi >= 0) idx = fi;
+  }
+  s._idx = idx;
+  const [firstId, firstTime] = s.photos[idx];
   const hasMultiple = s.photos.length > 1;
   const nav = hasMultiple ? `
       <button onclick="navStopPhoto('${s.uid}',-1)" style="position:absolute;top:50%;left:4px;transform:translateY(-50%);width:24px;height:24px;border-radius:50%;background:rgba(0,0,0,0.55);color:#fff;border:none;cursor:pointer;font-size:14px;line-height:1;padding:0">‹</button>
       <button onclick="navStopPhoto('${s.uid}',1)" style="position:absolute;top:50%;right:4px;transform:translateY(-50%);width:24px;height:24px;border-radius:50%;background:rgba(0,0,0,0.55);color:#fff;border:none;cursor:pointer;font-size:14px;line-height:1;padding:0">›</button>` : '';
-  const badgeText = hasMultiple ? `${firstTime} · 1/${s.photos.length}` : firstTime;
+  const badgeText = hasMultiple ? `${firstTime} · ${idx+1}/${s.photos.length}` : firstTime;
+  const favBtn = editMode
+    ? `<button id="stopstar-${s.uid}" onclick="setFavoritePhoto('${s.uid}')" title="Définir comme photo principale" style="position:absolute;bottom:4px;left:4px;background:rgba(0,0,0,0.55);color:#fff;border:none;border-radius:4px;font-size:12px;padding:2px 6px;cursor:pointer">${edit.favoriteAssetId === firstId ? '⭐' : '☆'}</button>`
+    : '';
   const thumb = `<div style="position:relative;margin-bottom:8px">
       <img id="stopimg-${s.uid}" src="${IMMICH_BASE_URL}/api/assets/${firstId}/thumbnail?size=thumbnail" loading="lazy" style="width:100%;height:110px;object-fit:cover;border-radius:6px;display:block" onerror="this.parentElement.style.display='none'">
       <div id="stopbadge-${s.uid}" style="position:absolute;bottom:4px;right:4px;background:rgba(0,0,0,0.6);color:#fff;font-size:10px;padding:1px 6px;border-radius:4px">${badgeText}</div>
+      ${favBtn}
       ${nav}
     </div>`;
   const immichLink = `<div style="margin-top:7px"><a id="stoplink-${s.uid}" href="${IMMICH_BASE_URL}/photos/${firstId}" target="_blank" style="display:inline-flex;align-items:center;gap:5px;background:#e8f0fe;color:#1565c0;font-size:11px;font-weight:600;padding:4px 9px;border-radius:5px;text-decoration:none">🔗 Voir les photos sur Immich</a></div>`;
+  const editUi = editMode
+    ? `<div style="margin-top:7px"><input type="text" value="${escAttr(displayName)}" placeholder="Nom du lieu" oninput="recordEdit('${editKey}','name', this.value.trim() || null)" style="width:100%;font-size:11px;padding:4px 6px;border:1px solid #ccc;border-radius:4px;box-sizing:border-box"></div>`
+    : '';
   return `<div style="padding:2px">
     ${thumb}
     <span class="popup-day" style="background:hsl(${s.hue},72%,42%)">${s.date.slice(8,10)} septembre</span>
-    <div class="popup-title">📸 ${s.name}</div>
+    <div class="popup-title">📸 ${displayName}</div>
     <div class="popup-sub">${s.nPhotos} photos · ${s.timeRange}</div>
     ${warn}
     ${immichLink}
+    ${editUi}
   </div>`;
 }
 
@@ -677,7 +786,7 @@ DAYS.forEach(d => {
 
   const icon = d.endType === 'airport' ? airportIcon(d.hue) : nightIcon(d.hue);
   L.marker(d.nightPos, {icon, zIndexOffset:200})
-    .bindPopup(dayPop(d), {maxWidth:290}).addTo(layer);
+    .bindPopup(() => dayPop(d), {maxWidth:290}).addTo(layer);
 });
 
 function toggleDay(date) {
@@ -693,13 +802,13 @@ registerStops(STOPS_MINOR);
 const layerStops = L.layerGroup();
 STOPS.forEach(s => {
   L.marker([s.lat, s.lon], {icon: stopIcon(s.hue), zIndexOffset:150})
-    .bindPopup(stopPop(s), {maxWidth:280}).addTo(layerStops);
+    .bindPopup(() => stopPop(s), {maxWidth:280}).addTo(layerStops);
 });
 
 const layerStopsMinor = L.layerGroup();
 STOPS_MINOR.forEach(s => {
   L.marker([s.lat, s.lon], {icon: stopMinorIcon(s.hue), zIndexOffset:100})
-    .bindPopup(stopPop(s), {maxWidth:280}).addTo(layerStopsMinor);
+    .bindPopup(() => stopPop(s), {maxWidth:280}).addTo(layerStopsMinor);
 });
 
 layerState.stopsMinor = false;
@@ -751,6 +860,7 @@ function renderSchedule() {
     : 'Moyenne : <b>—</b>';
 }
 renderSchedule();
+updateEditCount();
 
 document.getElementById('loading').style.display = 'none';
 </script>

@@ -66,6 +66,16 @@ Chaque arrêt porte la liste complète de ses photos (`photos:[[id,"HH:MM"], ...
 
 La recherche Immich (filtre par plage horaire, `takenAfter`/`takenBefore`) ne lit **aucun paramètre d'URL** au chargement dans cette version (vérifié dans le bundle JS du client web) — impossible de créer un lien qui pré-filtre une liste de photos par heure. La seule façon d'obtenir une vraie galerie filtrée serait un "shared link" Immich (écriture via l'API, un par arrêt) — **délibérément écarté** : la clé API utilisée est documentée comme lecture seule, et créer ~100+ liens partagés publics n'a pas été jugé souhaitable.
 
+## Mode édition (local, sans backend)
+
+Bouton ✏️ dédié dans les contrôles (au même niveau que 🗓️/📸/⚙️). Une fois activé, les popups d'arrêts et de nuit affichent un champ texte pour corriger le nom du lieu, et un bouton ☆/⭐ sous la photo affichée (arrêts uniquement) pour la définir comme photo principale — utilise la photo actuellement affichée par les flèches de navigation, pas forcément `photos[0]`.
+
+- **Stockage** : `localStorage` du navigateur uniquement (clé `voyage_edits_v1`), jamais envoyé à un serveur. Format : `{"stop:<uid>": {name, favoriteAssetId}, "day:<date>": {campName}}`.
+- **Pourquoi pas de backend** : le site est public — n'importe qui peut activer le mode édition. Sans backend d'écriture, ce n'est pas un problème (chaque modification reste dans le navigateur de la personne qui l'a faite) ; un vrai endpoint d'écriture aurait nécessité une authentification pour éviter que n'importe quel visiteur modifie les données partagées.
+- **Application immédiate côté affichage** : les popups (`stopPop`/`dayPop`) sont liées via `bindPopup(() => ...)` (fonction, pas chaîne) pour se régénérer à chaque ouverture et refléter `EDITS`/`editMode` à jour sans recharger la page.
+- **Export** : menu ✏️ → "Envoyer par email" (lien `mailto:` avec le JSON des modifications dans le corps, destinataire laissé vide à remplir par l'utilisateur) ou "Copier" (presse-papier, avec repli si l'API Clipboard échoue). "Effacer mes modifications" vide `EDITS` et le `localStorage` après confirmation.
+- **Intégration définitive** : l'utilisateur transmet le JSON exporté ; les champs `name`/`campName` remplacent la valeur correspondante dans `STOPS`/`STOPS_MINOR`/`DAYS`, et `favoriteAssetId` fait passer cette photo en tête du tableau `photos` de l'arrêt concerné (même mécanique que l'ordre chronologique actuel, juste réordonné).
+
 ## Sécurité — à respecter si ce module est régénéré ou étendu
 
 - Ne jamais écrire une clé API Immich (ni aucun secret) dans ce dépôt, y compris dans des commentaires ou des scripts de génération commités.
