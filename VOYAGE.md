@@ -46,9 +46,11 @@ Les arrêts sont des regroupements de photos proches dans l'espace et le temps �
 1. **Clustering séquentiel** : les photos triées chronologiquement sont regroupées tant qu'elles restent à ≤ **250 m** (`CLUSTER_RADIUS_KM = 0.25`) du centre du groupe en cours.
 2. **Fusion** : deux groupes voisins sont recollés si l'écart est ≤ **20 min** (`MERGE_GAP_MIN`) ET ≤ **600 m** (`MERGE_DIST_KM`).
 3. **Deux niveaux** (le dernier groupe du jour, qui correspond à la nuit, est toujours exclu des deux) :
-   - **`STOPS`** (arrêts marquants, 106) : ≥ 4 photos ET ≥ 3 min de présence.
+   - **`STOPS`** (arrêts marquants, 107) : ≥ 4 photos ET ≥ 3 min de présence.
    - **`STOPS_MINOR`** (arrêts secondaires, 128) : tout le reste des groupes, dès 2 photos, sans contrainte de durée — désactivé par défaut (menu 📸 → 🔹), car nettement plus dense.
 4. **Nom** : plus proche lieu connu (POI ou camping d'`index.html`, si à ≤ 600 m) sinon `Arrêt près de <ville EXIF>` sinon `Arrêt (à nommer)` — `matched:false` déclenche un badge ⚠️ dans le popup.
+
+**Exception manuelle** : `m106` (14/09, "Aurores boréales - Vík Campsite") est le dernier groupe du jour (normalement toujours exclu, voir ci-dessous) ajouté à la main à `STOPS` sur demande explicite, parce qu'il contenait une photo marquante (aurores boréales) à rendre trouvable sur la carte sans la confondre avec le marqueur 🌙 de nuit. `uid` n'est qu'une clé de lookup (`STOP_BY_UID`), pas un index de tableau — ajouter une entrée en fin de tableau est sans risque, mais **ne pas oublier la virgule de fin de ligne sur l'ancien dernier élément** (il n'en avait pas besoin tant qu'il était le dernier).
 
 ## Kilométrage
 
