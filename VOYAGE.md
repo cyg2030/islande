@@ -56,10 +56,11 @@ Les arrêts sont des regroupements de photos proches dans l'espace et le temps �
 
 ## Liens et miniatures Immich dans les popups d'arrêts
 
-Chaque arrêt porte l'id de sa **photo représentative** (la première du groupe, chronologiquement) :
+Chaque arrêt porte la liste complète de ses photos (`photos:[[id,"HH:MM"], ...]`, triées chronologiquement) — pas seulement une photo représentative :
 
-- **Lien** `${IMMICH_BASE_URL}/photos/<id>` — route confirmée en inspectant le bundle JS du client web Immich (c'est la route réellement utilisée par l'app pour ouvrir une photo). Ouvre la photo dans la timeline du compte connecté, sans écriture ni clé API.
-- **Miniature** `${IMMICH_BASE_URL}/api/assets/<id>/thumbnail?size=thumbnail` — chargée en `<img>` simple, avec repli silencieux (`onerror` masque l'image) si elle ne charge pas. Elle dépend entièrement du cookie de session du navigateur (voir "Domaine personnalisé" ci-dessus) — sans le domaine `itcg-consulting.com`, ou si l'utilisateur n'est pas connecté à Immich dans ce navigateur, l'image reste masquée mais rien ne casse.
+- **Miniature + navigation** : la première photo du groupe s'affiche par défaut. Si l'arrêt a plusieurs photos, deux flèches (‹ ›) apparaissent sur les bords de l'image ; `navStopPhoto(uid, ±1)` fait défiler la liste (avec retour au début/fin en boucle), met à jour l'image, l'heure affichée dans le coin (`HH:MM · position/total`) et le lien Immich en même temps. `STOP_BY_UID` (rempli par `registerStops()`) est le registre qui relie chaque bouton à son objet `stop` et à l'index courant (`s._idx`).
+- **Miniature** `${IMMICH_BASE_URL}/api/assets/<id>/thumbnail?size=thumbnail` — chargée en `<img>` simple. En cas d'échec (`onerror`), c'est **tout le bloc** (image + heure + flèches) qui se masque, pas seulement l'image seule — sinon les flèches et le badge d'heure restent affichés flottants sans image derrière. Repli entièrement silencieux si l'utilisateur n'est pas connecté à Immich dans ce navigateur ou si le domaine `itcg-consulting.com` n'est pas utilisé (voir "Domaine personnalisé" ci-dessus).
+- **Lien** `${IMMICH_BASE_URL}/photos/<id>` — route confirmée en inspectant le bundle JS du client web Immich (c'est la route réellement utilisée par l'app pour ouvrir une photo). Ouvre la photo affichée dans la timeline du compte connecté, sans écriture ni clé API.
 
 ### Limite connue (déjà explorée, pas de solution simple)
 
