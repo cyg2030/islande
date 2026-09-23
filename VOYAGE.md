@@ -74,7 +74,39 @@ Bouton ✏️ dédié dans les contrôles (au même niveau que 🗓️/📸/⚙�
 - **Pourquoi pas de backend** : le site est public — n'importe qui peut activer le mode édition. Sans backend d'écriture, ce n'est pas un problème (chaque modification reste dans le navigateur de la personne qui l'a faite) ; un vrai endpoint d'écriture aurait nécessité une authentification pour éviter que n'importe quel visiteur modifie les données partagées.
 - **Application immédiate côté affichage** : les popups (`stopPop`/`dayPop`) sont liées via `bindPopup(() => ...)` (fonction, pas chaîne) pour se régénérer à chaque ouverture et refléter `EDITS`/`editMode` à jour sans recharger la page.
 - **Export** : menu ✏️ → "Envoyer par email" (lien `mailto:` avec le JSON des modifications dans le corps, destinataire laissé vide à remplir par l'utilisateur) ou "Copier" (presse-papier, avec repli si l'API Clipboard échoue). "Effacer mes modifications" vide `EDITS` et le `localStorage` après confirmation.
-- **Intégration définitive** : l'utilisateur transmet le JSON exporté ; les champs `name`/`campName` remplacent la valeur correspondante dans `STOPS`/`STOPS_MINOR`/`DAYS`, et `favoriteAssetId` fait passer cette photo en tête du tableau `photos` de l'arrêt concerné (même mécanique que l'ordre chronologique actuel, juste réordonné).
+### Procédure — appliquer un JSON exporté du mode édition
+
+Quand l'utilisateur colle un JSON de ce type (une ou plusieurs clés) :
+
+```json
+{
+  "stop:m91": {"favoriteAssetId": "8575ce28-...", "name": "Nouveau nom"},
+  "day:2026-09-05": {"campName": "Nouveau nom de camping"}
+}
+```
+
+**C'est une opération purement locale sur `voyage.html` — pas besoin de recontacter Immich, de relancer OSRM, ni de recalculer le clustering des arrêts.** Toutes les données existent déjà, figées, dans le fichier. Procédure :
+
+1. **Identifier la clé.**
+   - `stop:<uid>` → l'entrée est dans `const STOPS = [...]` si `uid` commence par `m`, ou dans `const STOPS_MINOR = [...]` si `uid` commence par `n` (index de l'arrêt dans son tableau respectif, ex. `m91` = 92ᵉ élément de `STOPS`).
+   - `day:<date>` (`YYYY-MM-DD`) → l'entrée est dans `const DAYS = [...]`, à faire correspondre via son champ `date`.
+   - Chaque entrée tient sur **une seule ligne** (fichier généré, pas formaté à la main) — la retrouver avec `grep -n '"uid:<uid>"'` ou `grep -n '"date":"YYYY-MM-DD"'` plutôt que d'ouvrir la ligne complète avec l'outil `Read` (elle peut faire des dizaines de Ko à cause du tracé GPS ou de la liste de photos, et fait dépasser les limites de lecture).
+   - Faire l'édition avec des scripts Python/`sed` ciblés (regex sur `re.escape(uid)`), pas avec l'outil `Edit` sur la ligne entière — c'est ce qui a été fait pour les 10 premières mises à jour, voir l'historique git (commit `c3af65f`) pour un script de référence directement réutilisable.
+
+2. **Champ `favoriteAssetId` (arrêts uniquement)** :
+   - Extraire la liste `photos:[["id","HH:MM"], ...]` de la ligne concernée.
+   - Vérifier que l'id donné existe bien dans cette liste — sinon, s'arrêter et signaler l'incohérence à l'utilisateur plutôt que de deviner.
+   - Réordonner : la photo choisie passe en tête (`photos[0]`), le reste garde son ordre relatif d'origine. Ne rien changer d'autre sur cette entrée.
+
+3. **Champ `name` (arrêts) / `campName` (jours)** :
+   - Remplacer directement la valeur de `name:"..."` (ou `campName:"..."`) sur la ligne concernée.
+   - Mettre aussi `matched:true` pour un arrêt (supprime le badge ⚠️ "non identifié") — et `campUncertain:false` pour un jour si la correction porte sur le nom du camping (supprime le badge ⚠️ de distance incertaine). Ce sont des noms confirmés manuellement, donc les avertissements automatiques n'ont plus lieu d'être.
+
+4. **Vérifier** : recharger `voyage.html` (`python3 -m http.server` + navigateur/CDP comme pour les sessions précédentes) et confirmer que la ligne modifiée est toujours un JS valide (pas de guillemet cassé) — un contrôle léger, pas une nouvelle investigation.
+
+5. **Committer et pousser** directement (pas besoin de redemander confirmation à l'utilisateur pour ce type de mise à jour de données ponctuelle — c'est le mode de fonctionnement établi sur ce projet), avec un message citant les `uid`/dates concernés.
+
+Aucune de ces étapes ne nécessite de ressortir la clé API Immich, de relire ce fichier en entier, ni de redériver l'algorithme de clustering — tout est déjà là, il s'agit uniquement de chirurgie de texte ciblée.
 
 ## Sécurité — à respecter si ce module est régénéré ou étendu
 
