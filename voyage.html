@@ -132,7 +132,7 @@ h1 { font-size:14px; font-weight:600; }
     <button class="grp-btn" id="grpbtn-actions" onclick="toggleGroup('actions')">⚙️</button>
     <div class="grp-menu" id="grpmenu-actions">
       <button class="sub-btn" onclick="toggleHeader();closeAllGroups()"><span class="icon">ℹ️</span><span class="label">Infos voyage</span><span class="check"></span></button>
-      <button class="sub-btn" onclick="map.setView([65.0,-19.0],6);closeAllGroups()"><span class="icon">🎯</span><span class="label">Recentrer la carte</span><span class="check"></span></button>
+      <button class="sub-btn" onclick="recenterMap();closeAllGroups()"><span class="icon">🎯</span><span class="label">Recentrer la carte</span><span class="check"></span></button>
       <button class="sub-btn" onclick="toggleSchedule();closeAllGroups()"><span class="icon">📋</span><span class="label">Programme jour par jour</span><span class="check"></span></button>
       <button class="sub-btn" onclick="toggleLegend();closeAllGroups()"><span class="icon">📖</span><span class="label">Légende</span><span class="check"></span></button>
       <div class="sub-sep"></div>
@@ -250,11 +250,15 @@ if (location.protocol === 'https:') registerSW().then(() => {
 
 
 // ── MAP INIT ──────────────────────────────────────────────────────────────
-const map = L.map('map', {zoomControl:true}).setView([65.0,-19.0], 6);
+const ICELAND_BOUNDS = L.latLngBounds([[63.2,-25.0],[66.6,-13.2]]);
+function recenterMap() { map.fitBounds(ICELAND_BOUNDS, {padding:[10,10]}); }
+const map = L.map('map', {zoomControl:true});
+recenterMap();
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
   maxZoom:19,
   attribution:'© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
+window.addEventListener('resize', () => map.invalidateSize());
 
 
 // ── UI FUNCTIONS ─────────────────────────────────────────────────────────
