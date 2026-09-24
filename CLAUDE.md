@@ -6,10 +6,11 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 A single-page interactive Leaflet map for a self-planned Iceland road trip (Ring Road + F-roads, campsites, hikes, réttir sheep round-ups, POIs). There is no framework, no package manager, and no build step — the entire app is one HTML file.
 
-- `index.html` — everything: CSS, DOM, and JS (~2300+ lines) for the map, controls, legend, and day-by-day schedule panel.
+- `index.html` — a tiny static landing page (no Leaflet, no JS logic) with two links: to `preparation.html` and `voyage.html`. Keep it minimal — it's a launcher, not a feature.
+- `preparation.html` — everything: CSS, DOM, and JS (~2300+ lines) for the trip-planning map, controls, legend, and day-by-day schedule panel. (Was `index.html` until this repo grew a `voyage.html` and needed a real landing page — see the git history for the rename.)
 - `voyage.html` — a separate, self-contained page: the post-trip journal (actual day-by-day GPS tracks, real campsites, detected stops, mileage), built from a one-time data pipeline (Immich photos → clustering → OSRM road-matching) whose output is baked into static arrays in the file — no live API calls at runtime. See `VOYAGE.md` for the full data pipeline, thresholds, and the custom-domain/cookie reasoning behind it.
-- `sw.js` — a small service worker for offline tile/route caching, registered only over HTTPS, shared as-is by both `index.html` and `voyage.html`.
-- `hikes.json` — ~1000 hikes (route geometry + metadata), fetched at runtime, not inlined in `index.html`.
+- `sw.js` — a small service worker for offline tile/route caching, registered only over HTTPS, shared as-is by both `preparation.html` and `voyage.html`.
+- `hikes.json` — ~1000 hikes (route geometry + metadata), fetched at runtime, not inlined in `preparation.html`.
 - `gpx/` — ~1000 downloadable `.gpx` files, one per hike, named by their Komoot numeric id (see "Hikes" below).
 - `CNAME` — GitHub Pages custom domain (`islande2026.itcg-consulting.com`); required for `voyage.html`'s Immich thumbnails to work (see `VOYAGE.md`).
 
@@ -17,15 +18,15 @@ A single-page interactive Leaflet map for a self-planned Iceland road trip (Ring
 
 There is no build, lint, or test tooling in this repo — it's plain static HTML/JS.
 
-- **Local dev server** (required — see below): `python3 -m http.server 8000` from the repo root, then open `http://localhost:8000/index.html`.
-  - Opening `index.html` directly via `file://` will **not** load hikes: the code explicitly skips the `hikes.json` fetch under `file:` protocol (see `init()`), and GPX download links resolve relative to the page.
+- **Local dev server** (required — see below): `python3 -m http.server 8000` from the repo root, then open `http://localhost:8000/preparation.html` (or `/index.html` for the landing page).
+  - Opening `preparation.html` directly via `file://` will **not** load hikes: the code explicitly skips the `hikes.json` fetch under `file:` protocol (see `init()`), and GPX download links resolve relative to the page.
   - The service worker (offline mode) only registers when `location.protocol === 'https:'`, so offline-cache behavior can only be exercised on the deployed GitHub Pages URL, not on `localhost`.
 - **Verifying changes**: there's no automated test suite. Serve the file locally and check it in a real/headless browser (e.g. drive it with a headless Chromium over CDP) — click through the relevant `grp-btn`/`sub-btn` controls and confirm markers/layers update as expected, and check the console for errors.
 - **Deploy**: `git push origin main` — GitHub Pages serves this repo's `main` branch root directly, so a push *is* the deploy. No CI config exists.
 
 ## Architecture
 
-Everything lives in one `<script>` block in `index.html`, organized into clearly marked sections (search for `// ── SECTION ──` comments to jump around):
+Everything lives in one `<script>` block in `preparation.html`, organized into clearly marked sections (search for `// ── SECTION ──` comments to jump around):
 
 `SERVICE WORKER` → `MAP INIT` → `LAYERS` → `UI FUNCTIONS` → `ICONS` → `ROUTING` → `ROUTES ADVISORY` → `SEGMENTS` → `ÉTAPES` → `ROUTES INTERDITES` → `DONNÉES CAMPINGS CAMPEASY` → `DONNÉES RÉTTIR` → `DONNÉES POI` (one block per category) → `TABLEAUX POI` → `PROGRAMME JOUR PAR JOUR` → `INIT` (`async function init()` at the bottom, which actually builds and adds every marker to the map).
 

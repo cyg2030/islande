@@ -6,7 +6,7 @@ Ce dépôt est **public** — ne jamais committer de clé API, mot de passe ou j
 
 ## Vue d'ensemble
 
-`voyage.html` est une page séparée de `index.html` (qui reste la carte de préparation). Elle retrace le voyage réellement effectué (4–19 septembre) : tracé GPS jour par jour, campings réels, arrêts marquants, kilométrage. Contrairement à `index.html`, ses données ne sont pas de simples tableaux tapés à la main : elles sont **calculées une fois** à partir des photos géolocalisées du voyage, puis figées (écrites en dur) dans le fichier — la page reste statique et ne recontacte ni Immich ni OSRM au chargement.
+`voyage.html` est une page séparée de `preparation.html` (qui reste la carte de préparation). Elle retrace le voyage réellement effectué (4–19 septembre) : tracé GPS jour par jour, campings réels, arrêts marquants, kilométrage. Contrairement à `preparation.html`, ses données ne sont pas de simples tableaux tapés à la main : elles sont **calculées une fois** à partir des photos géolocalisées du voyage, puis figées (écrites en dur) dans le fichier — la page reste statique et ne recontacte ni Immich ni OSRM au chargement.
 
 ## Domaine personnalisé
 
@@ -33,7 +33,7 @@ Pour chaque jour (`DAYS[i].segments`), les photos du téléphone du conducteur, 
 - Les segments "à pied" gardent la trace GPS brute (affichés en pointillés dans la légende).
 - Ce découpage est **figé** dans `DAYS[i].segments` — il n'y a plus d'appel OSRM au chargement de la page.
 
-**Position de nuit** (`nightPos`) : dernière photo géolocalisée du jour. Le nom du camping est déduit par plus-proche-voisin contre la base `CAMPEASY_CAMPINGS` d'`index.html` ; `campUncertain:true` si la correspondance est à plus de 2 km (à confirmer manuellement).
+**Position de nuit** (`nightPos`) : dernière photo géolocalisée du jour. Le nom du camping est déduit par plus-proche-voisin contre la base `CAMPEASY_CAMPINGS` de `preparation.html` ; `campUncertain:true` si la correspondance est à plus de 2 km (à confirmer manuellement).
 
 **Cas particuliers** :
 - **J0** (arrivée) : affiché par défaut (`defaultOn:true`) malgré son caractère atypique (vol + trajet court).
@@ -48,7 +48,7 @@ Les arrêts sont des regroupements de photos proches dans l'espace et le temps �
 3. **Deux niveaux** (le dernier groupe du jour, qui correspond à la nuit, est toujours exclu des deux) :
    - **`STOPS`** (arrêts marquants, 107) : ≥ 4 photos ET ≥ 3 min de présence.
    - **`STOPS_MINOR`** (arrêts secondaires, 128) : tout le reste des groupes, dès 2 photos, sans contrainte de durée — désactivé par défaut (menu 📸 → 🔹), car nettement plus dense.
-4. **Nom** : plus proche lieu connu (POI ou camping d'`index.html`, si à ≤ 600 m) sinon `Arrêt près de <ville EXIF>` sinon `Arrêt (à nommer)` — `matched:false` déclenche un badge ⚠️ dans le popup.
+4. **Nom** : plus proche lieu connu (POI ou camping de `preparation.html`, si à ≤ 600 m) sinon `Arrêt près de <ville EXIF>` sinon `Arrêt (à nommer)` — `matched:false` déclenche un badge ⚠️ dans le popup.
 
 **Exception manuelle** : `m106` (14/09, "Aurores boréales - Vík Campsite") est le dernier groupe du jour (normalement toujours exclu, voir ci-dessous) ajouté à la main à `STOPS` sur demande explicite, parce qu'il contenait une photo marquante (aurores boréales) à rendre trouvable sur la carte sans la confondre avec le marqueur 🌙 de nuit. `uid` n'est qu'une clé de lookup (`STOP_BY_UID`), pas un index de tableau — ajouter une entrée en fin de tableau est sans risque, mais **ne pas oublier la virgule de fin de ligne sur l'ancien dernier élément** (il n'en avait pas besoin tant qu'il était le dernier).
 

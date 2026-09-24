@@ -183,7 +183,7 @@ h1 { font-size:14px; font-weight:600; }
 
 <script>
 
-// ── SERVICE WORKER (HTTPS uniquement, cache partagé avec index.html) ────────
+// ── SERVICE WORKER (HTTPS uniquement, cache partagé avec preparation.html) ────────
 let swReg = null;
 let swEnabled = false;
 
@@ -390,7 +390,7 @@ const KM_LOG = {
 
 // Arrêts marquants — première liste calculée automatiquement en regroupant
 // les photos proches géographiquement (et temporellement) les unes des
-// autres, avec correspondance aux lieux déjà connus de index.html quand
+// autres, avec correspondance aux lieux déjà connus de preparation.html quand
 // possible. À relire et corriger/compléter à la main.
 const STOPS = [
   {uid:"m0",date:"2026-09-04",lat:64.01689,lon:-22.56729,name:"Arrêt près de Keflavík",matched:false,hue:0,nPhotos:8,timeRange:"19:10-19:32",photos:[["9a24900c-8694-41c8-9c71-913d814b9cf8","19:10"],["48128267-4a92-4a6a-a5d4-603751b26c97","19:11"],["afbe1c04-be43-409d-b17f-7d61bbc87423","19:16"],["e8bab246-815e-4ef9-9cf2-d33d40bb762a","19:16"],["746388d9-f1d3-4a9f-ac74-1304be0974a1","19:17"],["eb28fdad-66be-47a4-b6fc-9b7984f62e8f","19:23"],["78c0b3ee-cca5-461d-88da-2984c4cdbd13","19:29"],["6e3e8191-8638-4fbb-9999-b3eb6892ef03","19:32"]]},
